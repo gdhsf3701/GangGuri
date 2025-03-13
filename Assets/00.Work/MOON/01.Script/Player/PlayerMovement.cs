@@ -6,7 +6,12 @@ public class PlayerMovement : MonoBehaviour, IEntityComponent
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] float jumpPower = 5f;
     private Entity _entity;
+    private Rigidbody _rb;
     private float moveDirX = 0;
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
 
     public void Initialize(Entity entity)
     {
@@ -23,5 +28,8 @@ public class PlayerMovement : MonoBehaviour, IEntityComponent
 
     private void Move()
     {
+        Vector3 changedEuler = transform.eulerAngles;
+        changedEuler.y += moveDirX;
+        transform.eulerAngles = changedEuler;
     }
 }
