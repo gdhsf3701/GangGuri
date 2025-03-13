@@ -7,9 +7,12 @@ public class Entity : MonoBehaviour
 {
     protected Dictionary<Type, IEntityComponent> _components;
 
+    public CharacterController ControllerCompo { get; protected set; }
+
     protected virtual void Awake()
     {
         _components = new Dictionary<Type, IEntityComponent>();
+        ControllerCompo = GetComponent<CharacterController>();
         AddComponents();
         InitializeComponents();
     }
