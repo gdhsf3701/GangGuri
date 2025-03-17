@@ -274,7 +274,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 2
+  UpdateMethod: 0
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 330352003}
   - component: {fileID: 330352002}
   - component: {fileID: 330352001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330352000}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff98c40ecd8e2574cbb1e9f4a200b47d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -393,7 +393,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.11627169, w: 0.99321747}
   m_LocalPosition: {x: 717.4958, y: -168.6624, z: 0}
-  m_LocalScale: {x: 152.14943, y: 1, z: 6.4063997}
+  m_LocalScale: {x: 152.14943, y: 1, z: 11.781369}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -549,7 +549,7 @@ Rigidbody:
   m_GameObject: {fileID: 1188771114}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.025
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -596,7 +596,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkerSize: {x: 1, y: 0.22, z: 1}
-  checkerTransSet: {x: 0, y: -0.87, z: 0}
+  checkerTransSet: {x: 0, y: -0.97, z: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &1188771121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,7 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337d1fea9ea889a449555ae302c543cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 5
   jumpPower: 5
 --- !u!114 &1188771122
 MonoBehaviour:
@@ -631,7 +634,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188771114}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff98c40ecd8e2574cbb1e9f4a200b47d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

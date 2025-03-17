@@ -7,6 +7,7 @@ public class Player : Entity
     protected override void Awake()
     {
         base.Awake();
-        input.OnMoveEvent += GetCompo<PlayerMovement>().MoveDirXChanged;
+        input.OnMoveEvent += GetCompo<PlayerMovement>().MoveDirChanged;
+        input.OnJumpEvent += GetCompo<PlayerMovement>().Jump;
     }
 }

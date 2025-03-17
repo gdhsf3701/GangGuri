@@ -1,13 +1,20 @@
 using UnityEngine;
 
-public class GroundChecker : MonoBehaviour
+public class GroundChecker : MonoBehaviour, IEntityComponent
 {
     [SerializeField] Vector3 checkerSize;
     [SerializeField] Vector3 checkerTransSet;
+    [SerializeField] LayerMask groundLayer;
+    Entity _entity;
 
-    public void GroundCheck()
+    public bool GroundCheck()
     {
-        Physics.OverlapBox(transform.position + checkerTransSet, checkerSize);
+        return Physics.CheckBox(transform.position + checkerTransSet, checkerSize, Quaternion.identity, groundLayer);
+    }
+
+    public void Initialize(Entity entity)
+    {
+        _entity = entity;
     }
 
     private void OnDrawGizmos()
