@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour, IEntityComponent
     [SerializeField] float jumpPower = 5f;
     private Entity _entity;
     private Rigidbody _rb;
-    private float moveDirX = 0;
+    private Vector2 moveDir;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour, IEntityComponent
     }
     public void MoveDirXChanged(Vector2 change)
     {
-        moveDirX = change.x;
+        moveDir = change;
     }
     private void FixedUpdate()
     {
@@ -29,7 +29,16 @@ public class PlayerMovement : MonoBehaviour, IEntityComponent
     private void Move()
     {
         Vector3 changedEuler = transform.eulerAngles;
-        changedEuler.y += moveDirX;
+        Vector3 changedVelocity = _rb.angularVelocity;
+        Vector3 localforward = transform.forward;
+
+        localforward.y = 0;
+        localforward = localforward.normalized;
+
+        changedEuler.y += moveDir.x;
+        changedVelocity -= localforward * moveDir.y;
+
         transform.eulerAngles = changedEuler;
+        _rb.angularVelocity = changedVelocity;
     }
 }
