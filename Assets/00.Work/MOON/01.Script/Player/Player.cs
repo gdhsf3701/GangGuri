@@ -1,13 +1,17 @@
+using _00.Work.MOON._01.Script.SO;
 using UnityEngine;
 
-public class Player : Entity
+namespace _00.Work.MOON._01.Script.Player
 {
-    [SerializeField] InputReader input;
-    
-    protected override void Awake()
+    public class Player : Entity
     {
-        base.Awake();
-        input.OnMoveEvent += GetCompo<PlayerMovement>().MoveDirChanged;
-        input.OnJumpEvent += GetCompo<PlayerMovement>().Jump;
+        [SerializeField] InputReader input;
+    
+        protected override void Awake()
+        {
+            base.Awake();
+            input.OnMoveEvent += GetCompo<PlayerMovement>().MoveDirChanged;
+            input.OnJumpEvent += GetCompo<PlayerMovement>().Jump;
+        }
     }
 }

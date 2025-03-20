@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class GroundChecker : MonoBehaviour, IEntityComponent
+namespace _00.Work.MOON._01.Script
 {
-    [SerializeField] Vector3 checkerSize;
-    [SerializeField] Vector3 checkerTransSet;
-    [SerializeField] LayerMask groundLayer;
-    Entity _entity;
-
-    public bool GroundCheck()
+    public class GroundChecker : MonoBehaviour, IEntityComponent
     {
-        return Physics.CheckBox(transform.position + checkerTransSet, checkerSize, Quaternion.identity, groundLayer);
-    }
+        [SerializeField] Vector3 checkerSize;
+        [SerializeField] Vector3 checkerTransSet;
+        [SerializeField] LayerMask groundLayer;
+        Entity _entity;
 
-    public void Initialize(Entity entity)
-    {
-        _entity = entity;
-    }
+        public bool GroundCheck()
+        {
+            return Physics.CheckBox(transform.position + checkerTransSet, checkerSize, Quaternion.identity, groundLayer);
+        }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position + checkerTransSet, checkerSize);
-        Gizmos.color = Color.white;
+        public void Initialize(Entity entity)
+        {
+            _entity = entity;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireCube(transform.position + checkerTransSet, checkerSize);
+            Gizmos.color = Color.white;
+        }
     }
 }

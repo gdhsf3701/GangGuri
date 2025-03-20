@@ -3,29 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+namespace _00.Work.MOON._01.Script
 {
-    protected Dictionary<Type, IEntityComponent> _components;
-
-
-    protected virtual void Awake()
+    public class Entity : MonoBehaviour
     {
-        _components = new Dictionary<Type, IEntityComponent>();
-        AddComponents();
-        InitializeComponents();
-    }
+        protected Dictionary<Type, IEntityComponent> _components;
 
-    private void AddComponents()
-    {
-        GetComponentsInChildren<IEntityComponent>().ToList()
-            .ForEach(component => _components.Add(component.GetType(), component));
-    }
 
-    private void InitializeComponents()
-    {
-        _components.Values.ToList().ForEach(component => component.Initialize(this));
-    }
+        protected virtual void Awake()
+        {
+            _components = new Dictionary<Type, IEntityComponent>();
+            AddComponents();
+            InitializeComponents();
+        }
 
-    public T GetCompo<T>() where T : IEntityComponent
-        => (T)_components.GetValueOrDefault(typeof(T));
+        private void AddComponents()
+        {
+            GetComponentsInChildren<IEntityComponent>().ToList()
+                .ForEach(component => _components.Add(component.GetType(), component));
+        }
+
+        private void InitializeComponents()
+        {
+            _components.Values.ToList().ForEach(component => component.Initialize(this));
+        }
+
+        public T GetCompo<T>() where T : IEntityComponent
+            => (T)_components.GetValueOrDefault(typeof(T));
+    }
 }

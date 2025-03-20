@@ -1,19 +1,21 @@
 using UnityEngine;
 
-
-public class DropDamage : MonoBehaviour, IEntityComponent
+namespace _00.Work.MOON._01.Script.Player
 {
-    float maxPosition = 0;
-
-    Entity _entity;
-
-    public void Initialize(Entity entity)
+    public class DropDamage : MonoBehaviour, IEntityComponent
     {
-        _entity = entity;
-    }
+        float maxPosition = 0;
 
-    private void Update()
-    {
+        Entity _entity;
+
+        public void Initialize(Entity entity)
+        {
+            _entity = entity;
+        }
+
+        private void Update()
+        {
         
+        }
     }
 }

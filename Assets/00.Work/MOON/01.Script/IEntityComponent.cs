@@ -1,5 +1,8 @@
 ﻿
-public interface IEntityComponent
+namespace _00.Work.MOON._01.Script
 {
-    public void Initialize(Entity entity);
+    public interface IEntityComponent
+    {
+        public void Initialize(Entity entity);
+    }
 }

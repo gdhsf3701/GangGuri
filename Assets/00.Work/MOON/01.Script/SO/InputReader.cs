@@ -1,42 +1,44 @@
 using System;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(fileName = "InputReader", menuName = "SO/InputReader", order = 1)]
-public class InputReader : ScriptableObject, Input.IPlayerActions
+namespace _00.Work.MOON._01.Script.SO
 {
-    public event Action OnDashEvent;
-    public event Action OnJumpEvent;
-    public event Action<Vector2> OnMoveEvent;
-    private Input _controls;
-
-    private void OnEnable()
+    [CreateAssetMenu(fileName = "InputReader", menuName = "SO/InputReader", order = 1)]
+    public class InputReader : ScriptableObject, Input.IPlayerActions
     {
-        if (_controls == null)
+        public event Action OnDashEvent;
+        public event Action OnJumpEvent;
+        public event Action<Vector2> OnMoveEvent;
+        private Input _controls;
+
+        private void OnEnable()
         {
-            _controls = new Input();
-            _controls.Player.SetCallbacks(this);
+            if (_controls == null)
+            {
+                _controls = new Input();
+                _controls.Player.SetCallbacks(this);
+            }
+            _controls.Player.Enable();
         }
-        _controls.Player.Enable();
-    }
 
-    private void OnDisable()
-    {
-        _controls.Player.Disable();
-    }
-    public void OnDash(InputAction.CallbackContext context)
-    {
-        OnDashEvent?.Invoke();
-    }
+        private void OnDisable()
+        {
+            _controls.Player.Disable();
+        }
+        public void OnDash(InputAction.CallbackContext context)
+        {
+            OnDashEvent?.Invoke();
+        }
 
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        OnJumpEvent?.Invoke();
-    }
+        public void OnJump(InputAction.CallbackContext context)
+        {
+            OnJumpEvent?.Invoke();
+        }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        OnMoveEvent?.Invoke(context.ReadValue<Vector2>());
+        public void OnMove(InputAction.CallbackContext context)
+        {
+            OnMoveEvent?.Invoke(context.ReadValue<Vector2>());
+        }
     }
 }
