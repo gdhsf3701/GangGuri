@@ -8,8 +8,8 @@ PhysicsMaterial:
   m_PrefabAsset: {fileID: 0}
   m_Name: TestPhysicMat
   serializedVersion: 2
-  m_DynamicFriction: 1
-  m_StaticFriction: 0.64
+  m_DynamicFriction: 0.03
+  m_StaticFriction: 0.03
   m_Bounciness: 0
   m_FrictionCombine: 0
   m_BounceCombine: 0
