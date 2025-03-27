@@ -15,6 +15,7 @@ namespace _00.Work.KLM._01.Script.KAY_UI
             if (PlayerPrefs.HasKey("BGMVolume"))
             {
                 LoadVolume();
+                //아니 이 미친 것
             }
             else
             {
