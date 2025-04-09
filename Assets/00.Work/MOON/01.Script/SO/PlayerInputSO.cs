@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace _00.Work.MOON._01.Script.SO
 {
-    [CreateAssetMenu(fileName = "PlayerInput", menuName = "SO/PlayerInput")]
+    [CreateAssetMenu(fileName = "PlayerInput", menuName = "SO/Player/Input")]
     public class PlayerInputSO : ScriptableObject,Input.IPlayerActions
     {
         public Vector2 MovementKey {get; private set; } 
