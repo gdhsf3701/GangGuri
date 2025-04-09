@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3130e1b790147ee8acf9e98bfe645b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7714a98185bb45b9961e35aec6cc86b9, type: 3}
   m_Name: PlayerMoveInfo
   m_EditorClassIdentifier: 
   <MoveStats>k__BackingField:
@@ -20,4 +20,4 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 9d65b83ed9e6ee748ae38fe8960812fc, type: 2}
     - Key: 2
       Value: {fileID: 11400000, guid: 2caea7a4f3a5ee7438cec6d938b26996, type: 2}
-  <PlayerInput>k__BackingField: {fileID: 11400000, guid: 341bf33c4d4d2144aa5cd2451a4f7f11, type: 2}
+  <PlayerInput>k__BackingField: {fileID: 0}

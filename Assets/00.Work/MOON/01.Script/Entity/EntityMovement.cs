@@ -24,10 +24,8 @@ namespace _00.Work.MOON._01.Script.Entity
         {
             EntityMoveStatSO changedStat = statInfo.MoveStats[statType];
             if (_currentMoveStat == changedStat)
-            {
-                print("IsEqual");
                 return;
-            }
+            
             _currentMoveStat = changedStat;
 
             _moveSpeed = _currentMoveStat.MoveSpeed;

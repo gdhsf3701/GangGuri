@@ -1,5 +1,8 @@
+using System;
+using _00.Work.MOON._01.Script.SO.Entity;
 using _00.Work.MOON._01.Script.SO.Entity.Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace _00.Work.MOON._01.Script.Entity.Player
 {
@@ -10,14 +13,22 @@ namespace _00.Work.MOON._01.Script.Entity.Player
 
         protected override void Awake()
         {
-            base.Awake();
             GetMoveStatsInfo();
+            base.Awake();
         }
 
         private void GetMoveStatsInfo()
         {
             _statInfo = statInfo as PlayerMoveStatInfoSO;
             _playerInput = _statInfo.PlayerInput;
+        }
+
+        protected void Update()
+        {
+            if (Keyboard.current.tabKey.wasPressedThisFrame)
+            {
+                ChangeStat(EntityMoveStatType.Normal);
+            }
         }
 
         protected override void Move()
