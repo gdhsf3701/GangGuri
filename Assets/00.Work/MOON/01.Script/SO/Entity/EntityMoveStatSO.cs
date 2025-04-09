@@ -1,18 +1,11 @@
 using UnityEngine;
 
-namespace _00.Work.MOON._01.Script.SO
+namespace _00.Work.MOON._01.Script.SO.Entity
 {
-    [CreateAssetMenu(fileName = "PlayerMoveStat", menuName = "SO/Player/MoveStat", order = 0)]
-    public class PlayerMoveStatSO : ScriptableObject
+    [CreateAssetMenu(fileName = "Move", menuName = "SO/Entity/MoveStat", order = 0)]
+    public class EntityMoveStatSO : ScriptableObject
     {
-        private string _statName;
-
-        public bool CheckStatName(string statName)
-        {
-            if(this == null)
-                return false;
-            return _statName.Equals(statName);
-        }
+        
         
         [field: SerializeField]
         public float SlopeSpeed { get; private set; } = 15f;

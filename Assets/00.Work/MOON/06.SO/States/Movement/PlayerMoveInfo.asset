@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3130e1b790147ee8acf9e98bfe645b9, type: 3}
+  m_Name: PlayerMoveInfo
+  m_EditorClassIdentifier: 
+  <MoveStats>k__BackingField:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 11400000, guid: 71edd560f0e57ae41860c6634f39a403, type: 2}
+    - Key: 1
+      Value: {fileID: 11400000, guid: 9d65b83ed9e6ee748ae38fe8960812fc, type: 2}
+    - Key: 2
+      Value: {fileID: 11400000, guid: 2caea7a4f3a5ee7438cec6d938b26996, type: 2}
+  <PlayerInput>k__BackingField: {fileID: 11400000, guid: 341bf33c4d4d2144aa5cd2451a4f7f11, type: 2}

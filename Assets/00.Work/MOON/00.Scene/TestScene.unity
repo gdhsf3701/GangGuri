@@ -591,11 +591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 2053297763}
-  slopeSpeed: 15
-  moveSpeed: 25
-  playerInput: {fileID: 11400000, guid: 341bf33c4d4d2144aa5cd2451a4f7f11, type: 2}
-  maxAngle: 4
-  maxSpeed: 50
+  statInfo: {fileID: 11400000, guid: 784c4bf5af72e8546bc0e00e7533f280, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

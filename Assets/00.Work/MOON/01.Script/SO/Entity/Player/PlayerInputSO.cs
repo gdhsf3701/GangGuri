@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _00.Work.MOON._01.Script.SO
+namespace _00.Work.MOON._01.Script.SO.Entity.Player
 {
     [CreateAssetMenu(fileName = "PlayerInput", menuName = "SO/Player/Input")]
     public class PlayerInputSO : ScriptableObject,Input.IPlayerActions
