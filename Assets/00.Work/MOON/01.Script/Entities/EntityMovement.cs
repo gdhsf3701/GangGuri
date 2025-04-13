@@ -1,12 +1,12 @@
 using _00.Work.MOON._01.Script.SO.Entity;
 using UnityEngine;
 
-namespace _00.Work.MOON._01.Script.Entity
+namespace _00.Work.MOON._01.Script.Entities
 {
-    public abstract class EntityMovement : MonoBehaviour
+    public abstract class EntityMovement : MonoBehaviour , IEntityComponent
     {
         [SerializeField] protected EntityMoveStatInfoSO statInfo;
-        [SerializeField] protected Rigidbody rigidbody;
+        [SerializeField] protected Rigidbody rb;
         
         protected EntityMoveStatSO _currentMoveStat;
         
@@ -14,9 +14,13 @@ namespace _00.Work.MOON._01.Script.Entity
         protected float _slopeSpeed;
         protected float _maxAngle;
         protected float _maxSpeed;
+        protected float _jumpPower;
         
-        protected virtual void Awake()
+        protected Entities.Entity _entity;
+        
+        public void Initialize(Entities.Entity entity)
         {
+            _entity = entity;
             ChangeStat(EntityMoveStatType.Normal);
         }
         
@@ -32,18 +36,19 @@ namespace _00.Work.MOON._01.Script.Entity
             _slopeSpeed = _currentMoveStat.SlopeSpeed;
             _maxAngle = _currentMoveStat.MaxAngle;
             _maxSpeed = _currentMoveStat.MaxSpeed;
+            _jumpPower = _currentMoveStat.JumpPower;
         }
         
         protected void SlopeMove()
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, 2f)) {
+            if (Physics.Raycast(transform.position, -transform.up, out hit, 2f)) {
                 float angle = Vector3.Angle(Vector3.up, hit.normal);
         
                 if (angle > _maxAngle) 
                 { 
                     Vector3 slopeDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal);
-                    rigidbody.AddForce(slopeDirection * _slopeSpeed, ForceMode.Acceleration);
+                    rb.AddForce(slopeDirection * _slopeSpeed, ForceMode.Acceleration);
                 }
             }
         }
@@ -62,9 +67,9 @@ namespace _00.Work.MOON._01.Script.Entity
 
         protected void MoveMaxCheck()
         {
-            if (rigidbody.linearVelocity.magnitude > _maxSpeed)
+            if (rb.linearVelocity.magnitude > _maxSpeed)
             {
-                rigidbody.linearVelocity = rigidbody.linearVelocity.normalized * (_maxSpeed + 0.01f);
+                rb.linearVelocity = rb.linearVelocity.normalized * (_maxSpeed + 0.01f);
             }
         }
     }

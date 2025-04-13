@@ -1,13 +1,16 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace _00.Work.MOON._01.Script.SO.Entity.Player
+namespace _00.Work.MOON._01.Script.SO.Player
 {
     [CreateAssetMenu(fileName = "PlayerInput", menuName = "SO/Player/Input")]
     public class PlayerInputSO : ScriptableObject,Input.IPlayerActions
     {
         public Vector2 MovementKey {get; private set; } 
         private Input _controls;
+        public event Action OnJumpKeyEvent;
+        
         private void OnEnable()
         {
             if (_controls == null)
@@ -29,7 +32,7 @@ namespace _00.Work.MOON._01.Script.SO.Entity.Player
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            
+            OnJumpKeyEvent?.Invoke();
         }
 
         public void OnDash(InputAction.CallbackContext context)

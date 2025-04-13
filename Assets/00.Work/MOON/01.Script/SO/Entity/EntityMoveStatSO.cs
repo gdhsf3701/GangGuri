@@ -18,5 +18,7 @@ namespace _00.Work.MOON._01.Script.SO.Entity
         
         [field: SerializeField]
         public float MaxSpeed { get; private set; } = 50f;
+        [field: SerializeField]
+        public float JumpPower { get; private set; } = 10f;
     }
 }

@@ -1,7 +1,7 @@
+using _00.Work.MOON._01.Script.SO.Entity;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-namespace _00.Work.MOON._01.Script.SO.Entity.Player
+namespace _00.Work.MOON._01.Script.SO.Player
 {
     [CreateAssetMenu(fileName = "PlayerMoveInfo", menuName = "SO/Player/MoveInfo", order = 0)]
     public class PlayerMoveStatInfoSO : EntityMoveStatInfoSO
