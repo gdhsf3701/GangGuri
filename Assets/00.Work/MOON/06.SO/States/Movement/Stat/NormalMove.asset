@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a2179a5ba24ac6b384097a8ce267a7, type: 3}
   m_Name: NormalMove
   m_EditorClassIdentifier: 
-  <SlopeSpeed>k__BackingField: 15
+  <SlopeSpeed>k__BackingField: 50
   <MoveSpeed>k__BackingField: 25
   <MaxAngle>k__BackingField: 4
   <MaxSpeed>k__BackingField: 50
+  <JumpPower>k__BackingField: 10
+  <RotateSpeed>k__BackingField: 1.5

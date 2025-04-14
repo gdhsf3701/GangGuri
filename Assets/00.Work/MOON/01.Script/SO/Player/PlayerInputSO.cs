@@ -32,7 +32,8 @@ namespace _00.Work.MOON._01.Script.SO.Player
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            OnJumpKeyEvent?.Invoke();
+            if(context.performed)
+                OnJumpKeyEvent?.Invoke();
         }
 
         public void OnDash(InputAction.CallbackContext context)

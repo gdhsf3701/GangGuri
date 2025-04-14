@@ -15,13 +15,17 @@ namespace _00.Work.MOON._01.Script.Entities
         protected float _maxAngle;
         protected float _maxSpeed;
         protected float _jumpPower;
+        protected float _rotateSpeed;
         
-        protected Entities.Entity _entity;
+        protected Entity _entity;
+
+        protected GroundChecker _groundChecker;
         
-        public void Initialize(Entities.Entity entity)
+        public void Initialize(Entity entity)
         {
             _entity = entity;
             ChangeStat(EntityMoveStatType.Normal);
+            _groundChecker = _entity.GetCompo<GroundChecker>();
         }
         
         public void ChangeStat(EntityMoveStatType statType)
@@ -37,14 +41,21 @@ namespace _00.Work.MOON._01.Script.Entities
             _maxAngle = _currentMoveStat.MaxAngle;
             _maxSpeed = _currentMoveStat.MaxSpeed;
             _jumpPower = _currentMoveStat.JumpPower;
+            _rotateSpeed = _currentMoveStat.RotateSpeed;
         }
-        
+        protected void Jump()
+        {
+            if (_groundChecker.GroundCheck())
+            {
+                rb.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
+            }
+        }
+
         protected void SlopeMove()
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, -transform.up, out hit, 2f)) {
                 float angle = Vector3.Angle(Vector3.up, hit.normal);
-        
                 if (angle > _maxAngle) 
                 { 
                     Vector3 slopeDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal);

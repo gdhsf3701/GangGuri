@@ -15,14 +15,7 @@ namespace _00.Work.MOON._01.Script.Players
             PlayerInput.OnJumpKeyEvent += Jump;
         }
 
-        private void Jump()
-        {
-            if (_entity.GetCompo<GroundChecker>().GroundCheck())
-            {
-                rb.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
-            }
-        }
-
+        
         private void GetMoveStatsInfo()
         {
             _statInfo = statInfo as PlayerMoveStatInfoSO;
@@ -38,7 +31,9 @@ namespace _00.Work.MOON._01.Script.Players
 
         private void Rotate()
         {
-            
+            Vector3 changeVelocity = rb.angularVelocity;
+            changeVelocity.y = PlayerInput.MovementKey.x * _rotateSpeed;
+            rb.angularVelocity = changeVelocity;
         }
 
         protected override void Move()
