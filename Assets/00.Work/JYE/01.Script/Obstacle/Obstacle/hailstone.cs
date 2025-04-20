@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,19 +31,50 @@ public class hailstone : MonoBehaviour
         }
     }
 
-    private void DropHailston() //우박 떨어지기
+    //랜덤 위치 정해주기
+    private IEnumerator DropHailston() //우박 떨어지기
     {
         for(int i = 0; i < hailstons.Count; i++)
         {
-            hailstons[i].SetActive(true);
+            if (!hailstons[i].activeSelf)
+            {
+                yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //기다리기
+                float stonSize = Random.Range(minSize, maxSize);
+
+                SetWorldScale(hailstons[i].transform, Vector3.one * stonSize);
+
+                hailstons[i].SetActive(true);
+            }
         }
+    }
+
+    void SetWorldScale(Transform t, Vector3 worldScale) //크기 변환
+    {
+        Vector3 parentScale = t.parent != null ? t.parent.lossyScale : Vector3.one;
+        t.localScale = new Vector3(
+            worldScale.x / parentScale.x,
+            worldScale.y / parentScale.y,
+            worldScale.z / parentScale.z
+        );
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            DropHailston();
+            StartCoroutine(DropHailston());
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StopAllCoroutines();
+        }
+        if (other.gameObject.CompareTag("GameController"))
+        {
+            other.gameObject.SetActive(false);
         }
     }
 }
