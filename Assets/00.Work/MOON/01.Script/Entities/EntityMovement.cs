@@ -17,18 +17,21 @@ namespace _00.Work.MOON._01.Script.Entities
         protected float _jumpPower;
         protected float _rotateSpeed;
         
+        
         protected Entity _entity;
 
         protected GroundChecker _groundChecker;
+
+        protected Vector3 slopeDirection;
         
-        public void Initialize(Entity entity)
+        public virtual void Initialize(Entity entity)
         {
             _entity = entity;
-            ChangeStat(EntityMoveStatType.Normal);
+            ChangeStat("NORMAL");
             _groundChecker = _entity.GetCompo<GroundChecker>();
         }
         
-        public void ChangeStat(EntityMoveStatType statType)
+        public void ChangeStat(string statType)
         {
             EntityMoveStatSO changedStat = statInfo.MoveStats[statType];
             if (_currentMoveStat == changedStat)
@@ -43,24 +46,26 @@ namespace _00.Work.MOON._01.Script.Entities
             _jumpPower = _currentMoveStat.JumpPower;
             _rotateSpeed = _currentMoveStat.RotateSpeed;
         }
-        protected void Jump()
+        public void Jump()
         {
-            if (_groundChecker.GroundCheck())
-            {
-                rb.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
-            }
+            rb.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
         }
 
         protected void SlopeMove()
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, -transform.up, out hit, 2f)) {
+            if (Physics.Raycast(transform.position, -transform.up, out hit, 1f)) {
                 float angle = Vector3.Angle(Vector3.up, hit.normal);
+                slopeDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal);
+
                 if (angle > _maxAngle) 
                 { 
-                    Vector3 slopeDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal);
                     rb.AddForce(slopeDirection * _slopeSpeed, ForceMode.Acceleration);
                 }
+            }
+            else
+            {
+                slopeDirection = new Vector3(1, 1, 1);
             }
         }
 

@@ -8,5 +8,7 @@ namespace _00.Work.MOON._01.Script.SO.Player
     {
         [field: SerializeField]
         public PlayerInputSO PlayerInput { get; private set; }
+        [field: SerializeField] 
+        public float MoveThresholdTime { get; private set; } = 0.1f;
     }
 }

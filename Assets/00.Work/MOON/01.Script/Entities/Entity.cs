@@ -9,7 +9,7 @@ namespace _00.Work.MOON._01.Script.Entities
     {
         protected Dictionary<Type, IEntityComponent> _components;
 
-
+    
         protected virtual void Awake()
         {
             _components = new Dictionary<Type, IEntityComponent>();

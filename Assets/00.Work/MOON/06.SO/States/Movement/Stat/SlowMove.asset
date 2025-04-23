@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SlowMove
   m_EditorClassIdentifier: 
   <SlopeSpeed>k__BackingField: 15
-  <MoveSpeed>k__BackingField: 25
+  <MoveSpeed>k__BackingField: 5
   <MaxAngle>k__BackingField: 4
   <MaxSpeed>k__BackingField: 50
   <JumpPower>k__BackingField: 10

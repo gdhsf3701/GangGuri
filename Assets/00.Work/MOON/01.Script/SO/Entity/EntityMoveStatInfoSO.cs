@@ -6,14 +6,7 @@ namespace _00.Work.MOON._01.Script.SO.Entity
     public abstract class EntityMoveStatInfoSO : ScriptableObject
     {
         [field: SerializeField]
-        public SerializedDictionary<EntityMoveStatType,EntityMoveStatSO> MoveStats { get; private set; } = new();
+        public SerializedDictionary<string,EntityMoveStatSO> MoveStats { get; private set; } = new();
         
-    }
-
-    public enum EntityMoveStatType
-    {
-        Normal,
-        Slow,
-        Fast,
     }
 }

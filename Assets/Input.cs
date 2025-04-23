@@ -771,6 +771,94 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""POV"",
+            ""id"": ""214ebc39-c0f2-4171-8732-78ad2176b805"",
+            ""actions"": [
+                {
+                    ""name"": ""Pointer"",
+                    ""type"": ""Value"",
+                    ""id"": ""ba861df6-b6c3-429b-ba17-c63253eaacb1"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ZoomIn"",
+                    ""type"": ""Value"",
+                    ""id"": ""f6288f30-500d-4cae-9d5b-13de38f62cc4"",
+                    ""expectedControlType"": ""Delta"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Looked"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f6b4cc0-4b1e-426a-9943-6a5649ced299"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PointerDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""6afac2f7-18f7-46b6-b28c-207b6687523b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b085187a-721e-4eb6-84c6-6ba81c3804a5"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pointer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5e8d350-ef35-4776-a10c-f38ad2ec78df"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ZoomIn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66224d2b-123b-4fcf-a83b-cf0bbc113af2"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Looked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88952c5a-0aa7-4c22-a051-9978d92cd982"",
+                    ""path"": ""<Pointer>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PointerDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -853,12 +941,19 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // POV
+        m_POV = asset.FindActionMap("POV", throwIfNotFound: true);
+        m_POV_Pointer = m_POV.FindAction("Pointer", throwIfNotFound: true);
+        m_POV_ZoomIn = m_POV.FindAction("ZoomIn", throwIfNotFound: true);
+        m_POV_Looked = m_POV.FindAction("Looked", throwIfNotFound: true);
+        m_POV_PointerDelta = m_POV.FindAction("PointerDelta", throwIfNotFound: true);
     }
 
     ~@Input()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Input.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Input.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_POV.enabled, "This will cause a leak and performance issues, Input.POV.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -1096,6 +1191,76 @@ public partial class @Input: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // POV
+    private readonly InputActionMap m_POV;
+    private List<IPOVActions> m_POVActionsCallbackInterfaces = new List<IPOVActions>();
+    private readonly InputAction m_POV_Pointer;
+    private readonly InputAction m_POV_ZoomIn;
+    private readonly InputAction m_POV_Looked;
+    private readonly InputAction m_POV_PointerDelta;
+    public struct POVActions
+    {
+        private @Input m_Wrapper;
+        public POVActions(@Input wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pointer => m_Wrapper.m_POV_Pointer;
+        public InputAction @ZoomIn => m_Wrapper.m_POV_ZoomIn;
+        public InputAction @Looked => m_Wrapper.m_POV_Looked;
+        public InputAction @PointerDelta => m_Wrapper.m_POV_PointerDelta;
+        public InputActionMap Get() { return m_Wrapper.m_POV; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(POVActions set) { return set.Get(); }
+        public void AddCallbacks(IPOVActions instance)
+        {
+            if (instance == null || m_Wrapper.m_POVActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_POVActionsCallbackInterfaces.Add(instance);
+            @Pointer.started += instance.OnPointer;
+            @Pointer.performed += instance.OnPointer;
+            @Pointer.canceled += instance.OnPointer;
+            @ZoomIn.started += instance.OnZoomIn;
+            @ZoomIn.performed += instance.OnZoomIn;
+            @ZoomIn.canceled += instance.OnZoomIn;
+            @Looked.started += instance.OnLooked;
+            @Looked.performed += instance.OnLooked;
+            @Looked.canceled += instance.OnLooked;
+            @PointerDelta.started += instance.OnPointerDelta;
+            @PointerDelta.performed += instance.OnPointerDelta;
+            @PointerDelta.canceled += instance.OnPointerDelta;
+        }
+
+        private void UnregisterCallbacks(IPOVActions instance)
+        {
+            @Pointer.started -= instance.OnPointer;
+            @Pointer.performed -= instance.OnPointer;
+            @Pointer.canceled -= instance.OnPointer;
+            @ZoomIn.started -= instance.OnZoomIn;
+            @ZoomIn.performed -= instance.OnZoomIn;
+            @ZoomIn.canceled -= instance.OnZoomIn;
+            @Looked.started -= instance.OnLooked;
+            @Looked.performed -= instance.OnLooked;
+            @Looked.canceled -= instance.OnLooked;
+            @PointerDelta.started -= instance.OnPointerDelta;
+            @PointerDelta.performed -= instance.OnPointerDelta;
+            @PointerDelta.canceled -= instance.OnPointerDelta;
+        }
+
+        public void RemoveCallbacks(IPOVActions instance)
+        {
+            if (m_Wrapper.m_POVActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPOVActions instance)
+        {
+            foreach (var item in m_Wrapper.m_POVActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_POVActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public POVActions @POV => new POVActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1159,5 +1324,12 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnScrollWheel(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IPOVActions
+    {
+        void OnPointer(InputAction.CallbackContext context);
+        void OnZoomIn(InputAction.CallbackContext context);
+        void OnLooked(InputAction.CallbackContext context);
+        void OnPointerDelta(InputAction.CallbackContext context);
     }
 }

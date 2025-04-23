@@ -11,6 +11,8 @@ namespace _00.Work.MOON._01.Script.SO.Player
         private Input _controls;
         public event Action OnJumpKeyEvent;
         
+        public Action<bool> IsMoveThreshold;
+        
         private void OnEnable()
         {
             if (_controls == null)
@@ -27,6 +29,14 @@ namespace _00.Work.MOON._01.Script.SO.Player
         }
         public void OnMove(InputAction.CallbackContext context)
         {
+            if (context.performed)
+            {
+                IsMoveThreshold?.Invoke(true);
+            }
+            else if (context.canceled)
+            {
+                IsMoveThreshold?.Invoke(false);
+            }
             MovementKey = context.ReadValue<Vector2>();
         }
 
