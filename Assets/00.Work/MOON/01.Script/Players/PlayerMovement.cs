@@ -1,6 +1,9 @@
+using System.Collections.Generic;
 using _00.Work.MOON._01.Script.Entities;
+using _00.Work.MOON._01.Script.SO.Entity;
 using _00.Work.MOON._01.Script.SO.Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace _00.Work.MOON._01.Script.Players
 {
@@ -9,6 +12,8 @@ namespace _00.Work.MOON._01.Script.Players
         [SerializeField] private Transform rotateTarget; // 회전 대상
         public PlayerInputSO PlayerInput { get; private set; }
         private PlayerMoveStatInfoSO _statInfo;
+        
+        private ChangeModel _changeModel;
 
         // 이동 관련 변수들
         protected float _moveThresholdTime;
@@ -23,12 +28,15 @@ namespace _00.Work.MOON._01.Script.Players
 
         protected void Awake()
         {
-            GetMoveStatsInfo(); // 이동 관련 스탯 정보 초기화
             rb.constraints = RigidbodyConstraints.FreezeRotation; // Rigidbody 회전 고정
+            GetMoveStatsInfo(); // 이동 관련 스탯 정보 초기화
+
         }
 
         public override void Initialize(Entity entity)
         {
+            _changeModel = entity.GetCompo<ChangeModel>();
+            SetModel();
             base.Initialize(entity);
             parent = entity.transform;
             PlayerInput.IsMoveThreshold += IsMoveChecking; // MoveThreshold 이벤트 연결
@@ -49,6 +57,20 @@ namespace _00.Work.MOON._01.Script.Players
             _statInfo = statInfo as PlayerMoveStatInfoSO; // 이동 스탯 정보 캐스팅
             PlayerInput = _statInfo.PlayerInput;
             _moveThresholdTime = _statInfo.MoveThresholdTime;
+        }
+
+        protected override void ChangeStat(string statType)
+        {
+            base.ChangeStat(statType);
+            _changeModel.ChangeCarModel(statType);
+        }
+
+        private void SetModel()
+        {
+            foreach (KeyValuePair<string, EntityMoveStatSO> stat in statInfo.MoveStats)
+            {
+                _changeModel.AddDictionary(stat.Key, stat.Value.CarPrefab);
+            }
         }
 
         public void SetMovementDirection(Vector2 movementInput, float movementProportion = 1f)
@@ -73,7 +95,6 @@ namespace _00.Work.MOON._01.Script.Players
             Move(); // Rigidbody를 이용해 이동
             MoveMaxCheck(); // 이동량 최대치 확인
         }
-
         private void Update()
         {
             // 이동 가능 여부를 타이머 기반으로 체크
@@ -99,12 +120,14 @@ namespace _00.Work.MOON._01.Script.Players
         public void Stop()
         {
             // 이동 중지 로직: 속도를 서서히 감소
-            _velocity = new Vector3(_velocity.x, 0, _velocity.z);
-            rb.AddForce(-rb.linearVelocity * stopPer, ForceMode.Impulse);
-
-            if (Mathf.Abs(Vector3.Magnitude(new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z))) < stopDistance)
+            _velocity = new Vector3(0, 0, 0);
+            if (Mathf.Abs(Vector3.Magnitude(new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z))) <= stopDistance)
             {
                 rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+            }
+            else
+            {
+                rb.AddForce(-rb.linearVelocity * stopPer, ForceMode.Impulse);
             }
         }
     

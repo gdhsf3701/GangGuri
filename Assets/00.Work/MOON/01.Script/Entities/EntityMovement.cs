@@ -43,7 +43,7 @@ namespace _00.Work.MOON._01.Script.Entities
         /// 이동 스탯 변경
         /// </summary>
         /// <param name="statType">변경할 스탯 타입</param>
-        public void ChangeStat(string statType)
+        protected virtual void ChangeStat(string statType)
         {
             // 변경할 스탯 가져오기
             EntityMoveStatSO changedStat = statInfo.MoveStats[statType];
@@ -60,7 +60,7 @@ namespace _00.Work.MOON._01.Script.Entities
             _rotateSpeed = _currentMoveStat.RotateSpeed;
             _maxSlopeAngle = _currentMoveStat.MaxSlopeAngle;
             stopPer = _currentMoveStat.StopPer;
-            stopDistance = _currentMoveStat.stopDistance;
+            stopDistance = _currentMoveStat.StopDistance;
         }
 
         /// <summary>

@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a2179a5ba24ac6b384097a8ce267a7, type: 3}
   m_Name: NormalMove
   m_EditorClassIdentifier: 
-  <MoveToUpSpeed>k__BackingField: 1.25
+  <MoveToUpSpeed>k__BackingField: 1
   <MoveSpeed>k__BackingField: 5
   <UpDistance>k__BackingField: 2
   <MaxSpeed>k__BackingField: 50
   <JumpPower>k__BackingField: 10
   <RotateSpeed>k__BackingField: 1.5
   <MaxSlopeAngle>k__BackingField: 45
+  <StopPer>k__BackingField: 0.15
+  <StopDistance>k__BackingField: 1.35
+  <CarPrefab>k__BackingField: {fileID: -2253911629886400664, guid: 755be652074227748aa356e5872e5b6d, type: 3}
