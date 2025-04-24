@@ -59,7 +59,7 @@ namespace _00.Work.MOON._01.Script.Players
             _moveThresholdTime = _statInfo.MoveThresholdTime;
         }
 
-        protected override void ChangeStat(string statType)
+        public override void ChangeStat(string statType)
         {
             base.ChangeStat(statType);
             _changeModel.ChangeCarModel(statType);
