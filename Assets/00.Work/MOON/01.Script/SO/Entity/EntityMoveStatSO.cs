@@ -30,6 +30,8 @@ namespace _00.Work.MOON._01.Script.SO.Entity
         [field: SerializeField]
         public float StopPer { get; private set; } = 0.15f;
         [field: SerializeField]
-        public float stopDistance { get; private set; } = 1.35f;
+        public float StopDistance { get; private set; } = 1.35f;
+        [field: SerializeField]
+        public GameObject CarPrefab { get; private set; }
     }
 }
