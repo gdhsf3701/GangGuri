@@ -15,8 +15,7 @@ namespace _00.Work.MOON._01.Script.Players
         private bool _isMoveCheck = false;
         private float _timer;
         private Vector3 _movementDirection;
-        [SerializeField] private float stopPer;
-        [SerializeField] private float stopDistance;
+        
         public bool IsCanMove { get; private set; } = false;
 
         private float RotateTargetY => rotateTarget.eulerAngles.y;

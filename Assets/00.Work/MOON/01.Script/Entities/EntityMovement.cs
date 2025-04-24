@@ -19,6 +19,8 @@ namespace _00.Work.MOON._01.Script.Entities
         protected float _rotateSpeed;
         protected float _upDistance;
         protected float _maxSlopeAngle;
+        protected float stopPer;
+        protected float stopDistance;
         
         protected Vector3 _slopeVelocity;
 
@@ -57,6 +59,8 @@ namespace _00.Work.MOON._01.Script.Entities
             _jumpPower = _currentMoveStat.JumpPower;
             _rotateSpeed = _currentMoveStat.RotateSpeed;
             _maxSlopeAngle = _currentMoveStat.MaxSlopeAngle;
+            stopPer = _currentMoveStat.StopPer;
+            stopDistance = _currentMoveStat.stopDistance;
         }
 
         /// <summary>

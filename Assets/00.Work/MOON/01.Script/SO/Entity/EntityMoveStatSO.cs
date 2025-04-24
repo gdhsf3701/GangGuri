@@ -26,6 +26,10 @@ namespace _00.Work.MOON._01.Script.SO.Entity
         public float RotateSpeed { get; private set; } = 5f;
 
         [field: SerializeField] 
-            public float MaxSlopeAngle { get; protected set; } = 45f;
+        public float MaxSlopeAngle { get; private set; } = 45f;
+        [field: SerializeField]
+        public float StopPer { get; private set; } = 0.15f;
+        [field: SerializeField]
+        public float stopDistance { get; private set; } = 1.35f;
     }
 }
