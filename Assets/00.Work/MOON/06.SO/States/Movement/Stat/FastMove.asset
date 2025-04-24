@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a2179a5ba24ac6b384097a8ce267a7, type: 3}
   m_Name: FastMove
   m_EditorClassIdentifier: 
-  <MoveToUpSpeed>k__BackingField: 10
+  <MoveToUpSpeed>k__BackingField: 1
   <MoveSpeed>k__BackingField: 5
-  <UpDistance>k__BackingField: 1
+  <UpDistance>k__BackingField: 2
   <MaxSpeed>k__BackingField: 50
   <JumpPower>k__BackingField: 10
   <RotateSpeed>k__BackingField: 1.5
   <MaxSlopeAngle>k__BackingField: 45
   <StopPer>k__BackingField: 0.15
   <StopDistance>k__BackingField: 1.35
-  <CarPrefab>k__BackingField: {fileID: -2253911629886400664, guid: 337e3f138beb61b4b854eebecd90daa0, type: 3}
+  <CarPrefab>k__BackingField: {fileID: -2253911629886400664, guid: 66a164cbf71401747a1e9206346d489c, type: 3}

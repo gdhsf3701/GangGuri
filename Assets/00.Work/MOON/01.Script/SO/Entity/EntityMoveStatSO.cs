@@ -8,13 +8,13 @@ namespace _00.Work.MOON._01.Script.SO.Entity
         
         
         [field: SerializeField]
-        public float MoveToUpSpeed { get; private set; } = 15f;
+        public float MoveToUpSpeed { get; private set; } = 1f;
         
         [field: SerializeField]
-        public float MoveSpeed { get; private set; } = 25f;
+        public float MoveSpeed { get; private set; } = 5f;
         
         [field: SerializeField]
-        public float UpDistance { get; private set; } = 1f;
+        public float UpDistance { get; private set; } = 2f;
         
         [field: SerializeField]
         public float MaxSpeed { get; private set; } = 50f;
@@ -23,7 +23,7 @@ namespace _00.Work.MOON._01.Script.SO.Entity
         public float JumpPower { get; private set; } = 10f;
         
         [field: SerializeField]
-        public float RotateSpeed { get; private set; } = 5f;
+        public float RotateSpeed { get; private set; } = 1.5f;
 
         [field: SerializeField] 
         public float MaxSlopeAngle { get; private set; } = 45f;
