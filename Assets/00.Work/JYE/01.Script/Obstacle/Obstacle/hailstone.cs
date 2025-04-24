@@ -1,80 +1,59 @@
-using NUnit.Framework;
 using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class hailstone : MonoBehaviour
+public class Hailstone : MonoBehaviour
 {
-    [SerializeField] private ObstacleSO so; //구분
-    [SerializeField] private GameObject hailstonPrefabs; //우박 프리팹
-    private List<GameObject> hailstons = new List<GameObject>();
-    private float minTime = 1;
-    private float maxTime = 2.5f;
+    [SerializeField] private GameObject manager; //위치
+    [SerializeField]private GameObject hailstons; //우박
+
+    private float minTime = 0.2f;
+    private float maxTime = 1.2f;
 
     private float minSize = 0.8f;
     private float maxSize = 2f;
 
 
-    private void Awake()
+    private void OnEnable()
     {
-        SetHailstonCount(7);
+        StartCoroutine(DropHailston());
     }
 
-    private void SetHailstonCount(int count) //일단 우박들 불러와 주기
+    private void OnDisable()
     {
-        hailstons.Clear();
-        for(int i = 0; i < count; i++)
-        {
-            GameObject prefabs = Instantiate(hailstonPrefabs, transform);
-            prefabs.SetActive(false);
-            hailstons.Add(prefabs);
-        }
+        StopAllCoroutines();
     }
 
     //랜덤 위치 정해주기
     private IEnumerator DropHailston() //우박 떨어지기
     {
-        for(int i = 0; i < hailstons.Count; i++)
+        while (true)
         {
-            if (!hailstons[i].activeSelf)
-            {
-                yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //기다리기
-                float stonSize = Random.Range(minSize, maxSize);
+            yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //기다리기
 
-                SetWorldScale(hailstons[i].transform, Vector3.one * stonSize);
+            float stonSize = Random.Range(minSize, maxSize);
 
-                hailstons[i].SetActive(true);
-            }
+            SetWorldScale(hailstons.transform, Vector3.one * stonSize); //사이즈 정하기
+
+            hailstons.SetActive(true);
+
+            yield return new WaitForSeconds(2); //기다리기
+            hailstons.SetActive(false);
         }
     }
 
-    void SetWorldScale(Transform t, Vector3 worldScale) //크기 변환
+    private void SetPosition() //위치 정하기
     {
-        Vector3 parentScale = t.parent != null ? t.parent.lossyScale : Vector3.one;
+
+    }
+
+    private void SetWorldScale(Transform t, Vector3 worldScale) //크기 변환
+    {
+        Vector3 parentScale = gameObject.transform.parent != null ? gameObject.transform.parent.lossyScale : Vector3.one;
         t.localScale = new Vector3(
             worldScale.x / parentScale.x,
             worldScale.y / parentScale.y,
             worldScale.z / parentScale.z
         );
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            StartCoroutine(DropHailston());
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            StopAllCoroutines();
-        }
-        if (other.gameObject.CompareTag("GameController"))
-        {
-            other.gameObject.SetActive(false);
-        }
     }
 }
