@@ -4,7 +4,7 @@ namespace _00.Work.MOON._01.Script.Entities
 {
     public class GroundChecker : MonoBehaviour , IEntityComponent
     {
-        [SerializeField] Vector3 checkerSize;
+        [SerializeField] float checkerDistance;
         [SerializeField] LayerMask groundLayer;
         
         #region testEntityGizmos
@@ -13,9 +13,14 @@ namespace _00.Work.MOON._01.Script.Entities
         [SerializeField] private Mesh box;
         #endregion
         
+        public bool GroundCheck(out RaycastHit hit)
+        {
+            return Physics.Raycast(transform.position,Vector3.down ,out hit , checkerDistance ,
+                groundLayer);
+        }
         public bool GroundCheck()
         {
-            return Physics.CheckBox(transform.position, checkerSize, _entity.transform.rotation,
+            return Physics.Raycast(transform.position,Vector3.down, checkerDistance ,
                 groundLayer);
         }
 
@@ -27,7 +32,7 @@ namespace _00.Work.MOON._01.Script.Entities
         private void OnDrawGizmos()
         {
             Gizmos.color = checkerColor;
-            Gizmos.DrawWireMesh(box, transform.position, _entity.transform.rotation, checkerSize);
+            Gizmos.DrawRay(transform.position,-Vector3.up * checkerDistance);
             Gizmos.color = Color.white;
         }
     }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a2179a5ba24ac6b384097a8ce267a7, type: 3}
   m_Name: FastMove
   m_EditorClassIdentifier: 
-  <SlopeSpeed>k__BackingField: 15
+  <MoveToUpSpeed>k__BackingField: 10
   <MoveSpeed>k__BackingField: 5
-  <MaxAngle>k__BackingField: 4
+  <UpDistance>k__BackingField: 1
   <MaxSpeed>k__BackingField: 50
   <JumpPower>k__BackingField: 10
   <RotateSpeed>k__BackingField: 1.5

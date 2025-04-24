@@ -8,19 +8,24 @@ namespace _00.Work.MOON._01.Script.SO.Entity
         
         
         [field: SerializeField]
-        public float SlopeSpeed { get; private set; } = 15f;
+        public float MoveToUpSpeed { get; private set; } = 15f;
         
         [field: SerializeField]
         public float MoveSpeed { get; private set; } = 25f;
         
         [field: SerializeField]
-        public float MaxAngle { get; private set; } = 4f;
+        public float UpDistance { get; private set; } = 1f;
         
         [field: SerializeField]
         public float MaxSpeed { get; private set; } = 50f;
+        
         [field: SerializeField]
         public float JumpPower { get; private set; } = 10f;
+        
         [field: SerializeField]
         public float RotateSpeed { get; private set; } = 5f;
+
+        [field: SerializeField] 
+            public float MaxSlopeAngle { get; protected set; } = 45f;
     }
 }
