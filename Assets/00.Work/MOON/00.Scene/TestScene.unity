@@ -1127,8 +1127,8 @@ MonoBehaviour:
   statInfo: {fileID: 11400000, guid: 784c4bf5af72e8546bc0e00e7533f280, type: 2}
   rb: {fileID: 2053297763}
   rotateTarget: {fileID: 1389171052}
-  stopPer: 0.055
-  stopDistance: 0.2
+  stopPer: 0.15
+  stopDistance: 1.35
 --- !u!1 &821784469
 GameObject:
   m_ObjectHideFlags: 0
