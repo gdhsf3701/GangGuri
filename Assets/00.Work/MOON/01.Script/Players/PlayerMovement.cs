@@ -29,12 +29,11 @@ namespace _00.Work.MOON._01.Script.Players
         protected void Awake()
         {
             rb.constraints = RigidbodyConstraints.FreezeRotation; // Rigidbody 회전 고정
-            GetMoveStatsInfo(); // 이동 관련 스탯 정보 초기화
-
         }
 
         public override void Initialize(Entity entity)
         {
+            GetMoveStatsInfo(); // 이동 관련 스탯 정보 초기화
             _changeModel = entity.GetCompo<ChangeModel>();
             SetModel();
             base.Initialize(entity);
