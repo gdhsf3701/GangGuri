@@ -6,14 +6,20 @@ using UnityEngine;
 
 public class HailstoneManager : MonoBehaviour
 {
+    public static Action OnStartHailstone;
+    public static Action OnStopHailstone;
+
     [SerializeField] private ObstacleSO so; //구분
     [SerializeField] private GameObject hailstonPrefabs; //우박 프리팹
-    private List<GameObject> hailstons = new List<GameObject>();
+    [SerializeField]private List<GameObject> hailstons = new List<GameObject>();
+
+    private int maxCount; // 가장 큰 쪽
 
 
     private void Awake()
     {
-        SetHailstonCount(7);
+        SetCount();
+        SetHailstonCount(maxCount);
     }
 
     private void SetHailstonCount(int count) //일단 우박들 불러와 주기
@@ -22,6 +28,7 @@ public class HailstoneManager : MonoBehaviour
         for(int i = 0; i < count; i++)
         {
             GameObject prefabs = Instantiate(hailstonPrefabs, transform);
+            prefabs.GetComponent<Hailstone>().SetManager(this);
             prefabs.SetActive(false);
             hailstons.Add(prefabs);
         }
@@ -35,13 +42,19 @@ public class HailstoneManager : MonoBehaviour
         }
     }
 
+    private void SetCount()
+    {
+        Vector3 scale = transform.localScale;
 
+        maxCount = scale.x > scale.z? (int)scale.x/3 : (int)scale.z/3;  //x랑 z값 중
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             ActiveHailston();
+            OnStartHailstone?.Invoke();
         }
     }
 
@@ -51,10 +64,11 @@ public class HailstoneManager : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             StopAllCoroutines();
+            OnStopHailstone?.Invoke();
         }
-        if (other.gameObject.CompareTag("GameController"))
-        {
-            other.gameObject.SetActive(false);
-        }
+        //if (other.gameObject.CompareTag("GameController"))
+        //{
+        //    other.gameObject.SetActive(false);
+        //}
     }
 }
