@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace _00.Work.JYE._01.Script.Obstacle
+namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
 {
     public class Hailstone : MonoBehaviour
     {
@@ -18,13 +18,21 @@ namespace _00.Work.JYE._01.Script.Obstacle
         [SerializeField] private HailstoneManager manager; //위치
         [SerializeField] private GameObject hailstons; //우박
 
+        private Rigidbody rb;
+        private bool isCoroutines; //코루틴 실행중인지.
+
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+
         private void OnEnable()
         {
             HailstoneManager.OnStopHailstone += Stop;
             HailstoneManager.OnStartHailstone += Drop;
 
+            StopAllCoroutines();
             hailstons.SetActive(false);
-            StartCoroutine(DropHailston());
         }
 
         private void OnDisable()
@@ -36,14 +44,20 @@ namespace _00.Work.JYE._01.Script.Obstacle
 
         private void Stop() //플레이어 나감
         {
+            StopAllCoroutines();
             StartCoroutine(StopHailston());
             StopAllCoroutines();
             hailstons.SetActive(false);
+            isCoroutines = false;
         }
 
         private void Drop() //플레이어 들어옴
         {
-            StartCoroutine(DropHailston());
+            if(!isCoroutines)
+            {
+                isCoroutines=true;
+                StartCoroutine(DropHailston());
+            }
         }
 
         public void SetManager(HailstoneManager ma) //매니저 정해주기
@@ -52,10 +66,12 @@ namespace _00.Work.JYE._01.Script.Obstacle
         }
         private IEnumerator StopHailston() //우박 멈추기 (자연 스럽게)
         {
+            rb.isKinematic = true;
             yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //기다리기
         }
         private IEnumerator DropHailston() //우박 떨어지기
         {
+            rb.isKinematic = false;
             while (true)
             {
                 float stonSize = Random.Range(minSize, maxSize);

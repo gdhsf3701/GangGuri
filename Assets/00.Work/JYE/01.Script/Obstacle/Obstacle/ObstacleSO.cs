@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _00.Work.JYE._01.Script.Obstacle
+namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
 {
     [CreateAssetMenu(fileName = "obstacleSO", menuName = "SO/obstacleSO")]
     public class ObstacleSO : ScriptableObject //Àå¾Ö¹°

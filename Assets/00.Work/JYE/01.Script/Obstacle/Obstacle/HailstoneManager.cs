@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace _00.Work.JYE._01.Script.Obstacle
+namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
 {
     public class HailstoneManager : MonoBehaviour
     {
