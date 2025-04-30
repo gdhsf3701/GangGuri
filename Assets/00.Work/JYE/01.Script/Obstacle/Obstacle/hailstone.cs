@@ -3,99 +3,102 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Splines;
 
-public class Hailstone : MonoBehaviour
+namespace _00.Work.JYE._01.Script.Obstacle
 {
-    [Header("Setting")]
-    [SerializeField] private float minTime = 0.2f;
-    [SerializeField]private float maxTime = 1.2f;
-
-    [SerializeField] private float minSize = 2f;
-    [SerializeField] private float maxSize = 7f;
-
-    [Header("Need")]
-    [SerializeField] private HailstoneManager manager; //위치
-    [SerializeField]private GameObject hailstons; //우박
-
-    private void OnEnable()
+    public class Hailstone : MonoBehaviour
     {
-        HailstoneManager.OnStopHailstone += Stop;
-        HailstoneManager.OnStartHailstone += Drop;
+        [Header("Setting")]
+        [SerializeField] private float minTime = 0.2f;
+        [SerializeField] private float maxTime = 1.2f;
 
-        hailstons.SetActive(false);
-        StartCoroutine(DropHailston());
-    }
+        [SerializeField] private float minSize = 2f;
+        [SerializeField] private float maxSize = 7f;
 
-    private void OnDisable()
-    {
-        HailstoneManager.OnStopHailstone -= Stop;
-        HailstoneManager.OnStartHailstone -= Drop;
-        StopAllCoroutines();
-    }
+        [Header("Need")]
+        [SerializeField] private HailstoneManager manager; //위치
+        [SerializeField] private GameObject hailstons; //우박
 
-    private void Stop() //플레이어 나감
-    {
-        StartCoroutine(StopHailston());
-        StopAllCoroutines();
-        hailstons.SetActive(false);
-    }
-
-    private void Drop() //플레이어 들어옴
-    {
-        StartCoroutine(DropHailston());
-    }
-
-    public void SetManager(HailstoneManager ma) //매니저 정해주기
-    {
-        manager = ma;
-    }
-    private IEnumerator StopHailston() //우박 멈추기 (자연 스럽게)
-    {
-        yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //기다리기
-    }
-    private IEnumerator DropHailston() //우박 떨어지기
-    {
-        while (true)
+        private void OnEnable()
         {
-            float stonSize = Random.Range(minSize, maxSize);
+            HailstoneManager.OnStopHailstone += Stop;
+            HailstoneManager.OnStartHailstone += Drop;
 
-            SetWorldScale(hailstons.transform, Vector3.one * stonSize); //사이즈 정하기
-            SetPosition();
+            hailstons.SetActive(false);
+            StartCoroutine(DropHailston());
+        }
 
-            yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //기다리기
+        private void OnDisable()
+        {
+            HailstoneManager.OnStopHailstone -= Stop;
+            HailstoneManager.OnStartHailstone -= Drop;
+            StopAllCoroutines();
+        }
 
-            hailstons.SetActive(true);
-
-            yield return new WaitForSeconds(2); //기다리기
+        private void Stop() //플레이어 나감
+        {
+            StartCoroutine(StopHailston());
+            StopAllCoroutines();
             hailstons.SetActive(false);
         }
-    }
 
-    private void SetPosition() // 위치 정하기
-    {
-        Vector3 center = manager.transform.position;
-        Vector3 scale = manager.transform.localScale * 0.5f;
+        private void Drop() //플레이어 들어옴
+        {
+            StartCoroutine(DropHailston());
+        }
 
-        float randomX = Random.Range(-scale.x, scale.x);
-        float randomZ = Random.Range(-scale.z, scale.z);
+        public void SetManager(HailstoneManager ma) //매니저 정해주기
+        {
+            manager = ma;
+        }
+        private IEnumerator StopHailston() //우박 멈추기 (자연 스럽게)
+        {
+            yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //기다리기
+        }
+        private IEnumerator DropHailston() //우박 떨어지기
+        {
+            while (true)
+            {
+                float stonSize = Random.Range(minSize, maxSize);
 
-        // 로컬 기준 랜덤 위치
-        Vector3 localRandomPos = new Vector3(randomX, (scale.y*2) - (randomX/2), randomZ);
+                SetWorldScale(hailstons.transform, Vector3.one * stonSize); //사이즈 정하기
+                SetPosition();
 
-        // 로컬 -> 월드 좌표 변환 (회전 고려)
-        Vector3 spawnPosition = localRandomPos;
+                yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //기다리기
+
+                hailstons.SetActive(true);
+
+                yield return new WaitForSeconds(2); //기다리기
+                hailstons.SetActive(false);
+            }
+        }
+
+        private void SetPosition() // 위치 정하기
+        {
+            Vector3 center = manager.transform.position;
+            Vector3 scale = manager.transform.localScale * 0.5f;
+
+            float randomX = Random.Range(-scale.x, scale.x);
+            float randomZ = Random.Range(-scale.z, scale.z);
+
+            // 로컬 기준 랜덤 위치
+            Vector3 localRandomPos = new Vector3(randomX, (scale.y * 2) - (randomX / 2), randomZ);
+
+            // 로컬 -> 월드 좌표 변환 (회전 고려)
+            Vector3 spawnPosition = localRandomPos;
 
 
-        gameObject.transform.position = spawnPosition;
-    }
+            gameObject.transform.position = spawnPosition;
+        }
 
 
-    private void SetWorldScale(Transform t, Vector3 worldScale) //크기 변환
-    {
-        Vector3 parentScale = gameObject.transform.parent != null ? gameObject.transform.parent.lossyScale : Vector3.one;
-        t.localScale = new Vector3(
-            worldScale.x / parentScale.x,
-            worldScale.y / parentScale.y,
-            worldScale.z / parentScale.z
-        );
+        private void SetWorldScale(Transform t, Vector3 worldScale) //크기 변환
+        {
+            Vector3 parentScale = gameObject.transform.parent != null ? gameObject.transform.parent.lossyScale : Vector3.one;
+            t.localScale = new Vector3(
+                worldScale.x / parentScale.x,
+                worldScale.y / parentScale.y,
+                worldScale.z / parentScale.z
+            );
+        }
     }
 }
