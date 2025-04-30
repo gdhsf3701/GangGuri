@@ -1410,19 +1410,55 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_POV_ZoomIn;
     private readonly InputAction m_POV_Looked;
     private readonly InputAction m_POV_PointerDelta;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "POV".
+    /// </summary>
     public struct POVActions
     {
         private @Input m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
         public POVActions(@Input wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "POV/Pointer".
+        /// </summary>
         public InputAction @Pointer => m_Wrapper.m_POV_Pointer;
+        /// <summary>
+        /// Provides access to the underlying input action "POV/ZoomIn".
+        /// </summary>
         public InputAction @ZoomIn => m_Wrapper.m_POV_ZoomIn;
+        /// <summary>
+        /// Provides access to the underlying input action "POV/Looked".
+        /// </summary>
         public InputAction @Looked => m_Wrapper.m_POV_Looked;
+        /// <summary>
+        /// Provides access to the underlying input action "POV/PointerDelta".
+        /// </summary>
         public InputAction @PointerDelta => m_Wrapper.m_POV_PointerDelta;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_POV; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
         public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="POVActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
         public static implicit operator InputActionMap(POVActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="POVActions" />
         public void AddCallbacks(IPOVActions instance)
         {
             if (instance == null || m_Wrapper.m_POVActionsCallbackInterfaces.Contains(instance)) return;
@@ -1441,6 +1477,13 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @PointerDelta.canceled += instance.OnPointerDelta;
         }
 
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="POVActions" />
         private void UnregisterCallbacks(IPOVActions instance)
         {
             @Pointer.started -= instance.OnPointer;
@@ -1457,12 +1500,25 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @PointerDelta.canceled -= instance.OnPointerDelta;
         }
 
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="POVActions.UnregisterCallbacks(IPOVActions)" />.
+        /// </summary>
+        /// <seealso cref="POVActions.UnregisterCallbacks(IPOVActions)" />
         public void RemoveCallbacks(IPOVActions instance)
         {
             if (m_Wrapper.m_POVActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="POVActions.AddCallbacks(IPOVActions)" />
+        /// <seealso cref="POVActions.RemoveCallbacks(IPOVActions)" />
+        /// <seealso cref="POVActions.UnregisterCallbacks(IPOVActions)" />
         public void SetCallbacks(IPOVActions instance)
         {
             foreach (var item in m_Wrapper.m_POVActionsCallbackInterfaces)
@@ -1471,6 +1527,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             AddCallbacks(instance);
         }
     }
+    /// <summary>
+    /// Provides a new <see cref="POVActions" /> instance referencing this action map.
+    /// </summary>
     public POVActions @POV => new POVActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
@@ -1644,11 +1703,40 @@ public partial class @Input: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
     }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "POV" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="POVActions.AddCallbacks(IPOVActions)" />
+    /// <seealso cref="POVActions.RemoveCallbacks(IPOVActions)" />
     public interface IPOVActions
     {
+        /// <summary>
+        /// Method invoked when associated input action "Pointer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPointer(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ZoomIn" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnZoomIn(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Looked" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLooked(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PointerDelta" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPointerDelta(InputAction.CallbackContext context);
     }
 }
