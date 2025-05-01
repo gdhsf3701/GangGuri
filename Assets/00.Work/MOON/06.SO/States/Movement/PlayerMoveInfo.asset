@@ -20,5 +20,9 @@ MonoBehaviour:
     _serializedList:
     - Key: NORMAL
       Value: {fileID: 11400000, guid: 592d96648a2bd004d9b5c5117edccfa7, type: 2}
+    - Key: FAST
+      Value: {fileID: 11400000, guid: c541db646af75cf4ea51def0ae0b09bd, type: 2}
+    - Key: STOP
+      Value: {fileID: 11400000, guid: 544aa0880f177664aa647e00dc1730c2, type: 2}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: 341bf33c4d4d2144aa5cd2451a4f7f11, type: 2}
   <MoveThresholdTime>k__BackingField: 0.1

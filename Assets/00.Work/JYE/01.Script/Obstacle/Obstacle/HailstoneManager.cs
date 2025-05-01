@@ -1,60 +1,76 @@
-using NUnit.Framework;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HailstoneManager : MonoBehaviour
+
+namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
 {
-    [SerializeField] private ObstacleSO so; //구분
-    [SerializeField] private GameObject hailstonPrefabs; //우박 프리팹
-    private List<GameObject> hailstons = new List<GameObject>();
-
-
-    private void Awake()
+    public class HailstoneManager : MonoBehaviour
     {
-        SetHailstonCount(7);
-    }
+        public static Action OnStartHailstone;
+        public static Action OnStopHailstone;
 
-    private void SetHailstonCount(int count) //일단 우박들 불러와 주기
-    {
-        hailstons.Clear();
-        for(int i = 0; i < count; i++)
+        [SerializeField] private ObstacleSO so; //구분
+        [SerializeField] private GameObject hailstonPrefabs; //우박 프리팹
+        [SerializeField] private List<GameObject> hailstons = new List<GameObject>();
+
+        private int maxCount; // 가장 큰 쪽
+
+
+        private void Awake()
         {
-            GameObject prefabs = Instantiate(hailstonPrefabs, transform);
-            prefabs.SetActive(false);
-            hailstons.Add(prefabs);
+            SetCount();
+            SetHailstonCount(maxCount);
         }
-    }
 
-    private void ActiveHailston()
-    {
-        for(int i = 0;i < hailstons.Count;i++)
+        private void SetHailstonCount(int count) //일단 우박들 불러와 주기
         {
-            hailstons[i].SetActive(true);
+            hailstons.Clear();
+            for (int i = 0; i < count; i++)
+            {
+                GameObject prefabs = Instantiate(hailstonPrefabs, transform);
+                prefabs.GetComponent<Hailstone>().SetManager(this);
+                prefabs.SetActive(false);
+                hailstons.Add(prefabs);
+            }
         }
-    }
 
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
+        private void ActiveHailston()
         {
-            ActiveHailston();
+            for (int i = 0; i < hailstons.Count; i++)
+            {
+                hailstons[i].SetActive(true);
+            }
         }
-    }
 
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        private void SetCount()
         {
-            StopAllCoroutines();
+            Vector3 scale = transform.localScale;
+
+            maxCount = scale.x > scale.z ? (int)scale.x / 3 : (int)scale.z / 3;  //x랑 z값 중
         }
-        if (other.gameObject.CompareTag("GameController"))
+
+        private void OnTriggerEnter(Collider other)
         {
-            other.gameObject.SetActive(false);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                ActiveHailston();
+                OnStartHailstone?.Invoke();
+            }
+        }
+
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                StopAllCoroutines();
+                OnStopHailstone?.Invoke();
+            }
+            //if (other.gameObject.CompareTag("GameController"))
+            //{
+            //    other.gameObject.SetActive(false);
+            //}
         }
     }
 }
