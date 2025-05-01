@@ -17,6 +17,9 @@ namespace _00.Work.MOON._01.Script.SO.Player
         public float MaxSpeed { get; private set; } = 50f;
         [field: SerializeField]
         public float StopPer { get; private set; } = 0.15f;
+
+        [field: SerializeField] 
+        public float UpDistanceCheckerSize { get; private set; } = 0.15f;
         [field: SerializeField]
         public GameObject CarPrefab { get; private set; }
     }
