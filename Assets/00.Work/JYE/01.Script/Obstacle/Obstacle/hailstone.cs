@@ -1,7 +1,5 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Splines;
 
 namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
 {
