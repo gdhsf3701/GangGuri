@@ -26,6 +26,7 @@ namespace _00.Work.MOON._01.Script.Players
 
         // MoveStat에서 받는 스탯
         private float _upDistance;
+        private float _upDistanceCheckerSize;
         private float _jumpPower;
         private float _maxSpeed;
         private float _stopPer;
@@ -98,6 +99,7 @@ namespace _00.Work.MOON._01.Script.Players
             _jumpPower = CurrentPlayerMoveStat.JumpPower;
             _stopPer = CurrentPlayerMoveStat.StopPer;
             _moveToUpSpeed = CurrentPlayerMoveStat.MoveToUpSpeed;
+            _upDistanceCheckerSize = CurrentPlayerMoveStat.UpDistanceCheckerSize;
             _changeModel.ChangeCarModel(statType);
         }
 
@@ -186,7 +188,7 @@ namespace _00.Work.MOON._01.Script.Players
                 Vector3 slopeForward = Vector3.ProjectOnPlane(_parent.forward, hit.normal).normalized;
                 Quaternion targetRotation = Quaternion.LookRotation(slopeForward, hit.normal);
 
-                if ((pos - _parent.transform.position).magnitude <= 0.15f)
+                if ((pos - _parent.transform.position).magnitude <= _upDistanceCheckerSize)
                 {
                     _parent.transform.position = pos;
                 }
