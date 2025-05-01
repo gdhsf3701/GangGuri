@@ -1,3 +1,4 @@
+using System;
 using _00.Work.MOON._01.Script.SO.Cam;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -37,6 +38,13 @@ namespace _00.Work.MOON._01.Script.Players
             povInput.LookedChange += Looked;
             povInput.PointerDeltaChanged += LookChange;
             povInput.ZoomedChange += ZoomInOut;
+        }
+
+        private void OnDestroy()
+        {
+            povInput.LookedChange -= Looked;
+            povInput.PointerDeltaChanged -= LookChange;
+            povInput.ZoomedChange -= ZoomInOut;
         }
 
         private void ZoomInOut(float value)

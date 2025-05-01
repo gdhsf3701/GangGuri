@@ -17,7 +17,7 @@ namespace _00.Work.MOON._01.Script.Entities
             InitializeComponents();
         }
 
-        private void AddComponents()
+        protected virtual void AddComponents()
         {
             GetComponentsInChildren<IEntityComponent>().ToList()
                 .ForEach(component => _components.Add(component.GetType(), component));
@@ -30,5 +30,8 @@ namespace _00.Work.MOON._01.Script.Entities
 
         public T GetCompo<T>() where T : IEntityComponent
             => (T)_components.GetValueOrDefault(typeof(T));
+        
+        public IEntityComponent GetCompo(Type type)
+            => _components.GetValueOrDefault(type);
     }
 }
