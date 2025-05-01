@@ -11,6 +11,7 @@ namespace _00.Work.MOON._01.Script.Entities
 
         // 현재 이동 스탯
         protected EntityMoveStatSO _currentMoveStat;
+        protected EntityMoveStatPerSO _currentMoveStatPer;
 
         // 이동 관련 변수
         protected float _moveSpeed;
@@ -36,6 +37,7 @@ namespace _00.Work.MOON._01.Script.Entities
         public virtual void Initialize(Entity entity)
         {
             _entity = entity;
+            ChangeStatPer("NORMAL");
             ChangeStat("NORMAL"); // 기본 스탯 설정
             _parent = entity.transform;
             _groundChecker = _entity.GetCompo<GroundChecker>(); // GroundChecker 컴포넌트 참조
@@ -58,10 +60,25 @@ namespace _00.Work.MOON._01.Script.Entities
             _currentMoveStat = changedStat;
 
             // 스탯 값 업데이트
-            _moveSpeed = _currentMoveStat.MoveSpeed;
-            _rotateSpeed = _currentMoveStat.RotateSpeed;
+            _moveSpeed = _currentMoveStat.MoveSpeed * _currentMoveStatPer.MoveSpeedPer;
+            _rotateSpeed = _currentMoveStat.RotateSpeed * _currentMoveStatPer.RotateSpeedPer;
             _maxSlopeAngle = _currentMoveStat.MaxSlopeAngle;
             _stopDistance = _currentMoveStat.StopDistance;
+        }
+        
+        public virtual void ChangeStatPer(string statType)
+        {
+            // 변경할 스탯 가져오기
+            EntityMoveStatPerSO changedStatPer = statInfo.MoveStatsPer[statType];
+            if (_currentMoveStatPer == changedStatPer) return; // 동일한 스탯이면 종료
+
+            _currentMoveStatPer = changedStatPer;
+
+            if (_currentMoveStat != null)
+            {
+                _moveSpeed = _currentMoveStat.MoveSpeed * _currentMoveStatPer.MoveSpeedPer;
+                _rotateSpeed = _currentMoveStat.RotateSpeed * _currentMoveStatPer.RotateSpeedPer;
+            }
         }
 
         #endregion
