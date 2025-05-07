@@ -102,5 +102,10 @@ namespace _00.Work.MOON._01.Script.Entities
         }
 
         #endregion
+
+        public void SetDestination(object o)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

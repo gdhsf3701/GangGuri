@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0aaa654cc5b24414a67aaddc0cedb341, type: 3}
-  m_Name: NormalMove
+  m_Name: PlayerNormalMove
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 5
   <RotateSpeed>k__BackingField: 1.5

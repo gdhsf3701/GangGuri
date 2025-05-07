@@ -9,7 +9,7 @@ using Action = Unity.Behavior.Action;
 namespace _00.Work.MOON._01.Script.Enemies.BT.Actions
 {
     [Serializable, GeneratePropertyBag]
-    [NodeDescription(name: "GetComponents", story: "Get components from [Self]", category: "Action", id: "d4606e6cb3ee88b67609f878cf89dbe3")]
+    [NodeDescription(name: "GetComponents", story: "Get components from [Self]", category: "Enemy", id: "70ec5e4c353337b023a0bfd28f7c9d5b")]
     public partial class GetComponentsAction : Action
     {
         [SerializeReference] public BlackboardVariable<Enemy> Self;
@@ -17,7 +17,7 @@ namespace _00.Work.MOON._01.Script.Enemies.BT.Actions
         protected override Status OnStart()
         {
             Enemy enemy = Self.Value;
-            SetVariable(enemy, "Target", enemy.PlayerFinder.Target.transform);
+           // SetVariable(enemy, "Target", enemy.PlayerFinder.Target.transform);
 
             List<BlackboardVariable> varList = enemy.BtAgent.BlackboardReference.Blackboard.Variables;
 
