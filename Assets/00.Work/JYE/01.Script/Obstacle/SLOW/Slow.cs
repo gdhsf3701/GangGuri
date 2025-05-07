@@ -1,10 +1,9 @@
 using _00.Work.MOON._01.Script.Players;
-using System.Collections;
 using UnityEngine;
 
-namespace _00.Work.JYE._01.Script.Obstacle.Ice
+namespace _00.Work.JYE._01.Script.Obstacle.Slow
 {
-    public class Ice : MonoBehaviour
+    public class Slow : MonoBehaviour
     {
         private PlayerMovement move;
         private void OnTriggerEnter(Collider other)
@@ -13,7 +12,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Ice
             {
                 move = other.gameObject.GetComponentInChildren<PlayerMovement>();
 
-                move.ChangeStatPer("FAST");
+                move.ChangeStatPer("SLOW");
             }
         }
 
