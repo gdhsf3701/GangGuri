@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e40e2eb280847b7afa4ad906e2268cc, type: 3}
-  m_Name: StopMovePer
+  m_Script: {fileID: 11500000, guid: 234a423849cc4f56ab875a3ffa19d187, type: 3}
+  m_Name: FastPer
   m_EditorClassIdentifier: 
-  <MoveSpeedPer>k__BackingField: 0
-  <RotateSpeedPer>k__BackingField: 0
+  <MoveSpeedPer>k__BackingField: 30
+  <RotateSpeedPer>k__BackingField: 1
+  <JumpPowerPer>k__BackingField: 1
