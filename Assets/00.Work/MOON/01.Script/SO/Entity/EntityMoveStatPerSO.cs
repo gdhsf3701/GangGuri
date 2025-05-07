@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _00.Work.MOON._01.Script.SO.Entity
 {
-    [CreateAssetMenu(fileName = "MovePer", menuName = "SO/Entity/MoveStatPer", order = 0)]
+    
     public class EntityMoveStatPerSO : ScriptableObject
     {
         [field: Header("EntityMoveStatPerSO")]

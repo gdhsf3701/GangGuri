@@ -15,5 +15,15 @@ namespace _00.Work.MOON._01.Script.Enemies
             base.ChangeStat(statType);
             
         }
+
+        public void SetDestination(Vector3 valuePosition)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SetStop(bool newValueValue)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

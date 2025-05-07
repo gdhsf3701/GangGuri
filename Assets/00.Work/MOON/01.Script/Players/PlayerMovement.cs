@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using _00.Work.MOON._01.Script.Entities;
+using _00.Work.MOON._01.Script.Players.SO;
 using _00.Work.MOON._01.Script.SO.Entity;
 using _00.Work.MOON._01.Script.SO.Player;
 using UnityEngine;
@@ -34,6 +35,7 @@ namespace _00.Work.MOON._01.Script.Players
 
         // 현재 플레이어 이동 스탯
         private PlayerMoveStatSO CurrentPlayerMoveStat => (PlayerMoveStatSO)_currentMoveStat;
+        private PlayerMoveStatPerSO StatPer => (PlayerMoveStatPerSO)_currentMoveStatPer;
 
         // 이동 가능 여부
         public bool IsCanMove { get; private set; } = false;
@@ -95,8 +97,8 @@ namespace _00.Work.MOON._01.Script.Players
         {
             base.ChangeStat(statType);
             _upDistance = CurrentPlayerMoveStat.UpDistance;
-            _maxSpeed = CurrentPlayerMoveStat.MaxSpeed;
-            _jumpPower = CurrentPlayerMoveStat.JumpPower;
+            _maxSpeed = CurrentPlayerMoveStat.MaxSpeed * _currentMoveStatPer.MoveSpeedPer;
+            _jumpPower = CurrentPlayerMoveStat.JumpPower * StatPer.JumpPowerPer;
             _stopPer = CurrentPlayerMoveStat.StopPer;
             _moveToUpSpeed = CurrentPlayerMoveStat.MoveToUpSpeed;
             _upDistanceCheckerSize = CurrentPlayerMoveStat.UpDistanceCheckerSize;
