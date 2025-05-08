@@ -95,7 +95,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
             float randomZ = Random.Range(-scale.z, scale.z);
 
             // 로컬 기준 랜덤 위치
-            Vector3 localRandomPos = new Vector3(randomX, (scale.y * 2) - (randomX / 2), randomZ);
+            Vector3 localRandomPos = new Vector3(randomX, center.y + 10 /*(scale.y * 2) - (randomX / 2)*/, randomZ);
 
             // 로컬 -> 월드 좌표 변환 (회전 고려)
             Vector3 spawnPosition = localRandomPos;
