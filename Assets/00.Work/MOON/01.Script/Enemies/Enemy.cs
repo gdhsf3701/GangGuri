@@ -9,6 +9,7 @@ namespace _00.Work.MOON._01.Script.Enemies
     public abstract class Enemy : Entity
     {
         [field: SerializeField] public ScriptFinderSO<Player> PlayerFinder { get; set; }
+        [field: SerializeField] public ScriptFinderSO<EnemyManager> EnemyManagerFinder { get; set; }
         public BehaviorGraphAgent BtAgent { get; private set; }
 
         #region Temp

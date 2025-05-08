@@ -1,17 +1,23 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace _00.Work.MOON._01.Script.Entities.SO
 {
-    public abstract class ScriptFinderSO<T> : ScriptableObject where T : MonoBehaviour
+    public abstract class ScriptFinderSOBase : ScriptableObject
     {
-        public Type KeyType = typeof(T);
-        
+        public abstract Type KeyType { get; }
+        public abstract void SetTarget(MonoBehaviour target);
+    }
+
+    public abstract class ScriptFinderSO<T> : ScriptFinderSOBase where T : MonoBehaviour
+    {
+        public override Type KeyType => typeof(T);
         public T Target { get; private set; }
 
-        public void SetTarget(T go)
+        public override void SetTarget(MonoBehaviour target)
         {
-            Target = go;
+            Target = target as T;
         }
     }
 }
