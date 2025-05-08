@@ -12,7 +12,7 @@ namespace _00.Work.MOON._01.Script.Enemies.BT.Conditions
 
         public override bool IsTrue()
         {
-            return true;
+            return Self.Value.EnemyManagerFinder.Target.IsFinded;
         }
     }
 }

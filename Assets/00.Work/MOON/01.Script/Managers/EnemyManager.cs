@@ -1,16 +1,17 @@
+using _00.Work.MOON._01.Script.Core.DI;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : MonoBehaviour , IDependencyProvider
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private bool _isFinded = false;
+    public bool IsFinded => _isFinded;
+    
+    [Provide]
+    public EnemyManager ProvideEnemyManager() => this;
 
-    // Update is called once per frame
-    void Update()
+    public void Finded()
     {
-        
+        _isFinded = true;
     }
 }
