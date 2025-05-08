@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _00.Work.MOON._01.Script.SO.Player
 {
-    [CreateAssetMenu(fileName = "Move", menuName = "SO/Player/MoveStat", order = 0)]
+    [CreateAssetMenu(fileName = "PlayerMove", menuName = "SO/Player/MoveStat", order = 0)]
     public class PlayerMoveStatSO : EntityMoveStatSO
     {
         [field: Header("PlayerMoveStatSO")]

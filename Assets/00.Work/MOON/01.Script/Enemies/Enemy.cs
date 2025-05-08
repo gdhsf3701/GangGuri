@@ -1,6 +1,6 @@
 using _00.Work.MOON._01.Script.Entities;
-using _00.Work.MOON._01.Script.Entities.SO;
 using _00.Work.MOON._01.Script.Players;
+using _00.Work.MOON._01.Script.SO.Finder;
 using Unity.Behavior;
 using UnityEngine;
 
@@ -8,21 +8,17 @@ namespace _00.Work.MOON._01.Script.Enemies
 {
     public abstract class Enemy : Entity
     {
-        [field: SerializeField] public ScriptFinderSO<Player> PlayerFinder { get; set; }
-        [field: SerializeField] public ScriptFinderSO<EnemyManager> EnemyManagerFinder { get; set; }
+        [field: SerializeField] public ScriptFinderSO<Player> PlayerFinder { get; protected set; }
+        [field: SerializeField] public ScriptFinderSO<EnemyManager> EnemyManagerFinder { get; protected set; }
         public BehaviorGraphAgent BtAgent { get; private set; }
 
         #region Temp
-
-        public float detectRange = 8f;
         public float attackRange = 2f;
-
+        [SerializeField]private LayerMask targetLayer;
         #endregion
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, detectRange);
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position,attackRange);
         }
@@ -41,6 +37,21 @@ namespace _00.Work.MOON._01.Script.Enemies
                 return result;
             }
             return default;
+        }
+
+        public void Attack()
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRange, targetLayer);
+            if(hitColliders.Length > 0)
+            {
+                foreach (Collider hit in hitColliders)
+                {
+                    if (hit.transform.TryGetComponent(out IHitable hitable))
+                    {
+                        hitable.Hit(this);
+                    }
+                }
+            }
         }
     }
 }

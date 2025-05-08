@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace _00.Work.MOON._01.Script.Players
 {
-    public class Player : Entity ,IDependencyProvider
+    public class Player : Entity ,IDependencyProvider ,IHitable
     {
         [field : SerializeField] public PlayerInputSO PlayerInput { get; private set; }
 
@@ -36,5 +36,10 @@ namespace _00.Work.MOON._01.Script.Players
         }
 
         public void ChangeState(string newStateName) => _stateMachine.ChangeState(newStateName);
+        public void Hit(Entity hiter)
+        {
+            Debug.Log("Attacked by " + hiter.gameObject.name);
+            //우와 게임오버
+        }
     }
 }

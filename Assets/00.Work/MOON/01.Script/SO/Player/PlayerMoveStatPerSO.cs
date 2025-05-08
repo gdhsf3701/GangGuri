@@ -1,7 +1,7 @@
 using _00.Work.MOON._01.Script.SO.Entity;
 using UnityEngine;
 
-namespace _00.Work.MOON._01.Script.Players.SO
+namespace _00.Work.MOON._01.Script.SO.Player
 {
     [CreateAssetMenu(fileName = "MovePer", menuName = "SO/Player/MoveStatPer", order = 0)]
     public class PlayerMoveStatPerSO : EntityMoveStatPerSO
