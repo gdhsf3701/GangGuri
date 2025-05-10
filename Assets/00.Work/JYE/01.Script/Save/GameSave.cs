@@ -5,14 +5,14 @@ namespace _00.Work.JYE._01.Script.Save
     public class GameSave : MonoBehaviour
     {
         public GameSaveData data; //¿˙¿Âº“
-        private string path = "GameSaveData";
+        private string path;
         
 
         private void Awake()
         {
             data = ResetData();
             LoadData();
-            
+            path =  Application.persistentDataPath+"GameSaveData";
         }
 
         private void OnDisable()
