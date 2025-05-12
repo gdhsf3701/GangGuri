@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using _00.Work.MOON._01.Script.Entities;
-using _00.Work.MOON._01.Script.Players.SO;
 using _00.Work.MOON._01.Script.SO.Entity;
 using _00.Work.MOON._01.Script.SO.Player;
 using UnityEngine;

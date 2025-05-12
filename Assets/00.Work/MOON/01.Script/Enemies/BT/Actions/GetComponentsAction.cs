@@ -16,8 +16,8 @@ namespace _00.Work.MOON._01.Script.Enemies.BT.Actions
 
         protected override Status OnStart()
         {
-            Enemy enemy = Self.Value;
-           // SetVariable(enemy, "Target", enemy.PlayerFinder.Target.transform);
+            Enemy enemy = Self.Value; 
+            SetVariable(enemy, "Target", enemy.PlayerFinder.Target.transform);
 
             List<BlackboardVariable> varList = enemy.BtAgent.BlackboardReference.Blackboard.Variables;
 

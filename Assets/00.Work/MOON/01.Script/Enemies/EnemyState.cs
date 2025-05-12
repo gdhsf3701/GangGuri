@@ -6,6 +6,7 @@ namespace _00.Work.MOON._01.Script.Enemies
 	public enum EnemyState
 	{
 		IDLE = 1,
-		MOVE
+		MOVE,
+		ATTACK
 	}
 }
