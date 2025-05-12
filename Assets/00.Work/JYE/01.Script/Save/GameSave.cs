@@ -4,20 +4,33 @@ namespace _00.Work.JYE._01.Script.Save
 {
     public class GameSave : MonoBehaviour
     {
-        public GameSaveData data; //저장소
+        private GameSaveData data; //저장소
         private string path;
+        private static int saveNum; //저장된(할) 번호
         
-
+        // saveNum = 저장된(할) 번호를 저장하는.
         private void Awake()
         {
-            data = ResetData();
-            LoadData();
             path =  Application.persistentDataPath+"GameSaveData";
+            saveNum = PlayerPrefs.GetInt("saveNum");
+            
+            // data = ResetData();
+            // LoadData();
         }
 
-        private void OnDisable()
+        private void OnDisable() //자동 저장
         {
             SaveData();
+        }
+
+        public int GetSaveNum()
+        {
+            return saveNum;
+        }
+
+        public string GetPath() //저장소 알려주기.
+        {
+            return path;
         }
 
         private GameSaveData ResetData() //데이터 리셋
