@@ -209,9 +209,14 @@ namespace _00.Work.MOON._01.Script.Players
             }
         }
 
-        public void Jump()
+        public bool Jump()
         {
-            _rb.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse); // 위 방향으로 힘 추가
+            if (_jumpPower > 0.00001f)
+            {
+                _rb.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse); // 위 방향으로 힘 추가
+                return true;
+            }
+            return false;
         }
 
         public void Stop()

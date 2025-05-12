@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234a423849cc4f56ab875a3ffa19d187, type: 3}
   m_Name: SlowPer
   m_EditorClassIdentifier: 
-  <MoveSpeedPer>k__BackingField: 0.001
+  <MoveSpeedPer>k__BackingField: 0.1
   <RotateSpeedPer>k__BackingField: 1
-  <JumpPowerPer>k__BackingField: -100
+  <JumpPowerPer>k__BackingField: 0

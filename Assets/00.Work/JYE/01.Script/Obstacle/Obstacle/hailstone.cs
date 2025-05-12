@@ -13,11 +13,11 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
         [SerializeField] private float maxSize = 7f;
 
         [Header("Need")]
-        [SerializeField] private HailstoneManager manager; //ï¿½ï¿½Ä¡
-        [SerializeField] private GameObject hailstons; //ï¿½ï¿½ï¿½
+        [SerializeField] private HailstoneManager manager; //À§Ä¡
+        [SerializeField] private GameObject hailstons; //¿ì¹Ú
 
         private Rigidbody rb;
-        private bool isCoroutines; //ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+        private bool isCoroutines; //ÄÚ·çÆ¾ ½ÇÇàÁßÀÎÁö.
 
         private void Awake()
         {
@@ -40,7 +40,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
             StopAllCoroutines();
         }
 
-        private void Stop() //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½
+        private void Stop() //ÇÃ·¹ÀÌ¾î ³ª°¨
         {
             StopAllCoroutines();
             StartCoroutine(StopHailston());
@@ -49,7 +49,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
             isCoroutines = false;
         }
 
-        private void Drop() //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½
+        private void Drop() //ÇÃ·¹ÀÌ¾î µé¾î¿È
         {
             if(!isCoroutines)
             {
@@ -58,35 +58,35 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
             }
         }
 
-        public void SetManager(HailstoneManager ma) //ï¿½Å´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
+        public void SetManager(HailstoneManager ma) //¸Å´ÏÀú Á¤ÇØÁÖ±â
         {
             manager = ma;
         }
-        private IEnumerator StopHailston() //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß±ï¿½ (ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+        private IEnumerator StopHailston() //¿ì¹Ú ¸ØÃß±â (ÀÚ¿¬ ½º·´°Ô)
         {
             rb.isKinematic = true;
-            yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½
+            yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //±â´Ù¸®±â
         }
-        private IEnumerator DropHailston() //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        private IEnumerator DropHailston() //¿ì¹Ú ¶³¾îÁö±â
         {
             rb.isKinematic = false;
             while (true)
             {
                 float stonSize = Random.Range(minSize, maxSize);
 
-                SetWorldScale(hailstons.transform, Vector3.one * stonSize); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+                SetWorldScale(hailstons.transform, Vector3.one * stonSize); //»çÀÌÁî Á¤ÇÏ±â
                 SetPosition();
 
-                yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½
+                yield return new WaitForSeconds(Random.Range(minTime, maxTime)); //±â´Ù¸®±â
 
                 hailstons.SetActive(true);
 
-                yield return new WaitForSeconds(2); //ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½
+                yield return new WaitForSeconds(2); //±â´Ù¸®±â
                 hailstons.SetActive(false);
             }
         }
 
-        private void SetPosition() // ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½Ï±ï¿½
+        private void SetPosition() // À§Ä¡ Á¤ÇÏ±â
         {
             Vector3 center = manager.transform.position;
             Vector3 scale = manager.transform.localScale * 0.5f;
@@ -94,10 +94,10 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
             float randomX = Random.Range(-scale.x, scale.x);
             float randomZ = Random.Range(-scale.z, scale.z);
 
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
-            Vector3 localRandomPos = new Vector3(randomX, (scale.y * 2) - (randomX / 2), randomZ);
+            // ·ÎÄÃ ±âÁØ ·£´ý À§Ä¡
+            Vector3 localRandomPos = new Vector3(randomX, center.y + 10 /*(scale.y * 2) - (randomX / 2)*/, randomZ);
 
-            // ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½È¯ (È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+            // ·ÎÄÃ -> ¿ùµå ÁÂÇ¥ º¯È¯ (È¸Àü °í·Á)
             Vector3 spawnPosition = localRandomPos;
 
 
@@ -105,7 +105,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
         }
 
 
-        private void SetWorldScale(Transform t, Vector3 worldScale) //Å©ï¿½ï¿½ ï¿½ï¿½È¯
+        private void SetWorldScale(Transform t, Vector3 worldScale) //Å©±â º¯È¯
         {
             Vector3 parentScale = gameObject.transform.parent != null ? gameObject.transform.parent.lossyScale : Vector3.one;
             t.localScale = new Vector3(

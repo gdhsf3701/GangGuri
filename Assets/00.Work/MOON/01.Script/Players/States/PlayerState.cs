@@ -21,8 +21,10 @@ namespace _00.Work.MOON._01.Script.Players.States
         {
             if(_groundChecker.GroundCheck())
             {
-                _movement.Jump();
-                _player.ChangeState("JUMP");
+                if (_movement.Jump())
+                {
+                    _player.ChangeState("JUMP");
+                }
             }
         }
     }

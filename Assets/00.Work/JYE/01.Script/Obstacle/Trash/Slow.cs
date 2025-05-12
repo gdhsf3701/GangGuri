@@ -1,7 +1,7 @@
 using _00.Work.MOON._01.Script.Players;
 using UnityEngine;
 
-namespace _00.Work.JYE._01.Script.Obstacle.Slow
+namespace _00.Work.JYE._01.Script.Obstacle.Trash
 {
     public class Slow : MonoBehaviour
     {
