@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using _00.Work.JYE._01.Script.Save;
 using UnityEngine;
 
@@ -29,11 +30,25 @@ namespace _00.Work.JYE._01.Script.Manager
 
         private void LoadCardDelete(int deleteNum) //로드 카드 삭제 
         {
+            
+            string path = SaveManager.Path; //저장소 (파일)
+            File.Delete($"{path}/{deleteNum}");
+            
+            
+            for (int i = deleteNum + 1; i <= SaveManager.AllSaveNum; i++)
+            {
+                string data = File.ReadAllText($"{path}/{i}"); //값 가져오기
+                File.WriteAllText($"{path}/{i-1}", data); //새 파일 만들기  (-1 수)
+                
+                File.Delete($"{path}/{i}"); //이전거 삭제
+            }
+            
+            SaveManager.Instance.SetSaveNum(-1); //슬롯 수 줄이기.
         }
 
         private void LoadCardSetting() //로드 카드들 불러와주기 (세팅)
         {
-            for (int i = 0; i < SaveManager.AllSaveNum; i++)
+            for (int i = 0; i < SaveManager.AllSaveNum && i < SaveManager.Instance.MaxNum; i++) //최대 값과 현재 저장 값을 안 넘어야
             {
                 GameObject card = Instantiate(loadCardPrefabs, gameObject.transform);
                 card.SetActive(true);

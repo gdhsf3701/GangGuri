@@ -26,6 +26,8 @@ namespace _00.Work.JYE._01.Script.Save
 
         private void Awake()
         {
+            //SetTest(5);
+            
             TitleCheck = PlayerPrefs.GetInt("titleCheck");
             Path = Application.persistentDataPath + "/GameSaveData"; 
             AllSaveNum = PlayerPrefs.GetInt("saveNum");
@@ -36,14 +38,30 @@ namespace _00.Work.JYE._01.Script.Save
             print(Path);
         }
 
+        private void Update()
+        {
+            print($"cur : {SaveCurrentNum} / all : {AllSaveNum}");
+        }
+
+        private void SetTest(int num)//빌드 본 때는 꼭 없애기
+        {
+            PlayerPrefs.SetInt("saveNum", num);
+            PlayerPrefs.Save();   
+        }
+
         public void NewGame() //저장 슬롯 더해주기 (그러니까 새 게임)
         {
-            if (TitleCheck >= 1) //0과 -1 은 사실상 초과인 것도 모르니
-            {
-                AllSaveNum++;
-                PlayerPrefs.SetInt("saveNum", AllSaveNum);
-                PlayerPrefs.Save();   
+            if (TitleCheck >= 1) //0과 -1 은 사실상 초과인 것도 모르니까
+            {  
+                SetSaveNum(1);
             }
+        }
+
+        public void SetSaveNum(int num) //현재 저장 슬롯수 정해주기 (삭제나 추가 할때)
+        {
+            AllSaveNum+= num;
+            PlayerPrefs.SetInt("saveNum", AllSaveNum);
+            PlayerPrefs.Save(); 
         }
         public void SetSaveData(GameSaveData data, int num) //받아온 값을 현재 본인 값으로
         {
@@ -58,6 +76,7 @@ namespace _00.Work.JYE._01.Script.Save
         {
             TitleCheck = num;
             PlayerPrefs.SetInt("titleCheck", TitleCheck);
+            PlayerPrefs.Save();
         }
         
         public void SaveData(GameSaveData data) //저장하기

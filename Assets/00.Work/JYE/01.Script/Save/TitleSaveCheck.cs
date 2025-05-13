@@ -23,6 +23,7 @@ namespace _00.Work.JYE._01.Script.Save
             }
 
             currentNum = SaveManager.SaveCurrentNum;
+            print($"{NumCheck()} && {EmptyCheck()} && {SaveManager.Instance.TitleCheck} <= 0");
             if (NumCheck() && EmptyCheck() && SaveManager.Instance.TitleCheck <= 0) //체크 && 타이틀 못 지났다면
             {
                 SaveManager.Instance.TitleCheckChange(1); //넘겼다, 야호!
@@ -30,7 +31,11 @@ namespace _00.Work.JYE._01.Script.Save
                 SaveFileMake(); //파일 만들어주기
                 // SaveManager.Instance.SetCurrentNum(1); //현재 넘버 올려주기 ( 새게임 할 때로 변경하기)
             }
-            else if(SaveManager.Instance.TitleCheck != 1) //1은 이미 넘긴건데 뭐가 중요해
+            else if (SaveManager.Instance.TitleCheck == 1) //1은 이미 넘긴건데 뭐가 중요해
+            {
+                isEmpty = true;
+            }
+            else
             {
                 SaveManager.Instance.TitleCheckChange(0);
                 isEmpty = false;
@@ -69,7 +74,7 @@ namespace _00.Work.JYE._01.Script.Save
 
         private bool NumCheck() //파일 개수 초과인지 체크
         {
-            if (SaveManager.Instance.MaxNum < currentNum) //수를 초과
+            if (SaveManager.Instance.MaxNum <= currentNum) //수를 초과
             {
                 return false;
             }

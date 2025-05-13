@@ -39,8 +39,6 @@ namespace _00.Work.JYE._01.Script.Save
         public void DeleteBtn() //삭제 버튼
         {
             OnCardDelete?.Invoke(myNum);
-            
-            File.Delete($"{path}/{myNum}");
             Destroy(gameObject);
         }
 
