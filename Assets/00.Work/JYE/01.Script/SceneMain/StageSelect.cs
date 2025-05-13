@@ -28,7 +28,7 @@ public class StageSelect : MonoBehaviour
 
     public void StageBtn() //스테이지 버튼
     {
-        sceneManager.SceneBtn(minValue+stageCount);
+        sceneManager.StageSceneBtn(minValue+stageCount);
     }
 
     public void NextBtn() //다음 버튼

@@ -17,6 +17,51 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Work/JYE/04Scene/StageSelectScene.unity
     guid: 8498a2e0153a47341898a5feec771687
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Stage1.unity
+    guid: 258a68069dbcecd409a620e629424c55
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Fail1.unity
+    guid: 73961af5b2873b444aa1256c57eaadaf
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Success1.unity
+    guid: 88bb611947229c94bbc1567ed1d8e99b
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Stage2.unity
+    guid: 408c2f6f8d4df7842b10bf895c9821d7
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Fail2.unity
+    guid: 36d3df98fe4fd954b9a2cc22f4122082
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Success2.unity
+    guid: d878508b3a1b2db47815c7448db1c2fd
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Stage3.unity
+    guid: 9f027bd9dc1174b44bbc0ac0280ec9f3
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Fail3.unity
+    guid: cdd9c9c568755984e8f73a23b143d1db
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Success3.unity
+    guid: 0be850231f1deeb4ebfc4e0beede1c04
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Stage4.unity
+    guid: ea14d07337ddcf24aa3f87fb3474187e
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Fail4.unity
+    guid: a8d9f80dc4df2544894371c969cbf6f4
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Success4.unity
+    guid: 63a6b7be477cf6345be34f88d4c95b7b
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Stage5.unity
+    guid: 8abb66e3af7f903498e825cf7888d8cb
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Fail5.unity
+    guid: a8c4dd876d40501439d2b6afdbaadad4
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/Stage/Success5.unity
+    guid: abd4f3067cb087744abf7232927ae9d2
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
