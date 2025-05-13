@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/00.Work/00.Scene/TitleScene.unity
+    guid: 3e3c2fd638fedb74b80ab284a7e4267e
+  - enabled: 1
+    path: Assets/00.Work/00.Scene/HomeScene.unity
+    guid: 653865667c6e5fe49a9e2534de5d0d79
+  - enabled: 1
+    path: Assets/00.Work/JYE/04Scene/LoadScene.unity
+    guid: 569e0530d588b164f8cdcc0dae76f0ea
+  - enabled: 1
+    path: Assets/00.Work/JYE/04Scene/StageSelectScene.unity
+    guid: 8498a2e0153a47341898a5feec771687
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
