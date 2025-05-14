@@ -1,3 +1,4 @@
+using System;
 using _00.Work.MOON._01.Script.Core.DI;
 using _00.Work.MOON._01.Script.Entities;
 using _00.Work.MOON._01.Script.FSM;
@@ -8,6 +9,8 @@ namespace _00.Work.MOON._01.Script.Players
 {
     public class Player : Entity ,IDependencyProvider ,IHitable
     {
+        public static Action OnFail; //실패
+        
         [field : SerializeField] public PlayerInputSO PlayerInput { get; private set; }
 
         [SerializeField] private StateDataSO[] states;
@@ -39,7 +42,7 @@ namespace _00.Work.MOON._01.Script.Players
         public void Hit(Entity hiter)
         {
             Debug.Log("Attacked by " + hiter.gameObject.name);
-            //우와 게임오버
+            OnFail?.Invoke(); //실패함을 알려주기
         }
     }
 }

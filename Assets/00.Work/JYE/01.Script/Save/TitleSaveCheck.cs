@@ -23,7 +23,7 @@ namespace _00.Work.JYE._01.Script.Save
             }
 
             currentNum = SaveManager.SaveCurrentNum;
-            print($"{NumCheck()} && {EmptyCheck()} && {SaveManager.TitleCheck} <= 0");
+            //print($"{NumCheck()} && {EmptyCheck()} && {SaveManager.TitleCheck} <= 0");
             if (NumCheck() && EmptyCheck() && SaveManager.TitleCheck <= 0) //체크 && 타이틀 못 지났다면
             {
                 SaveManager.Instance.TitleCheckChange(1); //넘겼다, 야호!

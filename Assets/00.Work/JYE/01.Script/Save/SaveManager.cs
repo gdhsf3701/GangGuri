@@ -27,7 +27,7 @@ namespace _00.Work.JYE._01.Script.Save
 
         private void Awake()
         {
-            //SetTest(3);
+            //SetTest(1);
             
             TitleCheck = PlayerPrefs.GetInt("titleCheck");
             Path = Application.persistentDataPath + "/GameSaveData"; 
@@ -47,7 +47,8 @@ namespace _00.Work.JYE._01.Script.Save
 
         private void Update()
         {
-            print($"cur : {SaveCurrentNum} / all : {AllSaveNum} / t :  {TitleCheck}");
+           //print($"cur : {SaveCurrentNum} / all : {AllSaveNum} / t :  {TitleCheck}");
+           //print($"data : {CurrentData.stage}");
         }
 
         private void SetTest(int num)//빌드 본 때는 꼭 없애기
@@ -61,8 +62,18 @@ namespace _00.Work.JYE._01.Script.Save
         {
             if (TitleCheck == 1) //1은 새게임 받겠다는 것과 같아서
             {  
-                SetSaveNum(1);
-                SetSaveData(new GameSaveData(), AllSaveNum);
+                SetSaveNum(1); //슬롯 늘리기
+                
+                GameSaveData data = new GameSaveData()
+                {
+                    coin = 0,
+                    stage = 1,
+                    playerCar = new bool[]{true,false,false,false, false}, //첫 번째는 기본 깽구리차임.
+                    car = 0,
+                    //데이터는 나중에 저장할 때
+                };
+                
+                SetSaveData(data, AllSaveNum);
             }
         }
 

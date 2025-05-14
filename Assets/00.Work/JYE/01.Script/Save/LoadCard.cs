@@ -57,7 +57,7 @@ namespace _00.Work.JYE._01.Script.Save
 
             //텍스트 입력
             carNum.text =$"가진 차 개수 : {car}";
-            stageNum.text =$" 클리어 한 스테이지 : {saveData.stage}";
+            stageNum.text =$"플레이 가능한 스테이지 : {saveData.stage}";
             coin.text =$"가진 코인 : {saveData.coin}";
             playTime.text =$"마지막 플레이 시간 : {saveData.finalDate}";  //현재 시간임 (나중 수정)
         }
