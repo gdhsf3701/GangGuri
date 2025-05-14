@@ -10,7 +10,6 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
         public static Action OnStartHailstone;
         public static Action OnStopHailstone;
 
-        [SerializeField] private ObstacleSO so; //구분
         [SerializeField] private GameObject hailstonPrefabs; //우박 프리팹
         [SerializeField] private List<GameObject> hailstons = new List<GameObject>();
 
