@@ -23,7 +23,7 @@ namespace _00.Work.JYE._01.Script.Save
             }
             else
             {
-                SaveManager.Instance.TitleCheckChange(2); //인게임 시작이라고
+                SaveManager.Instance.TitleCheckChange(3); //인게임 시작이라고
             }
         }
 

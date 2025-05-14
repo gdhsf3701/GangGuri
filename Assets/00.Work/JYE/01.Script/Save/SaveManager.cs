@@ -14,24 +14,31 @@ namespace _00.Work.JYE._01.Script.Save
                                       // 1 ~ max
         public static int SaveCurrentNum { get; private set; } //저장할 슬롯 넘버(다음에 저장 되면 이곳에 저장.)
                                                                //(받아온 값 혹은 현재 저장 되어 있는 슬롯 수 +1 값)
+                                                               //pp의 curNum에 저장
                                                                // 1 ~ max
 
         public static GameSaveData CurrentData; //현재 저장 내용
 
         public int MaxNum { get; private set; } = 5;//최대 저장 가능 번호
 
-        public int TitleCheck { get; private set; } //타이틀 갔는지 (중복 땜)
-        // -1 : 타이틀을 드디어옴(0혹은 2어야지만 바뀌는게 가능) / 0 : 저장 초과 / 1 : 새게임 (현재 넘버 올림 받음) / 2 : 메인씬 감. (저장 초과X) (1때만 가능)
+        public static int TitleCheck { get; private set; } //타이틀 갔는지 (중복 땜)
+        // -1 : 타이틀을 드디어옴(0혹은 2어야지만 바뀌는게 가능) / 0 : 저장 초과 / 1 : 이대로 시작하면 새게임 (현재 넘버를 안 받음) / 2 : 현재 넘버를 받음 / 3 : 메인씬 감. (저장 초과X) (1때만 가능)
         // pp의 titleCheck 에 저장되어 있음
 
         private void Awake()
         {
-            //SetTest(5);
+            //SetTest(3);
             
             TitleCheck = PlayerPrefs.GetInt("titleCheck");
             Path = Application.persistentDataPath + "/GameSaveData"; 
             AllSaveNum = PlayerPrefs.GetInt("saveNum");
-            SaveCurrentNum = AllSaveNum; // 값 안 받아오면 자동으로 저장되어 있는 슬롯 수 + 1 값이 됨.
+            if (TitleCheck < 0) //타이틀 전이면
+            {
+                SaveCurrentNum = AllSaveNum; // 값 안 받아오면 자동으로 저장되어 있는 슬롯 수 + 1 값이 됨.
+                PlayerPrefs.SetInt("curNum", SaveCurrentNum);
+                PlayerPrefs.Save(); 
+            }
+            SaveCurrentNum = PlayerPrefs.GetInt("curNum");
             LoadData();
             
 
@@ -40,20 +47,22 @@ namespace _00.Work.JYE._01.Script.Save
 
         private void Update()
         {
-            print($"cur : {SaveCurrentNum} / all : {AllSaveNum}");
+            print($"cur : {SaveCurrentNum} / all : {AllSaveNum} / t :  {TitleCheck}");
         }
 
         private void SetTest(int num)//빌드 본 때는 꼭 없애기
         {
+            TitleCheckChange(3);
             PlayerPrefs.SetInt("saveNum", num);
             PlayerPrefs.Save();   
         }
 
         public void NewGame() //저장 슬롯 더해주기 (그러니까 새 게임)
         {
-            if (TitleCheck >= 1) //0과 -1 은 사실상 초과인 것도 모르니까
+            if (TitleCheck == 1) //1은 새게임 받겠다는 것과 같아서
             {  
                 SetSaveNum(1);
+                SetSaveData(new GameSaveData(), AllSaveNum);
             }
         }
 
@@ -69,7 +78,10 @@ namespace _00.Work.JYE._01.Script.Save
             CurrentData = data;
             SaveData(CurrentData);
             
-            TitleCheckChange(1); //일단 타이틀 넘겼다고 (삭제 했든 안 했든 일단 해당 파일에 저장 할거니까)
+            PlayerPrefs.SetInt("curNum", SaveCurrentNum);
+            PlayerPrefs.Save(); 
+            
+            TitleCheckChange(2); //일단 타이틀 넘겼다고 (삭제 했든 안 했든 일단 해당 파일에 저장 할거니까)
         }
 
         public void TitleCheckChange(int num) //타이틀 넘버 수 정해주기 (위 변수 주석 보기)

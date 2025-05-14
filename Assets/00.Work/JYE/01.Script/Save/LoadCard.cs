@@ -32,7 +32,6 @@ namespace _00.Work.JYE._01.Script.Save
 
         public void Load() //불러오기 (자기 자신을 누름)
         {
-            print("click me");
             SaveManager.Instance.SetSaveData(saveData, myNum);
         }
         

@@ -17,21 +17,20 @@ namespace _00.Work.JYE._01.Script.Save
         {   
             path =  SaveManager.Path;
 
-            if (SaveManager.Instance.TitleCheck == 2) //역시 인게임중 첫 타이틀이라면 (즉 첫 로드)
+            if (SaveManager.TitleCheck == 3) //역시 인게임중 첫 타이틀이라면 (즉 첫 로드)
             {
                 SaveManager.Instance.TitleCheckChange(-1);
             }
 
             currentNum = SaveManager.SaveCurrentNum;
-            print($"{NumCheck()} && {EmptyCheck()} && {SaveManager.Instance.TitleCheck} <= 0");
-            if (NumCheck() && EmptyCheck() && SaveManager.Instance.TitleCheck <= 0) //체크 && 타이틀 못 지났다면
+            print($"{NumCheck()} && {EmptyCheck()} && {SaveManager.TitleCheck} <= 0");
+            if (NumCheck() && EmptyCheck() && SaveManager.TitleCheck <= 0) //체크 && 타이틀 못 지났다면
             {
                 SaveManager.Instance.TitleCheckChange(1); //넘겼다, 야호!
                 isEmpty = true;
                 SaveFileMake(); //파일 만들어주기
-                // SaveManager.Instance.SetCurrentNum(1); //현재 넘버 올려주기 ( 새게임 할 때로 변경하기)
             }
-            else if (SaveManager.Instance.TitleCheck == 1) //1은 이미 넘긴건데 뭐가 중요해
+            else if (SaveManager.TitleCheck >= 1) //1은 이미 넘긴건데 뭐가 중요해
             {
                 isEmpty = true;
             }
