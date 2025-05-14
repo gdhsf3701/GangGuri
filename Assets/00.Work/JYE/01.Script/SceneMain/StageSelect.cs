@@ -11,6 +11,7 @@ namespace _00.Work.JYE._01.Script.SceneMain
     {
         [Header("Show")]
         [SerializeField] private int stageCount; //현 스테이지
+                                                 //CurStage에 저장됨.
         [Space(10)]
         [Header("Setting")]
         [SerializeField] private int minStage = 1; //마지막 스테이지
@@ -42,6 +43,7 @@ namespace _00.Work.JYE._01.Script.SceneMain
         {
             if (canStage)
             {
+                PlayerPrefs.SetInt("CurStage", stageCount);
                 sceneManager.StageSceneBtn(stageCount); //씬 이동
             }
             else
@@ -79,7 +81,7 @@ namespace _00.Work.JYE._01.Script.SceneMain
             canStage = (stageCount - minStage) < curData.stage; //플레이 가능 스테이지보다 적다면
             
             rockImage.SetActive(!canStage); //풀린 스테이지인지
-            print($"{!canStage} cu : {stageCount}/ all {curData.stage}");
+            //print($"{!canStage} cu : {stageCount}/ all {curData.stage}");
 
         }
 

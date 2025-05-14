@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,13 @@ namespace _00.Work.JYE._01.Script.Manager
     public class SceneChange : MonoBehaviour
     {
 		public static int beforeScene; //이전 씬
+
+        private int curStage; //현재 스테이지
+
+        private void Awake()
+        {
+            curStage = PlayerPrefs.GetInt("CurStage");
+        }
 
         public void BeforeSceneBtn() //이전 씬으로
         {
@@ -16,19 +24,19 @@ namespace _00.Work.JYE._01.Script.Manager
             string scene = $"Stage{i}";
             SceneBtn(scene);
         } 
-        public void StealSceneBtn(int i) //훔치기
+        public void StealSceneBtn() //훔치기
         {
-            string scene = $"Steal{i}";
+            string scene = $"Steal{curStage}";
             SceneBtn(scene);
         } 
-        public void FailSceneBtn(int i) //실패
+        public void FailSceneBtn() //실패
         {
-            string scene = $"Fail{i}";
+            string scene = $"Fail{curStage}";
             SceneBtn(scene);
         } 
-        public void SuccessSceneBtn(int i) //성공
+        public void SuccessSceneBtn() //성공
         {
-            string scene = $"Success{i}";
+            string scene = $"Success{curStage}";
             SceneBtn(scene);
         } 
 

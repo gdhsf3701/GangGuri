@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.IO;
 using _00.Work.JYE._01.Script.Save;
@@ -26,6 +27,11 @@ namespace _00.Work.JYE._01.Script.Manager
             {
                 StartCoroutine(Warning());
             }
+        }
+
+        private void OnDisable()
+        {
+            LoadCard.OnCardDelete -= LoadCardDelete;
         }
 
         private void LoadCardDelete(int deleteNum) //로드 카드 삭제 

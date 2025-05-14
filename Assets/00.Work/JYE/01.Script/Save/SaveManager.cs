@@ -40,7 +40,6 @@ namespace _00.Work.JYE._01.Script.Save
             }
             SaveCurrentNum = PlayerPrefs.GetInt("curNum");
             LoadData();
-            
 
             print(Path);
         }
@@ -86,8 +85,8 @@ namespace _00.Work.JYE._01.Script.Save
         public void SetSaveData(GameSaveData data, int num) //받아온 값을 현재 본인 값으로
         {
             SaveCurrentNum = num;
-            CurrentData = data;
-            SaveData(CurrentData);
+            CurrentData = data; 
+            GameSave.SaveData(CurrentData, Path);
             
             PlayerPrefs.SetInt("curNum", SaveCurrentNum);
             PlayerPrefs.Save(); 
@@ -99,14 +98,6 @@ namespace _00.Work.JYE._01.Script.Save
         {
             TitleCheck = num;
             PlayerPrefs.SetInt("titleCheck", TitleCheck);
-            PlayerPrefs.Save();
-        }
-        
-        public void SaveData(GameSaveData data) //저장하기
-        {
-            data.finalDate = DateTime.Now.ToString("yy년 MM월 dd일 tt HH시 mm분"); //마지막 시간 입력
-            string json = JsonUtility.ToJson(data);
-            PlayerPrefs.SetString(Path, json);
             PlayerPrefs.Save();
         }
         private void LoadData() //데이터 로드
