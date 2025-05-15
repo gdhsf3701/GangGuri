@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: ef5d80edcce344ca59140988b6accada
+labels:
+- Architecture
+- Bridge
+- Pavement
+- Road
+timeCreated: 1490549297
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Bridges/Bridge04.prefab
+  uploadId: 180676

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 69c1e17910ec749158b052678d1077d0
+labels:
+- Ambulance
+- Car
+- Cartoon
+- Vehicle
+timeCreated: 1489719573
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/Ambulance01.prefab
+  uploadId: 180676

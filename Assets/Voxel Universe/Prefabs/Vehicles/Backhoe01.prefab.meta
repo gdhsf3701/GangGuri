@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 13cb9d65b1fd74dada69da808bfb8159
+labels:
+- Backhoe
+- Car
+- Construction
+- Truck
+timeCreated: 1492225881
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/Backhoe01.prefab
+  uploadId: 180676

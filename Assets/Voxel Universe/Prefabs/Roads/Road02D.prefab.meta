@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 3e5d2ec171fb9495eb47a2e01d8f5db3
+labels:
+- Grass
+- Leaves
+- Road
+- Street
+timeCreated: 1489717089
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Roads/Road02D.prefab
+  uploadId: 180676

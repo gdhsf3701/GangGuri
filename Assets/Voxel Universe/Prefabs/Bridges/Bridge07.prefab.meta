@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 989f7c8d465ce4d609a3713ad9c6791d
+labels:
+- Architecture
+- Bridge
+- Wood
+timeCreated: 1490549306
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Bridges/Bridge07.prefab
+  uploadId: 180676

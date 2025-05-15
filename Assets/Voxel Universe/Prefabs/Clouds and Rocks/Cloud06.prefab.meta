@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a67ee94c6f9bb469db47cc0d7a50f154
+labels:
+- Clouds
+- Gray
+- Rain
+- Water
+- Weather
+- White
+timeCreated: 1489808812
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Clouds and Rocks/Cloud06.prefab
+  uploadId: 180676

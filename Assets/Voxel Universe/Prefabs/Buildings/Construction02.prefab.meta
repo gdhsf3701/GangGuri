@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 35a014514dd854c7cb34414e93b53c28
+labels:
+- Architecture
+- Building
+- Concrete
+- Construction
+- Urban
+timeCreated: 1491754161
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Buildings/Construction02.prefab
+  uploadId: 180676

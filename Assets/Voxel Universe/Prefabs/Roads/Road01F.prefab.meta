@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 43728faa0cf10474798a32b4708fb274
+labels:
+- Concrete
+- Pavement
+- Road
+- Street
+timeCreated: 1491013938
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Roads/Road01F.prefab
+  uploadId: 180676

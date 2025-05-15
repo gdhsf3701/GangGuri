@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c101607ef75a443b9ae61f409b668c27
+labels:
+- City
+- Pool
+- Props
+- Town
+- Water
+timeCreated: 1491616570
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/City Props/Pool01.prefab
+  uploadId: 180676

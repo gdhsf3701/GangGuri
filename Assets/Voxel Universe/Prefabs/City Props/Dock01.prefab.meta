@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1288f49277ca94908b3e4bb8ff8202a2
+labels:
+- City
+- Dock
+- Props
+- Town
+- Wood
+timeCreated: 1491190906
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/City Props/Dock01.prefab
+  uploadId: 180676

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: e5e2bb95ac0d447feb590668627efc0d
+labels:
+- Leaves
+- Tree
+- Vegetation
+- Winter
+timeCreated: 1490452614
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Trees/Tree18.prefab
+  uploadId: 180676

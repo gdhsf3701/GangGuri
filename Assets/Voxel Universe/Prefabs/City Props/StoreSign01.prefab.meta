@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 181d75dd06e564190b9ee228526b8280
+labels:
+- City
+- Props
+- Sign
+- Store
+- Town
+timeCreated: 1491535304
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/City Props/StoreSign01.prefab
+  uploadId: 180676

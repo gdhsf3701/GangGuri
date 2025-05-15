@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 320b99563144e46338e3c51bec87bce1
+labels:
+- Cactus
+- Desert
+- Leaves
+- Tree
+- Vegetation
+timeCreated: 1489719446
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Trees/Tree11.prefab
+  uploadId: 180676

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 427293d6624bb4d7fa9e17581426cf62
+labels:
+- Car
+- Formula
+- One
+- Speed
+timeCreated: 1495152522
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/FormulaOne03.prefab
+  uploadId: 180676

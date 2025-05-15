@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b2fcb7927ca344be19afe443e464c3c7
+labels:
+- Airport
+- Architecture
+- Building
+- Glass
+- Urban
+timeCreated: 1490672063
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Buildings/Airport01.prefab
+  uploadId: 180676
