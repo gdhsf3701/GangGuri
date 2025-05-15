@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 556956ce5a43f425a9a7b84189b5041f
+labels:
+- Air
+- Sky
+- Vehicle
+- Zeppelin
+timeCreated: 1495155157
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/Zeppelin03.prefab
+  uploadId: 180676

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b330e29afb0e54f31801169304fedc19
+labels:
+- Architecture
+- Building
+- Garden
+- Police
+- Security
+- Station
+- Urban
+timeCreated: 1491758145
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Buildings/PoliceStation01.prefab
+  uploadId: 180676

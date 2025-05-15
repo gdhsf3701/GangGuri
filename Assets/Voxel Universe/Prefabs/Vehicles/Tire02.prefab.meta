@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 13125a051739142af9b225fd5b14b9f8
+labels:
+- Car
+- Cartoon
+- Tire
+- Vehicle
+timeCreated: 1490153993
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/Tire02.prefab
+  uploadId: 180676

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: c6e1137337676491891eae878ea4d27a
+labels:
+- Architecture
+- Bridge
+- Metal
+timeCreated: 1491627599
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Bridges/Bridge09.prefab
+  uploadId: 180676

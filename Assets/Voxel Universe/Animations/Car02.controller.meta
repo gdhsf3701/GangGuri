@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ca7279646e9484c8695022b3050b9e59
+timeCreated: 1492569411
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Animations/Car02.controller
+  uploadId: 180676

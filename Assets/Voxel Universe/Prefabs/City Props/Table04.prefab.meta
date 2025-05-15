@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1cf6094baa3a24cc991a27ad1d57c9a5
+labels:
+- City
+- Props
+- Table
+- Town
+- Wood
+timeCreated: 1490932034
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/City Props/Table04.prefab
+  uploadId: 180676

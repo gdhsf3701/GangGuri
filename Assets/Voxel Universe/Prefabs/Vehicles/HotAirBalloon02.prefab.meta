@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d811d803c4fa24140a35839b1d7ce495
+labels:
+- Air
+- Balloon
+- Car
+- Cartoon
+- Vehicle
+timeCreated: 1491889786
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/HotAirBalloon02.prefab
+  uploadId: 180676

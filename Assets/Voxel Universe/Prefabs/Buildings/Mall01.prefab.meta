@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 943cad092b18c40eb8aba20a08958ad4
+labels:
+- Architecture
+- Brick
+- Building
+- Garden
+- Glass
+- Mall
+- Urban
+timeCreated: 1491888425
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Buildings/Mall01.prefab
+  uploadId: 180676

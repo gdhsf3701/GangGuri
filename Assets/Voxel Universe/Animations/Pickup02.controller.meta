@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6b752696ddf014a1786df573d97149ba
+timeCreated: 1492654529
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Animations/Pickup02.controller
+  uploadId: 180676
