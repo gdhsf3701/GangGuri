@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/Assets/00.Work/JYE/01.Script/Obstacle/Obstacle/Hailstone.cs" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/Assets/00.Work/JYE/01.Script/Obstacle/CCTV/CCTV.cs" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/Assets/00.Work/JYE/01.Script/Obstacle/Obstacle/HailstoneManager.cs" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/Assets/00.Work/JYE/01.Script/Obstacle/Obstacle/ObstacleSO.cs" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/Assets/00.Work/JYE/01.Script/Obstacle/Obstacle/hailstone.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/00.Work/JYE/01.Script/Save/GameSave.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/00.Work/JYE/01.Script/Save/GameSaveData.cs" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/Assets/Plugins/Voxel Toolkit/Art/Text stored meshes/Demo.txt" charset="UTF-16" />

@@ -1,18 +1,21 @@
-using System;
+using _00.Work.MOON._01.Script.Enemies;
+using _00.Work.MOON._01.Script.SO.Finder;
+using Unity.Behavior;
 using UnityEngine;
+using Action = System.Action;
 
 namespace _00.Work.JYE._01.Script.Obstacle.CCTV
 {
     public class CCTV : MonoBehaviour
     {
-        public static Action OnCCTV; //cctv와 닿을 때
+        private EnemyManagerFinderSO finder;
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                OnCCTV?.Invoke();
-                print("플레이어와 닿다");
+                finder.Target.Finded();
             }
+    
         }
     }
 }
