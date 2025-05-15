@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 168fbaffdcc254d9eac2e87e213a53d5
+labels:
+- Bycicle
+- Vehicle
+timeCreated: 1495154557
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/Bycicle03.prefab
+  uploadId: 180676

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 45b1aadcf56f84af894bfc4f4738a8e8
+labels:
+- Architecture
+- Building
+- Metal
+- Platform
+- Rocket
+- Space
+- Urban
+timeCreated: 1491883602
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Buildings/RocketLaunchPlatform01.prefab
+  uploadId: 180676

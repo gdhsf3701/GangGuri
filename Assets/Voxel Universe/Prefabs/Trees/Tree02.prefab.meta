@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: cab4a202968ba471aa69adcae3392f10
+labels:
+- Leaves
+- Spring
+- Tree
+- Vegetation
+timeCreated: 1489719264
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Trees/Tree02.prefab
+  uploadId: 180676

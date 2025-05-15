@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 852e84b64e42441f9b67e448d01b4624
+labels:
+- City
+- Fence
+- Props
+- Town
+- Wood
+timeCreated: 1489721469
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/City Props/Fence02.prefab
+  uploadId: 180676

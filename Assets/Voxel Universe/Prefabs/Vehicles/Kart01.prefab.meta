@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 14f4520885cbc4195bc1737dbc36f571
+labels:
+- Car
+- Cartoon
+- Kart
+- Karts
+- Vehicle
+timeCreated: 1492134145
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/Kart01.prefab
+  uploadId: 180676

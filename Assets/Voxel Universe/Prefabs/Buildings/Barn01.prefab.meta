@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 1306be24e677f4fe1897efdb33c07def
+labels:
+- Architecture
+- Barn
+- Building
+- Urban
+timeCreated: 1489634446
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Buildings/Barn01.prefab
+  uploadId: 180676

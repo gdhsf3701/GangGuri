@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 044331aa2ef1c4d34b171be1cb65975d
+labels:
+- City
+- Flag
+- Props
+- Town
+timeCreated: 1489636142
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/City Props/Flag01.prefab
+  uploadId: 180676

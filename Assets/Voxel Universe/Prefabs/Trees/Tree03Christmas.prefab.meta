@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 937c7e372da2f40f4a8a66c8e8edea3c
+labels:
+- Christmas
+- Leaves
+- Tree
+- Vegetation
+timeCreated: 1489719310
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Trees/Tree03Christmas.prefab
+  uploadId: 180676

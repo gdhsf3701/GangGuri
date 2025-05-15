@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ddd461ee1ba224c3cbe25400f32d9b43
+labels:
+- Airport
+- Road
+timeCreated: 1489894312
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Roads/AirportRoad02.prefab
+  uploadId: 180676

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 5a3775511502f42e4bf03ab9b2ff738b
+labels:
+- Bush
+- Garden
+- Leaves
+- Vegetation
+timeCreated: 1490413152
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Trees/Bush02.prefab
+  uploadId: 180676

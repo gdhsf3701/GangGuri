@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: cf6f034cbc25246f3b0c040909a35b9d
+labels:
+- Brick
+- Road
+- Street
+timeCreated: 1489717166
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Roads/Road03A.prefab
+  uploadId: 180676

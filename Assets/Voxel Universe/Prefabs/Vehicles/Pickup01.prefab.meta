@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 83efa66ae54034eb18165298b4571ff2
+labels:
+- Car
+- Cartoon
+- Pickup
+- Truck
+timeCreated: 1492132992
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/Pickup01.prefab
+  uploadId: 180676

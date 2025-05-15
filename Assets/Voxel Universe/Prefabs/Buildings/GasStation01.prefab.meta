@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: cfebb256e9bd8422dabefa49eed75399
+labels:
+- Architecture
+- Building
+- Gas
+- Oil
+- Station
+- Urban
+timeCreated: 1491881117
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Buildings/GasStation01.prefab
+  uploadId: 180676

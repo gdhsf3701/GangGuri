@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 8a2c24082d1514742a0acda26632f9c1
+labels:
+- Environment
+- Gray
+- Rock
+timeCreated: 1491532382
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Clouds and Rocks/Rock03.prefab
+  uploadId: 180676

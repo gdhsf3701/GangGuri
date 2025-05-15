@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4399e379cacfc49ee9ca7858ccd93fd9
+labels:
+- Architecture
+- Building
+- Garden
+- Glass
+- Urban
+timeCreated: 1491626560
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Buildings/Building07.prefab
+  uploadId: 180676

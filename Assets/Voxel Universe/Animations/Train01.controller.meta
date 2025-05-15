@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9b931ae0a7ac448d8f53518de0c540d
+timeCreated: 1492394653
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Animations/Train01.controller
+  uploadId: 180676

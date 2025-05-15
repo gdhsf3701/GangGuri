@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 8a4f54462004f4244a2d751ee503cb98
+labels:
+- Bus
+- Car
+- Cartoon
+- Vehicle
+timeCreated: 1489719614
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/Vehicles/Bus02.prefab
+  uploadId: 180676

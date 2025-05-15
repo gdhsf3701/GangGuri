@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 70274e0fac62a47c7b9139e11de6a4f6
+labels:
+- City
+- Light
+- Props
+- Road
+- Street
+- Town
+- Traffic
+timeCreated: 1489636481
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88490
+  packageName: Voxel Universe - City Pack
+  packageVersion: 2
+  assetPath: Assets/Voxel Universe/Prefabs/City Props/TrafficLight01.prefab
+  uploadId: 180676
