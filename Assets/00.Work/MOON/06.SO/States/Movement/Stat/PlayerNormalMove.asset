@@ -22,4 +22,4 @@ MonoBehaviour:
   <MaxSpeed>k__BackingField: 50
   <StopPer>k__BackingField: 0.15
   <UpDistanceCheckerSize>k__BackingField: 0.15
-  <CarPrefab>k__BackingField: {fileID: -2253911629886400664, guid: 755be652074227748aa356e5872e5b6d, type: 3}
+  <CarPrefab>k__BackingField: {fileID: 8560509634167515918, guid: a0202e8f7bce980438316e17e8cec967, type: 3}
