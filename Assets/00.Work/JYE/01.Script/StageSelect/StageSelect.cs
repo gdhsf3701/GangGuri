@@ -4,7 +4,7 @@ using _00.Work.JYE._01.Script.Save;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _00.Work.JYE._01.Script.SceneMain
+namespace _00.Work.JYE._01.Script.StageSelect
 {
     //스테이지 선택씬만 필요
     public class StageSelect : MonoBehaviour

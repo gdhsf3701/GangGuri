@@ -8,7 +8,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.CCTV
 {
     public class CCTV : MonoBehaviour
     {
-        private EnemyManagerFinderSO finder;
+        [SerializeField]private EnemyManagerFinderSO finder;
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
