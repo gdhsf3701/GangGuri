@@ -15,11 +15,11 @@ MonoBehaviour:
   <MoveSpeed>k__BackingField: 5
   <RotateSpeed>k__BackingField: 1.5
   <MaxSlopeAngle>k__BackingField: 45
-  <StopDistance>k__BackingField: 1.35
+  <StopDistance>k__BackingField: 21.68
   <MoveToUpSpeed>k__BackingField: 1
   <UpDistance>k__BackingField: 2
   <JumpPower>k__BackingField: 10
   <MaxSpeed>k__BackingField: 50
-  <StopPer>k__BackingField: 0.15
+  <StopPer>k__BackingField: 0.0001
   <UpDistanceCheckerSize>k__BackingField: 0.15
   <CarPrefab>k__BackingField: {fileID: 8560509634167515918, guid: a0202e8f7bce980438316e17e8cec967, type: 3}

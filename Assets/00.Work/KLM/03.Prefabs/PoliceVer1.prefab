@@ -254,6 +254,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PoliceVer1
       objectReference: {fileID: 0}
+    - target: {fileID: 3376167463005651305, guid: 8fba2cc9ec3a03f4a8816a088323a383, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376167463005651305, guid: 8fba2cc9ec3a03f4a8816a088323a383, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376167463005651305, guid: 8fba2cc9ec3a03f4a8816a088323a383, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376167463005651305, guid: 8fba2cc9ec3a03f4a8816a088323a383, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376167463005651305, guid: 8fba2cc9ec3a03f4a8816a088323a383, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 8fba2cc9ec3a03f4a8816a088323a383, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
