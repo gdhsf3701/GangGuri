@@ -26,6 +26,11 @@ namespace _00.Work.JYE._01.Script.Success
             {
                 SaveManager.CurrentData.stage = curStage + 1;
             }
+
+            if (SaveManager.CurrentData.playerCar.Length > curStage)
+            {
+                SaveManager.CurrentData.playerCar[curStage] = true;
+            }
         }
     }
 }

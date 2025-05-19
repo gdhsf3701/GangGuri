@@ -68,7 +68,7 @@ namespace _00.Work.JYE._01.Script.Save
                     coin = 0,
                     stage = 1,
                     playerCar = new bool[]{true,false,false,false, false}, //첫 번째는 기본 깽구리차임.
-                    car = 0,
+                    car = "Model1",
                     //데이터는 나중에 저장할 때
                 };
                 
