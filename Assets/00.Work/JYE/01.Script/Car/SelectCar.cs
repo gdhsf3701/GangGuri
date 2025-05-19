@@ -3,7 +3,7 @@ using _00.Work.JYE._01.Script.Save;
 using _00.Work.MOON._01.Script.SO.Player;
 using UnityEngine;
 
-namespace _00.Work.JYE._01.Script.MainScene
+namespace _00.Work.JYE._01.Script.Car
 {
     public class SelectCar : MonoBehaviour
     {
@@ -16,7 +16,7 @@ namespace _00.Work.JYE._01.Script.MainScene
         [SerializeField] private GameObject warning; //경고 (이 차는 얻지 못함)
         [SerializeField] private GameObject carP; //차의 부모가 될 (위치)
 
-        [SerializeField]private GameSaveData curData; //현재 저장된 데이터
+        private GameSaveData curData; //현재 저장된 데이터
         
         private int min; // 최소 번째
         private int max; // 최소 번째
@@ -43,7 +43,7 @@ namespace _00.Work.JYE._01.Script.MainScene
             }
             else
             {
-                print("select");
+                SaveManager.CurrentData.car = allCar[currentNum].name; //현재 차 이름 저장
             }
         }
 

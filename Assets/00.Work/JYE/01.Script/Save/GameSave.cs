@@ -37,7 +37,7 @@ namespace _00.Work.JYE._01.Script.Save
             d.coin = 0;
             d.playerCar = new bool[5];
             d.stage = 1;
-            d.car = 0;
+            d.car = "Model1";
             return d;
         }
     }
