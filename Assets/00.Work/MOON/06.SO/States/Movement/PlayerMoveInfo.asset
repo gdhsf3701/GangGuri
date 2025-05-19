@@ -16,6 +16,16 @@ MonoBehaviour:
     _serializedList:
     - Key: NORMAL
       Value: {fileID: 11400000, guid: 11b9a01b9f41aec4aaa65166e528a8e2, type: 2}
+    - Key: Model1
+      Value: {fileID: 11400000, guid: d5ebb69c0104929499d11241244ef81a, type: 2}
+    - Key: Model2
+      Value: {fileID: 11400000, guid: 1626f9dd9db37d44a8dc977966baa3d7, type: 2}
+    - Key: Model3
+      Value: {fileID: 11400000, guid: 25c960805e3e0734e85b1765277ab68c, type: 2}
+    - Key: Model4
+      Value: {fileID: 11400000, guid: 74620542484a3c541b3c41a1f55a3f53, type: 2}
+    - Key: Model5
+      Value: {fileID: 11400000, guid: a871362b1303a274aa326beefdc16838, type: 2}
   <MoveStatsPer>k__BackingField:
     _serializedList:
     - Key: NORMAL

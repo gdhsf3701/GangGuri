@@ -43,6 +43,7 @@ namespace _00.Work.JYE._01.Script.StealUI.Stage1
 
                 if (all) //성공
                 {
+                    checkList.Clear(); // 다음 게임때 원활하게 하기 위해서
                     clock.Success();
                 }
             }
