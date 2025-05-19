@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aaa654cc5b24414a67aaddc0cedb341, type: 3}
   m_Name: Model2
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 5
+  <MoveSpeed>k__BackingField: 20
   <RotateSpeed>k__BackingField: 1.5
   <MaxSlopeAngle>k__BackingField: 45
   <StopDistance>k__BackingField: 1.35
   <MoveToUpSpeed>k__BackingField: 1
   <UpDistance>k__BackingField: 2
   <JumpPower>k__BackingField: 10
-  <MaxSpeed>k__BackingField: 50
+  <MaxSpeed>k__BackingField: 25
   <StopPer>k__BackingField: 0.15
   <UpDistanceCheckerSize>k__BackingField: 0.15
-  <CarPrefab>k__BackingField: {fileID: 8560509634167515918, guid: a0202e8f7bce980438316e17e8cec967, type: 3}
+  <CarPrefab>k__BackingField: {fileID: 7898206152723786392, guid: be69b7840f6aa7745abd91619d22a375, type: 3}
