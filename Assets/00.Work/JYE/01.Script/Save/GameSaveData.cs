@@ -7,7 +7,6 @@ namespace _00.Work.JYE._01.Script.Save
     [System.Serializable]
     public class GameSaveData
     {
-        public int coin; //소유 돈
         public int stage; //스테이지 (개수(1 ~))
         public bool[] playerCar; //소유 차들
         public string car; //사용 중이던 차 이름 (Model 1~)

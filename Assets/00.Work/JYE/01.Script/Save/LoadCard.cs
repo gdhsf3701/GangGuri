@@ -15,7 +15,6 @@ namespace _00.Work.JYE._01.Script.Save
         [Space(10)] [Header("Need")]
         [SerializeField] private TextMeshProUGUI carNum; //가진 차 개수
         [SerializeField] private TextMeshProUGUI stageNum; //클리어한 스테이지 수
-        [SerializeField] private TextMeshProUGUI coin; //가진 코인
         [SerializeField] private TextMeshProUGUI playTime; //마지막 플레이 시간
 
         private string path; //저장 값
@@ -58,7 +57,6 @@ namespace _00.Work.JYE._01.Script.Save
             //텍스트 입력
             carNum.text =$"가진 차 개수 : {car}";
             stageNum.text =$"플레이 가능한 스테이지 : {saveData.stage}";
-            coin.text =$"가진 코인 : {saveData.coin}";
             playTime.text =$"마지막 플레이 시간 : {saveData.finalDate}";  //현재 시간임 (나중 수정)
         }
 

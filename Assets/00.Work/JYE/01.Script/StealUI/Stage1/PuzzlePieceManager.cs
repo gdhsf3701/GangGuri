@@ -10,13 +10,11 @@ namespace _00.Work.JYE._01.Script.StealUI.Stage1
         [Header("Need")]
         [SerializeField] private GameObject piecePiecePrefab; //맞는 카드
         [SerializeField] private PieceManager piece; //이미지 얻을려고
-        [SerializeField] private ClcokUI clock; //성공 유무
-         private Sprite[] sprites; //이미지들
+        [SerializeField] private ClockUI clock; //성공 유무
+        [SerializeField]private Sprite[] sprites; //이미지들
 
         private void Awake()
         {
-            Sprite[] ne = piece.GetSprites();
-            sprites =  (Sprite[]) ne.Clone();
             Setting();
         }
 
@@ -29,14 +27,7 @@ namespace _00.Work.JYE._01.Script.StealUI.Stage1
                 newPiece.SetActive(true);
                 
                 PuzzlePiece sc = newPiece.GetComponent<PuzzlePiece>(); //카드 세팅
-                int rand = 0;
-                do
-                {
-                    rand = Random.Range(0, sprites.Length);
-                } while (sprites[rand] == null);
-                
-                sc.Setting(sprites[rand], clock);
-                sprites[rand] = null;
+                sc.Setting(sprites[i], clock);
             }
         }
     }

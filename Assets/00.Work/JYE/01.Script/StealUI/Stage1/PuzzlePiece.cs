@@ -8,19 +8,14 @@ namespace _00.Work.JYE._01.Script.StealUI.Stage1
     public class PuzzlePiece : MonoBehaviour
     {
         private static List<bool> checkList = new List<bool>(); //맞는지 확인
-        private static ClcokUI clock; //성공 유무
 
         private void Start()
         {
             checkList.Add(false);
         }
 
-        public void Setting(Sprite s,ClcokUI c) //세팅하기
+        public void Setting(Sprite s,ClockUI c) //세팅하기
         {
-            if (clock == null)
-            {
-                clock = c;
-            }
             Image myImage = gameObject.GetComponent<Image>();
             myImage.sprite = s;
         }
@@ -44,7 +39,7 @@ namespace _00.Work.JYE._01.Script.StealUI.Stage1
                 if (all) //성공
                 {
                     checkList.Clear(); // 다음 게임때 원활하게 하기 위해서
-                    clock.Success();
+                    ClockUI.OnSuccess?.Invoke();
                 }
             }
         }
