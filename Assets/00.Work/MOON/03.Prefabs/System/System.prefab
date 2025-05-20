@@ -206,6 +206,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4210042314389858682, guid: 1f19bcd194bf82d449a994b0bf622a22, type: 3}
+      propertyPath: finders.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210042314389858682, guid: 1f19bcd194bf82d449a994b0bf622a22, type: 3}
+      propertyPath: 'finders.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 38524ae36e910c44ba368587f1a3d4ec, type: 2}
+    - target: {fileID: 4210042314389858682, guid: 1f19bcd194bf82d449a994b0bf622a22, type: 3}
+      propertyPath: _components._serializedList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210042314389858682, guid: 1f19bcd194bf82d449a994b0bf622a22, type: 3}
+      propertyPath: _components._serializedList.Array.data[2].Key.typeName
+      value: _00.Work.MOON._01.Script.Enemies.SpawnEnemy, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
     - target: {fileID: 6024311253381072444, guid: 1f19bcd194bf82d449a994b0bf622a22, type: 3}
       propertyPath: m_Name
       value: FinderManager
