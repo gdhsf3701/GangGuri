@@ -34,7 +34,6 @@ namespace _00.Work.JYE._01.Script.Save
         private GameSaveData ResetData() //데이터 리셋
         {
             GameSaveData d =  new GameSaveData();
-            d.coin = 0;
             d.playerCar = new bool[5];
             d.stage = 1;
             d.car = "Model1";
