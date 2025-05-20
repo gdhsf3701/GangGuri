@@ -15,7 +15,7 @@ MonoBehaviour:
   <ResetTime>k__BackingField: 1.5
   <TurnSpeedX>k__BackingField: 5
   <TurnSpeedY>k__BackingField: 2.5
-  <GoDefaultRotateTime>k__BackingField: 0.75
-  <XMinMax>k__BackingField: {x: 16.4, y: 29.1}
-  <CamDistanceMinMax>k__BackingField: {x: 2.41, y: 10}
-  <CamDeffultRotate>k__BackingField: {x: 27, y: 0, z: 0}
+  <GoDefaultRotateTime>k__BackingField: 0.64
+  <XMinMax>k__BackingField: {x: 18.8, y: 49.3}
+  <CamDistanceMinMax>k__BackingField: {x: 9.34, y: 21.46}
+  <CamDeffultRotate>k__BackingField: {x: 24.3, y: 0, z: 0}

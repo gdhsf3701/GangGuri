@@ -47,7 +47,7 @@ namespace _00.Work.KLM._01.Script
             // 거리 텍스트
             float distance = Vector3.Distance(player.position, target.position);
             distanceText.text = $"{distance:F1}m";
-            distanceText.transform.position = arrowUI.position + (Vector3)(dir * 30f);
+            distanceText.transform.position = arrowUI.position + (Vector3)(dir * 155f);
         }
 
         // 동적으로 목표 설정하는 함수
