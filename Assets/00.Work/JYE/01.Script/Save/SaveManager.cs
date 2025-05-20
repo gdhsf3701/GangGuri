@@ -65,7 +65,6 @@ namespace _00.Work.JYE._01.Script.Save
                 
                 GameSaveData data = new GameSaveData()
                 {
-                    coin = 0,
                     stage = 1,
                     playerCar = new bool[]{true,false,false,false, false}, //첫 번째는 기본 깽구리차임.
                     car = "Model1",

@@ -32,7 +32,13 @@ namespace _00.Work.JYE._01.Script.StealUI.Stage1
                 newPiece.SetActive(true);
                 
                 ImageDrag sc = newPiece.GetComponent<ImageDrag>(); //카드 세팅
-                sc.ImageDragSetting(drag,scroll, pieceSprites[i]);
+                int rand = 0;
+                do
+                {
+                    rand = Random.Range(0, pieceSprites.Length);
+                } while (pieceSprites[rand] == null);
+                sc.ImageDragSetting(drag,scroll, pieceSprites[rand]);
+                pieceSprites[rand] = null;
             }
         }
     }

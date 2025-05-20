@@ -1,11 +1,15 @@
+using System;
 using _00.Work.JYE._01.Script.Manager;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace _00.Work.JYE._01.Script.StealUI
 {
-    public class ClcokUI : MonoBehaviour
+    public class ClockUI : MonoBehaviour
     {
+        public static Action OnSuccess; //성공
+        public static Action OnFail; //실패
+        
         [Header("Setting")]
         [SerializeField] private float timeLimit = 20; //타이머
         [Header("Show")]
@@ -19,14 +23,17 @@ namespace _00.Work.JYE._01.Script.StealUI
         private void Awake()
         {
             coolTime = timeLimit;
+
+            OnSuccess += Success;
+            OnFail += Fail;
         }
 
-        public void Success() //성공함
+        private void Success() //성공함
         {
             sceneManager.SuccessSceneBtn();
             isChange = true;
         }
-        public void Fail() //실패
+        private void Fail() //실패
         {
             sceneManager.FailSceneBtn();
             isChange = true;
