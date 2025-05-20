@@ -10,7 +10,7 @@ namespace _00.Work.JYE._01.Script.StealUI.Stage1
         [Header("Need")]
         [SerializeField] private GameObject piecePiecePrefab; //맞는 카드
         [SerializeField] private PieceManager piece; //이미지 얻을려고
-        [SerializeField] private ClcokUI clock; //성공 유무
+        [SerializeField] private ClockUI clock; //성공 유무
         [SerializeField]private Sprite[] sprites; //이미지들
 
         private void Awake()

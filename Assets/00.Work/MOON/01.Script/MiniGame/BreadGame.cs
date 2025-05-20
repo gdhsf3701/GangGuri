@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _00.Work.JYE._01.Script.StealUI;
 using _00.Work.MOON._01.Script.SO.MiniGame;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -33,21 +34,21 @@ namespace _00.Work.MOON._01.Script.MiniGame
         private void GameInit()
         {
             float xPos = parentObject.rect.width / cutMany;
-            float xNowPos = parentObject.rect.width - parentObject.rect.x;
+            float xNowPos = 17;
             for (int i = 1; i <= cutMany; i++)
             {
-                Vector3 position = new Vector3(Random.Range(xNowPos, xPos * i + parentObject.rect.x), 385, 0);
-                xNowPos = xPos * i;
+                Vector3 position = new Vector3(Random.Range(xNowPos, xPos * i - 17), 720  , 0);
+                xNowPos = xPos * i + 17;
                 _breadWantCutList.Add(Instantiate(breadWantCutPrefab, position, Quaternion.identity, parentObject)
                     .GetComponent<RectTransform>());
             }
         }
 
-        private void HandleMouseClick()
+        private void HandleMouseClick() 
         {
             Vector2 mousePosition = Mouse.current.position.value;
             RectTransform trans =
-                Instantiate(breadCutPrefab, new Vector3(mousePosition.x, 385, 0), Quaternion.identity, parentObject)
+                Instantiate(breadCutPrefab, new Vector3(mousePosition.x, 720, 0), Quaternion.identity, parentObject)
                     .GetComponent<RectTransform>();
             if (_breadWantCutList.Count <= 0)
             {
@@ -74,14 +75,14 @@ namespace _00.Work.MOON._01.Script.MiniGame
         {
             print("gameClear");
             input.OnMouseClick -= HandleMouseClick;
-            //성공 구현
+            ClockUI.OnSuccess?.Invoke();
         }
 
         private void GameOver()
         {
             print("gameOver");
             input.OnMouseClick -= HandleMouseClick;
-            //실패 구현
+            ClockUI.OnFail?.Invoke();
         }
 
         private bool Check(RectTransform trans)

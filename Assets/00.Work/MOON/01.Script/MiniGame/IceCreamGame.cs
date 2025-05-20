@@ -1,4 +1,5 @@
 using System;
+using _00.Work.JYE._01.Script.StealUI;
 using _00.Work.MOON._01.Script.SO.MiniGame;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -57,7 +58,7 @@ namespace _00.Work.MOON._01.Script.MiniGame
         {
             Debug.Log("Game Win");
             input.OnMouseClick -= HandleMouseClick;
-            //게임 승리
+            ClockUI.OnSuccess?.Invoke();
         }
         private bool Check(Vector3 trans)
         {
