@@ -32,7 +32,14 @@ namespace _00.Work.JYE._01.Script.Manager
         public void FailSceneBtn() //실패
         {
             string scene = $"Fail{curStage}";
-            SceneBtn(scene);
+            if (SceneManager.GetActiveScene().name.Contains("Steal"))
+            {
+                SceneManager.LoadScene(scene); 
+            }
+            else
+            {
+                SceneBtn(scene);
+            }
         } 
         public void SuccessSceneBtn() //성공
         {
@@ -42,11 +49,13 @@ namespace _00.Work.JYE._01.Script.Manager
 
        public void SceneBtn(int i) //해당 씬으로
         {
+            Cursor.lockState = CursorLockMode.None;
             beforeScene = SceneManager.GetActiveScene().buildIndex; //현재 씬은 저장
             SceneManager.LoadScene(i);
         }
         public void SceneBtn(string name) //해당 씬으로
         {
+            Cursor.lockState = CursorLockMode.None;
             beforeScene = SceneManager.GetActiveScene().buildIndex; //현재 씬은 저장
             SceneManager.LoadScene(name); 
         }

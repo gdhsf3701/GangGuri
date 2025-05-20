@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aaa654cc5b24414a67aaddc0cedb341, type: 3}
+  m_Name: Model4
+  m_EditorClassIdentifier: 
+  <MoveSpeed>k__BackingField: 20
+  <RotateSpeed>k__BackingField: 1.5
+  <MaxSlopeAngle>k__BackingField: 45
+  <StopDistance>k__BackingField: 1.35
+  <MoveToUpSpeed>k__BackingField: 1
+  <UpDistance>k__BackingField: 2
+  <JumpPower>k__BackingField: 10
+  <MaxSpeed>k__BackingField: 25
+  <StopPer>k__BackingField: 0.15
+  <UpDistanceCheckerSize>k__BackingField: 0.15
+  <CarPrefab>k__BackingField: {fileID: 5394527636071714464, guid: a46ca2656bc032148aff01772e6cd870, type: 3}
