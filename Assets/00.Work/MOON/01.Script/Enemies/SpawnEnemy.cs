@@ -1,13 +1,17 @@
+using _00.Work.MOON._01.Script.Core.DI;
 using UnityEngine;
 
 namespace _00.Work.MOON._01.Script.Enemies
 {
-    public class SpawnEnemy : MonoBehaviour
+    public class SpawnEnemy : MonoBehaviour , IDependencyProvider
     {
         [SerializeField] private GameObject enemyPrefab;
         [SerializeField] private Transform[] spawnPoint;
         [SerializeField] private int spawnCount = 5;
         [SerializeField] private float randomRange = 1f;
+        
+        [Provide]
+        public SpawnEnemy ProvideSpawnEnemy() => this;
         
         public void Spawn()
         {
