@@ -27,7 +27,7 @@ namespace _00.Work.JYE._01.Script.Save
 
         private void Awake()
         {
-            //SetTest(1);
+            SetTest(1);
             
             TitleCheck = PlayerPrefs.GetInt("titleCheck");
             Path = Application.persistentDataPath + "/GameSaveData"; 
