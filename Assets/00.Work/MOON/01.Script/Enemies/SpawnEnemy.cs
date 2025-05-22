@@ -13,12 +13,12 @@ namespace _00.Work.MOON._01.Script.Enemies
         {
             for (int i = 0; i < spawnCount; i++)
             {
-                Transform enemy = Instantiate(enemyPrefab, GetSpwanTrance() , Quaternion.identity).transform;
+                Transform enemy = Instantiate(enemyPrefab, GetSpawnTrance() , Quaternion.identity).transform;
                 enemy.SetParent(transform);
             }
         }
 
-        private Vector3 GetSpwanTrance()
+        private Vector3 GetSpawnTrance()
         {
             int randomIndex = Random.Range(0, spawnPoint.Length);
             Vector3 spawnPosition = spawnPoint[randomIndex].position;
