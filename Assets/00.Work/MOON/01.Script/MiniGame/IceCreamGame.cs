@@ -60,19 +60,10 @@ namespace _00.Work.MOON._01.Script.MiniGame
             input.OnMouseClick -= HandleMouseClick;
             ClockUI.OnSuccess?.Invoke();
         }
-        private bool Check(Vector3 trans)
+        private bool Check(Vector3 screenPosition)
         {
-            float x  = trans.x;
-            float y = trans.y;
-            float left  = iceCreamRect.position.x - iceCreamRect.rect.width  / 2;
-            float right = iceCreamRect.position.x + iceCreamRect.rect.width  / 2;
-            float up = iceCreamRect.position.y + iceCreamRect.rect.height / 2;
-            float down = iceCreamRect.position.y - iceCreamRect.rect.height / 2;
-            if (x >= left && x <= right && y >= down && y <= up)
-            {
-                return true;
-            }
-            return false;
+            return RectTransformUtility.RectangleContainsScreenPoint(
+                iceCreamRect, screenPosition, null);
         }
     }
 }
