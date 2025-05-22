@@ -19,6 +19,10 @@ namespace _00.Work.MOON._01.Script.MiniGame
         private List<RectTransform> _breadWantCutList = new List<RectTransform>();
         private int warningCount;
         [SerializeField]private int warningMaxCount;
+        
+        [SerializeField] private RectTransform start;
+        [SerializeField] private RectTransform end;
+        
 
         private void Awake()
         {
@@ -30,15 +34,20 @@ namespace _00.Work.MOON._01.Script.MiniGame
         {
             input.OnMouseClick -= HandleMouseClick;
         }
-
+        
         private void GameInit()
         {
-            float xPos = parentObject.rect.width / cutMany;
-            float xNowPos = 17;
+            float startX = start.position.x;
+            float endX = end.position.x;
+            float segmentWidth = (endX - startX) / cutMany;
+            float xNowPos = startX;
+
             for (int i = 1; i <= cutMany; i++)
             {
-                Vector3 position = new Vector3(Random.Range(xNowPos, xPos * i - 17), 720  , 0);
-                xNowPos = xPos * i + 17;
+                float min = xNowPos;
+                float max = startX + segmentWidth * i;
+                Vector3 position = new Vector3(Random.Range(min, max), 720, 0);
+                xNowPos = max;
                 _breadWantCutList.Add(Instantiate(breadWantCutPrefab, position, Quaternion.identity, parentObject)
                     .GetComponent<RectTransform>());
             }
@@ -87,15 +96,18 @@ namespace _00.Work.MOON._01.Script.MiniGame
 
         private bool Check(RectTransform trans)
         {
-            foreach (RectTransform breadWantCut in _breadWantCutList)
+            float left1 = trans.position.x - trans.rect.width / 2;
+            float right1 = trans.position.x + trans.rect.width / 2;
+
+            for (int i = 0; i < _breadWantCutList.Count; i++)
             {
-                float left1  = trans.position.x - trans.rect.width  / 2;
-                float right1 = trans.position.x + trans.rect.width  / 2;
-                float left2  = breadWantCut.position.x - breadWantCut.rect.width  / 2;
-                float right2 = breadWantCut.position.x + breadWantCut.rect.width  / 2;
-                if (right1 >= left2 && left1  <= right2)
+                RectTransform breadWantCut = _breadWantCutList[i];
+                float left2 = breadWantCut.position.x - breadWantCut.rect.width / 2;
+                float right2 = breadWantCut.position.x + breadWantCut.rect.width / 2;
+
+                if (right1 >= left2 && left1 <= right2)
                 {
-                    _breadWantCutList.Remove(breadWantCut);
+                    _breadWantCutList.RemoveAt(i);
                     Destroy(breadWantCut.gameObject);
                     return true;
                 }
