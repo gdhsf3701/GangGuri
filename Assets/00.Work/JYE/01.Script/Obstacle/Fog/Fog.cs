@@ -14,8 +14,13 @@ namespace _00.Work.JYE._01.Script.Obstacle.Fog
         [Space(10f)]
         [Header("Show")]
         [SerializeField] private float endValue; //현 안개 흐림 값
-        [SerializeField] private bool onFog; //true : 안개 / false : 안개 없음
 
+        private static bool onFog; //true : 안개 / false : 안개 없음
+
+        private void Awake()
+        {
+            onFog = false;
+        }
 
         private void OnTriggerEnter(Collider other)
         {

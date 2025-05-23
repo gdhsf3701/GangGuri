@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32167e395487b04bb96fb68ed0f684d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 20
+  timeLimit: 10
   coolTime: 0
   timeImage: {fileID: 1125262164}
   sceneManager: {fileID: 678814624}

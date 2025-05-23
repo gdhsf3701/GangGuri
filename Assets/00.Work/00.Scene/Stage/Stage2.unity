@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.5283019, g: 0.3314823, b: 0.14204343, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.007
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: b117232f88be64d40bd1ea8df645585b, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1703,7 +1703,7 @@ GameObject:
   - component: {fileID: 888933666}
   - component: {fileID: 888933665}
   - component: {fileID: 888933664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -2557,6 +2557,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60992d7aac90baa4cbe9f650f4019108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1633726914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1633726916}
+  - component: {fileID: 1633726915}
+  m_Layer: 0
+  m_Name: ChangeCar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1633726915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633726914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aab50d2cbe182c42a48a04b107dc00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFinder: {fileID: 11400000, guid: 8d46dcee043440649abcbe7369b20b44, type: 2}
+--- !u!4 &1633726916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633726914}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9117713, y: -59.785973, z: 223.55647}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1649700920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2923,8 +2968,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.9788954, z: 1}
-  m_Center: {x: 0, y: 0.4894476, z: 0}
+  m_Size: {x: 3.2061436, y: 3.1919522, z: 1.6591405}
+  m_Center: {x: 1.1030715, y: 1.0959761, z: 0.32956982}
 --- !u!33 &1796662918
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2942,7 +2987,7 @@ Transform:
   m_GameObject: {fileID: 1796662914}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 3.9, z: 50}
+  m_LocalPosition: {x: 181.13, y: 0.714283, z: -178.67}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3455,3 +3500,4 @@ SceneRoots:
   - {fileID: 1785031764}
   - {fileID: 2015325738}
   - {fileID: 662193599}
+  - {fileID: 1633726916}
