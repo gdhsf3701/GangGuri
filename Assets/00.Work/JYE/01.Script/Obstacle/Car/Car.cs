@@ -8,7 +8,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Car
     public class Car : MonoBehaviour
     {
         [Header("Setting")]
-        [SerializeField] private float speed; //움직이는 속도
+        private float speed = 55; //움직이는 속도
         [SerializeField] private float stopTime; //멈춰 있는 정도
         [Space(10f)]
         [Header("Need")]
