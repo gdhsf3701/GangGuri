@@ -1,3 +1,4 @@
+using System;
 using _00.Work.MOON._01.Script.Enemies;
 using _00.Work.MOON._01.Script.SO.Finder;
 using Unity.Behavior;
@@ -8,11 +9,19 @@ namespace _00.Work.JYE._01.Script.Obstacle.CCTV
 {
     public class CCTV : MonoBehaviour
     {
+        private static bool isEnemy; //true : ¿ÃπÃ µÈ≈¥ / false : æ» µÈ≈¥
+        
         [SerializeField]private EnemyManagerFinderSO finder;
+
+        private void Awake()
+        {
+            isEnemy = false;
+        }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (!isEnemy&&other.gameObject.CompareTag("Player"))
             {
+                isEnemy = true;
                 finder.Target.Finded();
             }
     

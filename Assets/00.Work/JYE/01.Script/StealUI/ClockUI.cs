@@ -44,7 +44,7 @@ namespace _00.Work.JYE._01.Script.StealUI
             if (coolTime > 0)
             {
                 coolTime -= Time.deltaTime;
-                timeImage.fillAmount = coolTime/timeLimit;
+                timeImage.fillAmount = 1- (coolTime/timeLimit);
             }
             else if (!isChange) //시간초과 해서 실패 씬으로
             {
