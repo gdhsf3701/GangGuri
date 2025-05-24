@@ -28,9 +28,10 @@ namespace _00.Work.JYE._01.Script.Obstacle.Car
         }
 
         private void Update()
-        {
-            if (gameObject.transform.position == target && canMove)
+        {    float distance = Vector3.Distance(transform.position, target);
+            if (distance <= 1.0f && canMove)
             {
+                print("ok");
                 StartCoroutine(CarMove()); // 타겟 변경
             }
             else if (canMove)
@@ -55,7 +56,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Car
         {
             canMove = false;
             yield return new WaitForSeconds(stopTime);
-            target = isPos ? pos2.position : pos1.position; //어딜 타겟으로 할지 정하기
+            target = isPos ? pos1.position : pos2.position; //어딜 타겟으로 할지 정하기
             isPos = !isPos;
             canMove = true;
         }

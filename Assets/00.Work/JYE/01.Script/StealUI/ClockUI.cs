@@ -17,15 +17,27 @@ namespace _00.Work.JYE._01.Script.StealUI
         [Header("Need")]
         [SerializeField] private Image timeImage; //검은 이미지
         [SerializeField] private SceneChange sceneManager; //씬 바꾸기 위해
+        [SerializeField] private GameObject Explanation; //예
 
         private bool isChange; //true : 씬을 바꿈 / false : 씬을 안 바꿈
+        private bool isStart; // true : 시작함 / false : 시작 전
 
         private void Awake()
         {
+            Time.timeScale = 0;
+            isStart = false;
+            Explanation.SetActive(true);
             coolTime = timeLimit;
 
             OnSuccess += Success;
             OnFail += Fail;
+        }
+
+        public void StartBtn() //시작 버튼 누름
+        {
+            isStart = true;
+            Explanation.SetActive(false);
+            Time.timeScale = 1;
         }
 
         private void Success() //성공함
@@ -41,14 +53,17 @@ namespace _00.Work.JYE._01.Script.StealUI
 
         private void Update()
         {
-            if (coolTime > 0)
+            if (isStart)
             {
-                coolTime -= Time.deltaTime;
-                timeImage.fillAmount = 1- (coolTime/timeLimit);
-            }
-            else if (!isChange) //시간초과 해서 실패 씬으로
-            {
-                Fail();
+                if (coolTime > 0)
+                {
+                    coolTime -= Time.deltaTime;
+                    timeImage.fillAmount = 1- (coolTime/timeLimit);
+                }
+                else if (!isChange) //시간초과 해서 실패 씬으로
+                {
+                    Fail();
+                }
             }
         
         }
