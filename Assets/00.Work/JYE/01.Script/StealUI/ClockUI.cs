@@ -24,6 +24,7 @@ namespace _00.Work.JYE._01.Script.StealUI
 
         private void Awake()
         {
+            Time.timeScale = 0;
             isStart = false;
             Explanation.SetActive(true);
             coolTime = timeLimit;
@@ -36,6 +37,7 @@ namespace _00.Work.JYE._01.Script.StealUI
         {
             isStart = true;
             Explanation.SetActive(false);
+            Time.timeScale = 1;
         }
 
         private void Success() //성공함
