@@ -35,6 +35,7 @@ namespace _00.Work.JYE._01.Script.StealUI
         public void StartBtn() //시작 버튼 누름
         {
             isStart = true;
+            Explanation.SetActive(false);
         }
 
         private void Success() //성공함
