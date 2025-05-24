@@ -6,76 +6,76 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00.Work/00.Scene/TitleScene.unity
+    path: Assets/00.Scene/TitleScene.unity
     guid: 3e3c2fd638fedb74b80ab284a7e4267e
   - enabled: 1
-    path: Assets/00.Work/00.Scene/HomeScene.unity
+    path: Assets/00.Scene/HomeScene.unity
     guid: 653865667c6e5fe49a9e2534de5d0d79
   - enabled: 1
-    path: Assets/00.Work/00.Scene/LoadScene.unity
+    path: Assets/00.Scene/LoadScene.unity
     guid: 569e0530d588b164f8cdcc0dae76f0ea
   - enabled: 1
-    path: Assets/00.Work/00.Scene/StageSelectScene.unity
+    path: Assets/00.Scene/StageSelectScene.unity
     guid: 8498a2e0153a47341898a5feec771687
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Stage1.unity
+    path: Assets/00.Scene/Stage/Stage1.unity
     guid: 258a68069dbcecd409a620e629424c55
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Fail1.unity
+    path: Assets/00.Scene/Stage/Fail1.unity
     guid: 73961af5b2873b444aa1256c57eaadaf
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Success1.unity
+    path: Assets/00.Scene/Stage/Success1.unity
     guid: 88bb611947229c94bbc1567ed1d8e99b
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Steal1.unity
+    path: Assets/00.Scene/Stage/Steal1.unity
     guid: 924eb46be52c3fe48848d014dbc7ad93
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Stage2.unity
+    path: Assets/00.Scene/Stage/Stage2.unity
     guid: 96597cc466b32f743a110b2f2115b80e
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Fail2.unity
+    path: Assets/00.Scene/Stage/Fail2.unity
     guid: 724697a23613d7c48a83937288d41ba4
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Success2.unity
+    path: Assets/00.Scene/Stage/Success2.unity
     guid: a509988b2f5acd044bb36478352d26cd
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Steal2.unity
+    path: Assets/00.Scene/Stage/Steal2.unity
     guid: 1b084b42eebbfe34fa7e91ba2113e080
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Stage3.unity
+    path: Assets/00.Scene/Stage/Stage3.unity
     guid: 382bdce72f202274297d632e5e1ddac6
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Fail3.unity
+    path: Assets/00.Scene/Stage/Fail3.unity
     guid: a90dc28d8de82f140a6f136ae960df06
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Success3.unity
+    path: Assets/00.Scene/Stage/Success3.unity
     guid: f11ac7f984c484941ae95af9d0e81583
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Steal3.unity
+    path: Assets/00.Scene/Stage/Steal3.unity
     guid: d41dc274fd1d5514190bda76703aedd9
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Stage4.unity
+    path: Assets/00.Scene/Stage/Stage4.unity
     guid: 7eefbc6c3d2744d4c8b611f100daada0
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Fail4.unity
+    path: Assets/00.Scene/Stage/Fail4.unity
     guid: dcfc9c10d6c0e2743b0c9ec3dc7500e5
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Success4.unity
+    path: Assets/00.Scene/Stage/Success4.unity
     guid: 034175f4d33213240a8b49047917ebdd
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Steal4.unity
+    path: Assets/00.Scene/Stage/Steal4.unity
     guid: cfae5846b2b61474a8b21af1ba62d1df
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Stage5.unity
+    path: Assets/00.Scene/Stage/Stage5.unity
     guid: 7683aa41d8719c644ab3b5423bf9ae5a
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Fail5.unity
+    path: Assets/00.Scene/Stage/Fail5.unity
     guid: bef6cb7a009791e4c803b0d3f8d37776
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Success5.unity
+    path: Assets/00.Scene/Stage/Success5.unity
     guid: ae68cc44694ae2642804362932eedebe
   - enabled: 1
-    path: Assets/00.Work/00.Scene/Stage/Steal5.unity
+    path: Assets/00.Scene/Stage/Steal5.unity
     guid: 8eabea7e0313d4341b79e842e50f0a8c
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
