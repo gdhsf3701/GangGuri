@@ -1,4 +1,6 @@
 using System;
+using _00.Work.KLM._01.Script.KAY_UI;
+using _00.Work.KLM.Sound;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -14,11 +16,14 @@ public class UIManager : MonoBehaviour
 
     public void RealQuit()
     {
+        SoundManager.Instance.Play(SoundName.Button);
         realQuitPanel.SetActive(true);
     }
     
+    
     public void Settings()
     {
+        SoundManager.Instance.Play(SoundName.Button);
         settingPanel.SetActive(!settingPanel.activeSelf);
         
     }
@@ -27,6 +32,7 @@ public class UIManager : MonoBehaviour
     {
         if (UnityEngine.Input.GetKeyDown(KeyCode.Escape))
         {
+            SoundManager.Instance.Play(SoundName.Button);
             if(realQuitPanel.activeSelf == false)
                 settingPanel.SetActive(!settingPanel.activeSelf);
             else
@@ -47,11 +53,13 @@ public class UIManager : MonoBehaviour
 
     public void RealClose()
     {
+        SoundManager.Instance.Play(SoundName.Button);
         realQuitPanel.SetActive(false);
     }
 
     public void Quit()
     {
+        SoundManager.Instance.Play(SoundName.Button);
         Application.Quit();
     }
     

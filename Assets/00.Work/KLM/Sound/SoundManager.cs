@@ -40,6 +40,27 @@ namespace _00.Work.KLM.Sound
                     Debug.LogWarning($"[SoundManager] Clip not found at: Resources/{path}");
             }
         }
+        public void PlayBGM(SoundName sound)
+        {
+            if (!clipMap.TryGetValue(sound, out var clip))
+            {
+                Debug.LogWarning($"[SoundManager] No BGM clip mapped for {sound}");
+                return;
+            }
+
+            if (!sound.ToString().EndsWith("BGM"))
+            {
+                Debug.LogWarning($"[SoundManager] {sound} is not a BGM sound.");
+                return;
+            }
+
+            Debug.Log($"[SoundManager] Playing BGM: {sound}");
+
+            bgmSource.clip = clip;
+            bgmSource.loop = true;
+            bgmSource.outputAudioMixerGroup = bgmGroup;
+            bgmSource.Play();
+        }
 
         public void Play(SoundName sound)
         {
@@ -63,7 +84,16 @@ namespace _00.Work.KLM.Sound
             }
         }
 
-        public void SetBGMVolume(float value) => audioMixer.SetFloat("BGMVolume", Mathf.Lerp(-80, 0, value));
-        public void SetSFXVolume(float value) => audioMixer.SetFloat("SFXVolume", Mathf.Lerp(-80, 0, value));
+        public void SetBGMVolume(float value)
+        {
+            float dB = Mathf.Approximately(value, 0f) ? -80f : Mathf.Log10(value) * 20f;
+            audioMixer.SetFloat("BGMVolume", dB);
+        }
+
+        public void SetSFXVolume(float value)
+        {
+            float dB = Mathf.Approximately(value, 0f) ? -80f : Mathf.Log10(value) * 20f;
+            audioMixer.SetFloat("SFXVolume", dB);
+        }
     }
 }
