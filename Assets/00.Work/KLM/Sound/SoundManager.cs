@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 namespace _00.Work.KLM.Sound
 {
+    [DefaultExecutionOrder(-100)]
     public class SoundManager : MonoBehaviour
     {
         public static SoundManager Instance;

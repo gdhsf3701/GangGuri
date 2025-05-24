@@ -1,4 +1,4 @@
-namespace _00.Work.KLM._01.Script.KAY_UI
+namespace _00.Work.KLM.Sound
 {
     public enum SoundName
     {
@@ -13,6 +13,7 @@ namespace _00.Work.KLM._01.Script.KAY_UI
         Stage5BGM,
         SucessBGM,
         FailBGM,
+        NULLBGM,
 
         // SFX
         Button,
