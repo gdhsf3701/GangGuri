@@ -15,7 +15,7 @@ namespace _00.Work.MOON._01.Script.Enemies
         {
             base.ChangeStat(statType); 
             agent.speed = _moveSpeed;
-            agent.angularSpeed = _rotateSpeed * Mathf.Rad2Deg;
+            agent.angularSpeed = _rotateSpeed;
             agent.stoppingDistance = _stopDistance;
         }
 
