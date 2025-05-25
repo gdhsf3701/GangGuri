@@ -1,5 +1,6 @@
 using System;
 using _00.Work.JYE._01.Script.StealUI;
+using _00.Work.KLM.Sound;
 using _00.Work.MOON._01.Script.SO.MiniGame;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,6 +25,7 @@ namespace _00.Work.MOON._01.Script.MiniGame
         private void Awake()
         {
             iceCream.sprite = iceCreamSprite[0];
+            SoundManager.Instance.PlayBGM(SoundName.Stage4BGM);
             input.OnMouseClick += HandleMouseClick;
         }
 

@@ -85,6 +85,36 @@ namespace _00.Work.KLM.Sound
             }
         }
 
+        public AudioSource PlayWithLoop(SoundName sound , GameObject target = null)
+        {
+            if (!clipMap.TryGetValue(sound, out var clip))
+            {
+                Debug.LogWarning($"[SoundManager] No clip mapped for {sound}");
+                return null;
+            }
+
+            var newSfxSource = target != null ? target.AddComponent<AudioSource>() : gameObject.AddComponent<AudioSource>();
+
+            newSfxSource.clip = clip;
+            newSfxSource.loop = true;
+            newSfxSource.outputAudioMixerGroup = sfxGroup;
+        
+            return newSfxSource;
+        }
+        
+        public void StopPlay(AudioSource source)
+        {
+            if (source != null)
+            {
+                source.Stop();
+                Destroy(source);
+            }
+            else
+            {
+                Debug.LogWarning("[SoundManager] Attempted to stop a null AudioSource.");
+            }
+        }
+
         public void SetBGMVolume(float value)
         {
             float dB = Mathf.Approximately(value, 0f) ? -80f : Mathf.Log10(value) * 20f;
