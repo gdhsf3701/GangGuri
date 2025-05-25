@@ -28,6 +28,7 @@ namespace _00.Work.MOON._01.Script.Players
             _stateMachine = new EntityStateMachine(this, states);
             
         }
+        
         private void Start()
         {
             _stateMachine.ChangeState("IDLE");

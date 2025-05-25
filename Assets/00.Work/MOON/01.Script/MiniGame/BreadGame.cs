@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using _00.Work.JYE._01.Script.StealUI;
+using _00.Work.KLM.Sound;
 using _00.Work.MOON._01.Script.SO.MiniGame;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -51,6 +52,7 @@ namespace _00.Work.MOON._01.Script.MiniGame
                 _breadWantCutList.Add(Instantiate(breadWantCutPrefab, position, Quaternion.identity, parentObject)
                     .GetComponent<RectTransform>());
             }
+            SoundManager.Instance.PlayBGM(SoundName.Stage5BGM);
         }
 
         private void HandleMouseClick() 
@@ -59,6 +61,7 @@ namespace _00.Work.MOON._01.Script.MiniGame
             RectTransform trans =
                 Instantiate(breadCutPrefab, new Vector3(mousePosition.x, 720, 0), Quaternion.identity, parentObject)
                     .GetComponent<RectTransform>();
+            SoundManager.Instance.Play(SoundName.CutBread);
             if (_breadWantCutList.Count <= 0)
             {
                 GameClear();
