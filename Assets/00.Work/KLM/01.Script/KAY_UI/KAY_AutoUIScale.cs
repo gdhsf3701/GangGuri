@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _00.Work.KLM._01.Script.KAY_UI
 {
-    public class AutoUIScale : MonoBehaviour
+    public class KAY_AutoUIScale : MonoBehaviour
     {
         private void Awake()
         {
