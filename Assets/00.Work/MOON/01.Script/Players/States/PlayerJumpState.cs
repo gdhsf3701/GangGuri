@@ -1,3 +1,4 @@
+using _00.Work.KLM.Sound;
 using _00.Work.MOON._01.Script.Entities;
 using UnityEngine;
 
@@ -7,6 +8,12 @@ namespace _00.Work.MOON._01.Script.Players.States
     {
         public PlayerJumpState(Entity entity, int animationHash) : base(entity, animationHash)
         {
+        }
+        
+        public override void Enter()
+        {
+            SoundManager.Instance.Play(SoundName.Jump);
+            base.Enter();
         }
         public override void Update()
         {

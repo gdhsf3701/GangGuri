@@ -1,3 +1,4 @@
+using _00.Work.KLM.Sound;
 using _00.Work.MOON._01.Script.Entities;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace _00.Work.MOON._01.Script.Players.States
 
         public override void Update()
         {
-            base.Update();;
+            base.Update();
 
             _movement.SetMovementDirection(_player.PlayerInput.MovementKey);
             Vector2 movementKey = _player.Rb.linearVelocity;
