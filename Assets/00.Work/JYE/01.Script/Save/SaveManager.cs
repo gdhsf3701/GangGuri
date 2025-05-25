@@ -46,7 +46,7 @@ namespace _00.Work.JYE._01.Script.Save
 
         private void Update()
         {
-           print($"cur : {SaveCurrentNum} / all : {AllSaveNum} / t :  {TitleCheck}");
+           //print($"cur : {SaveCurrentNum} / all : {AllSaveNum} / t :  {TitleCheck}");
            //print($"data : {CurrentData.stage}");
         }
 

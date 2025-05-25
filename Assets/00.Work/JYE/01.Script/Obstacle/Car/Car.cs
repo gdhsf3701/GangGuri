@@ -31,7 +31,6 @@ namespace _00.Work.JYE._01.Script.Obstacle.Car
         {    float distance = Vector3.Distance(transform.position, target);
             if (distance <= 1.0f && canMove)
             {
-                print("ok");
                 StartCoroutine(CarMove()); // 타겟 변경
             }
             else if (canMove)

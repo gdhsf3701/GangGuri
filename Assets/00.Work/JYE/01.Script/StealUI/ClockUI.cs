@@ -12,6 +12,7 @@ namespace _00.Work.JYE._01.Script.StealUI
         
         [Header("Setting")]
         [SerializeField] private float timeLimit = 20; //타이머
+        [SerializeField] private MonoBehaviour[] isStopScript; //작동 멈출 스크립트
         [Header("Show")]
         [SerializeField] private float coolTime; //남은 시간
         [Header("Need")]
@@ -35,9 +36,9 @@ namespace _00.Work.JYE._01.Script.StealUI
 
         public void StartBtn() //시작 버튼 누름
         {
-            isStart = true;
             Explanation.SetActive(false);
             Time.timeScale = 1;
+            isStart = true;
         }
 
         private void Success() //성공함
@@ -63,6 +64,14 @@ namespace _00.Work.JYE._01.Script.StealUI
                 else if (!isChange) //시간초과 해서 실패 씬으로
                 {
                     Fail();
+                }
+            }
+
+            if (isStopScript != null)
+            {
+                foreach (var sc in isStopScript)
+                {
+                    sc.gameObject.SetActive(isStart);
                 }
             }
         

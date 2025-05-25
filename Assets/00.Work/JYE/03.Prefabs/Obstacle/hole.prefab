@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1415868910306942775}
   - component: {fileID: 8498673448175625677}
   - component: {fileID: 2614146726431025872}
-  - component: {fileID: 7636257238792972012}
+  - component: {fileID: 8937172417597737326}
   m_Layer: 0
   m_Name: hole
   m_TagString: Untagged
@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: {fileID: 7061915843781295345}
---- !u!64 &7636257238792972012
-MeshCollider:
+--- !u!136 &8937172417597737326
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -120,10 +120,11 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5522743232205489369, guid: da2f06f06d566014693c4aa87770392f, type: 3}
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 5.9693837
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.91018355, z: 0}
 --- !u!1 &8111859177323604872
 GameObject:
   m_ObjectHideFlags: 0
