@@ -8530,6 +8530,14 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1868627774843775453, guid: ba933727dc92dda42b8c0e3f6b501d47, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868627774843775453, guid: ba933727dc92dda42b8c0e3f6b501d47, type: 3}
+      propertyPath: m_AgentTypeID
+      value: 1479372276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868627774843775453, guid: ba933727dc92dda42b8c0e3f6b501d47, type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: bb7b451d6ab65ff48a831f688e29e6f1, type: 2}
