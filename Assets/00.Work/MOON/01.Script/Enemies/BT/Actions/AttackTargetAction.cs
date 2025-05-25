@@ -14,7 +14,6 @@ namespace _00.Work.MOON._01.Script.Enemies.BT.Actions
 
         protected override Status OnStart()
         {
-            Self.Value.Attack();
             return Status.Success;
         }
     }
