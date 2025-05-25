@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd9686b81ce4124832cc8cb7f0d4062, type: 3}
   m_Name: EnemyNormalMove
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 100
+  <MoveSpeed>k__BackingField: 45
   <RotateSpeed>k__BackingField: 1.5
   <MaxSlopeAngle>k__BackingField: 45
   <StopDistance>k__BackingField: 1.35

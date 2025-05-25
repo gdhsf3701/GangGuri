@@ -1,3 +1,4 @@
+using System;
 using _00.Work.MOON._01.Script.Entities;
 using _00.Work.MOON._01.Script.Players;
 using _00.Work.MOON._01.Script.SO.Finder;
@@ -39,18 +40,11 @@ namespace _00.Work.MOON._01.Script.Enemies
             return default;
         }
 
-        public void Attack()
+        private void OnCollisionEnter(Collision other)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRange, targetLayer);
-            if(hitColliders.Length > 0)
+            if (other.transform.TryGetComponent(out IHitable hitable))
             {
-                foreach (Collider hit in hitColliders)
-                {
-                    if (hit.transform.TryGetComponent(out IHitable hitable))
-                    {
-                        hitable.Hit(this);
-                    }
-                }
+                hitable.Hit(this);
             }
         }
     }
