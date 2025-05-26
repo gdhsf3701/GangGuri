@@ -27,6 +27,7 @@ namespace _00.Work.MOON._01.Script.SO.Player
         {
             _controls.Player.Disable();
         }
+        
         public void OnMove(InputAction.CallbackContext context)
         {
             if (context.performed)
