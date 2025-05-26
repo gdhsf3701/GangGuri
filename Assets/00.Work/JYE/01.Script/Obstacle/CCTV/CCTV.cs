@@ -1,10 +1,6 @@
-using System;
 using _00.Work.KLM.Sound;
-using _00.Work.MOON._01.Script.Enemies;
 using _00.Work.MOON._01.Script.SO.Finder;
-using Unity.Behavior;
 using UnityEngine;
-using Action = System.Action;
 
 namespace _00.Work.JYE._01.Script.Obstacle.CCTV
 {
