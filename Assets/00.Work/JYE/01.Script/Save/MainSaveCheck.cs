@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using _00.Work.JYE._01.Script.Manager;
 using UnityEngine;

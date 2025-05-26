@@ -1,6 +1,7 @@
 using System.Collections;
 using _00.Work.JYE._01.Script.Manager;
 using _00.Work.JYE._01.Script.Save;
+using _00.Work.KLM.Sound;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,17 +44,20 @@ namespace _00.Work.JYE._01.Script.StageSelect
         {
             if (canStage)
             {
+                SoundManager.Instance.Play(SoundName.Button);
                 PlayerPrefs.SetInt("CurStage", stageCount);
                 sceneManager.StageSceneBtn(stageCount); //씬 이동
             }
             else
             {
+                SoundManager.Instance.Play(SoundName.Button);
                 StartCoroutine(Warning());
             }
         }
 
         public void NextBtn() //다음 버튼
         {
+            SoundManager.Instance.Play(SoundName.Button);
             stageCount++;
             if (stageCount > maxStage)
             {
@@ -65,6 +69,7 @@ namespace _00.Work.JYE._01.Script.StageSelect
 
         public void BeforeBtn() //이전 버튼
         {
+            SoundManager.Instance.Play(SoundName.Button);
             stageCount--;
             if (stageCount < minStage)
             {
@@ -76,6 +81,7 @@ namespace _00.Work.JYE._01.Script.StageSelect
 
         private void SetStageImage() //락이미지나 스테이지 이미지등 세팅
         {
+            SoundManager.Instance.Play(SoundName.Button);
             currentStageImage.sprite = stageImages[stageCount-1];
 
             canStage = (stageCount - minStage) < curData.stage; //플레이 가능 스테이지보다 적다면
@@ -87,6 +93,7 @@ namespace _00.Work.JYE._01.Script.StageSelect
 
         private IEnumerator Warning() //경고문 띄우기
         {
+            SoundManager.Instance.Play(SoundName.Button);
             warning.SetActive(true);
             yield return new WaitForSeconds(1.2f);
             warning.SetActive(false);

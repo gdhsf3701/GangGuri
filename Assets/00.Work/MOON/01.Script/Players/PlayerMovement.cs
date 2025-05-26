@@ -130,6 +130,12 @@ namespace _00.Work.MOON._01.Script.Players
             MoveMaxCheck(); // 이동량 최대치 확인
         }
 
+        public bool GetStatPerName(string statType)
+        {
+            EntityMoveStatPerSO changedStatPer = statInfo.MoveStatsPer[statType];
+            return (_currentMoveStatPer == changedStatPer);
+        }
+
         private void Update()
         {
             // 이동 가능 여부를 타이머 기반으로 체크

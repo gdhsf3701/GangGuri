@@ -1,4 +1,3 @@
-using System;
 using _00.Work.KLM.Sound;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,11 +17,13 @@ namespace _00.Work.JYE._01.Script.Manager
 
         public void BeforeSceneBtn() //이전 씬으로
         {
+            SoundManager.Instance.Play(SoundName.Button);
             SceneBtn(beforeScene);
             SoundManager.Instance.Play(SoundName.Button);
         } 
         public void StageSceneBtn(int i) //스테이지
         {
+            
             SoundManager.Instance.Play(SoundName.Button);
             string scene = $"Stage{i}";
             SceneBtn(scene);
