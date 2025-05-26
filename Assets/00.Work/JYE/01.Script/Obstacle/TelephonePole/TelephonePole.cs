@@ -2,6 +2,7 @@ using UnityEngine;
 using _00.Work.MOON._01.Script.SO.Player;
 using System.Collections;
 using System;
+using _00.Work.KLM.Sound;
 using _00.Work.MOON._01.Script.Players;
 
 public class TelephonePole : MonoBehaviour
@@ -21,6 +22,7 @@ public class TelephonePole : MonoBehaviour
     {
         if(!cantMove&&collision.gameObject.CompareTag("Player"))
         {
+            SoundManager.Instance.Play(SoundName.Thunder);
             particle.Play();    
             move = collision.gameObject.GetComponentInChildren<PlayerMovement>();
             Rigidbody rd = collision.gameObject.GetComponent<Rigidbody>();

@@ -16,7 +16,7 @@ namespace _00.Work.KLM._01.Script.KAY_UI
         IEnumerator waitt()
         {
             yield return new WaitForSeconds(5);
-            SceneManager.LoadScene("GongJang");
+            SceneManager.LoadScene(24);
         }
     }
 }
