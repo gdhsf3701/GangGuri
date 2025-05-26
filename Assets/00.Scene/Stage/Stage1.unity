@@ -5790,18 +5790,6 @@ PrefabInstance:
       value: TelephonePole
       objectReference: {fileID: 0}
     - target: {fileID: 7439829570618504869, guid: 14421bcd97f4d8a4ab513491ff188c97, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7439829570618504869, guid: 14421bcd97f4d8a4ab513491ff188c97, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 111.672
-      objectReference: {fileID: 0}
-    - target: {fileID: 7439829570618504869, guid: 14421bcd97f4d8a4ab513491ff188c97, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7439829570618504869, guid: 14421bcd97f4d8a4ab513491ff188c97, type: 3}
       propertyPath: m_LocalPosition.x
       value: -174.2
       objectReference: {fileID: 0}
@@ -5840,10 +5828,6 @@ PrefabInstance:
     - target: {fileID: 7439829570618504869, guid: 14421bcd97f4d8a4ab513491ff188c97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7439829570618504869, guid: 14421bcd97f4d8a4ab513491ff188c97, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
