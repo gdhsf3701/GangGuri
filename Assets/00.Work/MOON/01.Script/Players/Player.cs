@@ -44,6 +44,11 @@ namespace _00.Work.MOON._01.Script.Players
             _stateMachine.UpdateStateMachine();
         }
 
+        private void OnDestroy()
+        {
+            _stateMachine.StateDestroy();
+        }
+
         public void ChangeState(string newStateName) => _stateMachine.ChangeState(newStateName);
         public void Hit(Entity hiter)
         {
