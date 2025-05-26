@@ -25,7 +25,9 @@ namespace _00.Work.MOON._01.Script.Players.States
             base.Update();
 
             _movement.SetMovementDirection(_player.PlayerInput.MovementKey);
-            Vector2 movementKey = _player.Rb.linearVelocity;
+            Vector3 movementKey = _player.Rb.linearVelocity;
+            
+            movementKey.y = 0;
             
             if(movementKey.magnitude > _inputThreshold && _movement.IsCanMove)
             {

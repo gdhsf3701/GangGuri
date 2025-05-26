@@ -98,7 +98,8 @@ namespace _00.Work.KLM.Sound
             newSfxSource.clip = clip;
             newSfxSource.loop = true;
             newSfxSource.outputAudioMixerGroup = sfxGroup;
-        
+            newSfxSource.Play();
+            
             return newSfxSource;
         }
         
