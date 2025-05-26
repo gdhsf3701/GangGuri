@@ -1134,8 +1134,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7820044637080923402, guid: 20fe4b6cd9e556f45a565fd932240676, type: 3}
+      propertyPath: soundName
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8084009175526431085, guid: 20fe4b6cd9e556f45a565fd932240676, type: 3}
+    - {fileID: 6015484253764367863, guid: 20fe4b6cd9e556f45a565fd932240676, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fe4b6cd9e556f45a565fd932240676, type: 3}
