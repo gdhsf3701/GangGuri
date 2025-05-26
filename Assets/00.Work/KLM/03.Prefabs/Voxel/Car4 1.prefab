@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: frog_st2
       objectReference: {fileID: 0}
+    - target: {fileID: 327258271715322483, guid: 21f840716a871b842b7c3aa19cd2911e, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3376167463005651305, guid: 21f840716a871b842b7c3aa19cd2911e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.32
