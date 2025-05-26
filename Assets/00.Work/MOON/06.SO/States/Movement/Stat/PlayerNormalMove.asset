@@ -18,7 +18,7 @@ MonoBehaviour:
   <StopDistance>k__BackingField: 21.68
   <MoveToUpSpeed>k__BackingField: 1
   <UpDistance>k__BackingField: 2
-  <JumpPower>k__BackingField: 10
+  <JumpPower>k__BackingField: 1
   <MaxSpeed>k__BackingField: 25
   <StopPer>k__BackingField: 0.0001
   <UpDistanceCheckerSize>k__BackingField: 0.15

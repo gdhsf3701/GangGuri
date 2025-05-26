@@ -1,5 +1,7 @@
+using System;
 using _00.Work.MOON._01.Script.Players;
 using System.Collections;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 namespace _00.Work.JYE._01.Script.Obstacle.Ice
@@ -13,15 +15,20 @@ namespace _00.Work.JYE._01.Script.Obstacle.Ice
             {
                 move = other.gameObject.GetComponentInChildren<PlayerMovement>();
 
-                move.ChangeStatPer("FAST");
+                if (!move.GetStatPerName("STOP"))
+                {
+                    move.ChangeStatPer("FAST");
+                }
             }
         }
-
         private void OnTriggerExit(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                move.ChangeStatPer("NORMAL");
+                if (!move.GetStatPerName("STOP"))
+                {
+                    move.ChangeStatPer("NORMAL");
+                }
             }
         }
     }
