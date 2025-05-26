@@ -1,4 +1,5 @@
 using System;
+using _00.Work.KLM.Sound;
 using _00.Work.MOON._01.Script.Enemies;
 using _00.Work.MOON._01.Script.SO.Finder;
 using Unity.Behavior;
@@ -21,6 +22,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.CCTV
         {
             if (!isEnemy&&other.gameObject.CompareTag("Player"))
             {
+                SoundManager.Instance.Play(SoundName.Police);
                 isEnemy = true;
                 finder.Target.Finded();
             }
