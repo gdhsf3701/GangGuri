@@ -31,7 +31,7 @@ namespace _00.Work.JYE._01.Script.Save
             warning.SetActive(true);
             
             yield return new WaitForSeconds(2f);
-            sceneManager.SceneBtn(2);
+            sceneManager.SceneBtn(3);
         }
     }
 }
