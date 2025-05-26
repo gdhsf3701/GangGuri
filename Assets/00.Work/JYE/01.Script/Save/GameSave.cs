@@ -25,6 +25,10 @@ namespace _00.Work.JYE._01.Script.Save
         
         public static void SaveData(GameSaveData data, string Path) //저장하기
         {
+            if (data.stage > SaveManager.Instance.MaxNum) //스테이지 최고수 넘음
+            {
+                data.stage = SaveManager.Instance.MaxNum;
+            }
             data.finalDate = DateTime.Now.ToString("yy년 MM월 dd일 tt HH시 mm분"); //마지막 시간 입력
             string json = JsonUtility.ToJson(data);
             PlayerPrefs.SetString(Path, json);
