@@ -1,5 +1,6 @@
 using System.Collections;
 using _00.Work.JYE._01.Script.Save;
+using _00.Work.KLM.Sound;
 using _00.Work.MOON._01.Script.SO.Player;
 using UnityEngine;
 
@@ -39,16 +40,18 @@ namespace _00.Work.JYE._01.Script.Car
         {
             if (isRock)
             {
+                SoundManager.Instance.Play(SoundName.Button);
                 StartCoroutine(Warning());
             }
             else
-            {
+            {SoundManager.Instance.Play(SoundName.Button);
                 SaveManager.CurrentData.car = allCar[currentNum].name; //현재 차 이름 저장
             }
         }
 
         public void NextBtn() //다음 버튼
         {
+            SoundManager.Instance.Play(SoundName.Button);
             currentNum++;
             if (currentNum > max)
             {
@@ -60,6 +63,7 @@ namespace _00.Work.JYE._01.Script.Car
 
         public void BeforeBtn() //이전 버튼
         {
+            SoundManager.Instance.Play(SoundName.Button);
             currentNum--;
             if (currentNum < min)
             {
