@@ -15,12 +15,13 @@ public class TelephonePole : MonoBehaviour
     
 
     private bool cantMove; //true : 못 움직임, false : 풀림
-
+    [SerializeField] ParticleSystem particle;
 
     private void OnCollisionEnter(Collision collision)
     {
         if(!cantMove&&collision.gameObject.CompareTag("Player"))
         {
+            particle.Play();    
             move = collision.gameObject.GetComponentInChildren<PlayerMovement>();
             Rigidbody rd = collision.gameObject.GetComponent<Rigidbody>();
             rd.isKinematic = true;
