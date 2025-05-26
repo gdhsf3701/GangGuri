@@ -34,11 +34,6 @@ namespace _00.Work.MOON._01.Script.Players
             _stateMachine.ChangeState("IDLE");
         }
 
-        private void OnDisable()
-        {
-            _stateMachine.ChangeState("JUMP");
-        }
-
         private void Update()
         {
             _stateMachine.UpdateStateMachine();
