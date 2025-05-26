@@ -14,6 +14,7 @@ namespace _00.Work.KLM.Sound
         SucessBGM,
         FailBGM,
         NULLBGM,
+        CutBGM,
 
         // SFX
         Button,
