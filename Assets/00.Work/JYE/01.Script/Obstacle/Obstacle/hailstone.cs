@@ -1,4 +1,5 @@
 using System.Collections;
+using _00.Work.KLM.Sound;
 using UnityEngine;
 
 namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
@@ -53,6 +54,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Obstacle
         {
             if(!isCoroutines)
             {
+                SoundManager.Instance.Play(SoundName.IceHit);
                 isCoroutines=true;
                 StartCoroutine(DropHailston());
             }

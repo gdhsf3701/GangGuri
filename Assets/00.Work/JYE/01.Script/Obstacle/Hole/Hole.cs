@@ -1,3 +1,4 @@
+using _00.Work.KLM.Sound;
 using UnityEngine;
 
 namespace _00.Work.JYE._01.Script.Obstacle.Hole
@@ -10,6 +11,7 @@ namespace _00.Work.JYE._01.Script.Obstacle.Hole
         {
             if (other.gameObject.CompareTag("Player"))
             {
+                SoundManager.Instance.Play(SoundName.Boom);
                 other.transform.position = pos.position; //위치 이동
             }
         }

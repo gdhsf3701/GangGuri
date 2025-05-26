@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using _00.Work.KLM.Sound;
 using TMPro;
 using UnityEngine;
 
@@ -31,6 +32,7 @@ namespace _00.Work.JYE._01.Script.Save
 
         public void Load() //불러오기 (자기 자신을 누름)
         {
+            SoundManager.Instance.Play(SoundName.Button);
             SaveManager.Instance.SetSaveData(saveData, myNum);
         }
         

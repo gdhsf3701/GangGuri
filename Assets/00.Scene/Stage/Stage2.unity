@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &73576072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &84417235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -626,6 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1 &131399438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,6 +1175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &253814041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2722,6 +2726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &658057153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2868,7 +2873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7820044637080923402, guid: 20fe4b6cd9e556f45a565fd932240676, type: 3}
       propertyPath: soundName
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2975,6 +2980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &687388327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3070,6 +3076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1 &704137014
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,6 +4479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &848478906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4907,6 +4915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &875591828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5197,6 +5206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &956217171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5292,6 +5302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1 &985055139
 GameObject:
   m_ObjectHideFlags: 0
@@ -5595,6 +5606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1 &1089719247
 GameObject:
   m_ObjectHideFlags: 0
@@ -5799,6 +5811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &1159610373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6144,6 +6157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &1211108404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6440,6 +6454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1001 &1276023658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6597,6 +6612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1 &1323033710
 GameObject:
   m_ObjectHideFlags: 0
@@ -8292,6 +8308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
+  particle: {fileID: 0}
 --- !u!1 &1714196266
 GameObject:
   m_ObjectHideFlags: 0
