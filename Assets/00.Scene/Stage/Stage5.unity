@@ -14838,7 +14838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7820044637080923402, guid: 20fe4b6cd9e556f45a565fd932240676, type: 3}
       propertyPath: soundName
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
