@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _00.Work.JYE._01.Script.Obstacle.Car
