@@ -37,6 +37,11 @@ namespace _00.Work.MOON._01.Script.FSM
             CurrentState.Enter();
         }
 
+        public void StateDestroy()
+        {
+            CurrentState?.Exit();
+        }
+
         public void UpdateStateMachine()
         {
             CurrentState?.Update();
