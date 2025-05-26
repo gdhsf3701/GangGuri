@@ -106,7 +106,7 @@ namespace _00.Work.MOON._01.Script.Players
 
         #endregion
 
-        #region Movement Logic
+          #region Movement Logic
 
         public void SetMovementDirection(Vector2 movementInput, float movementProportion = 1f)
         {
