@@ -10,9 +10,9 @@ namespace _00.Work.JYE._01.Script.Obstacle.Hole
 
         private void OnTriggerEnter(Collider other)
         {
-            particle.Play();
             if (other.gameObject.CompareTag("Player"))
             {
+                particle.Play(); 
                 SoundManager.Instance.Play(SoundName.Boom);
                 other.transform.position = pos.position; //위치 이동
             }
