@@ -24,6 +24,8 @@ namespace _00.Work.MOON._01.Script.MiniGame
         [SerializeField] private RectTransform start;
         [SerializeField] private RectTransform end;
         
+        [SerializeField] private Camera cam;
+        
 
         private void Awake()
         {
@@ -38,6 +40,8 @@ namespace _00.Work.MOON._01.Script.MiniGame
         
         private void GameInit()
         {
+            Rect rect = cam.pixelRect;
+            
             float startX = start.position.x;
             float endX = end.position.x;
             float segmentWidth = (endX - startX) / cutMany;
@@ -47,19 +51,22 @@ namespace _00.Work.MOON._01.Script.MiniGame
             {
                 float min = xNowPos;
                 float max = startX + segmentWidth * i;
-                Vector3 position = new Vector3(Random.Range(min, max), 720, 0);
+                Vector3 position = new Vector3(Random.Range(min, max), (rect.height) /2, 0);
                 xNowPos = max;
                 _breadWantCutList.Add(Instantiate(breadWantCutPrefab, position, Quaternion.identity, parentObject)
                     .GetComponent<RectTransform>());
+                print($"pos : {position} / y7 : {rect.height} / c : {cam.name} / cam : {cam.pixelRect}");
             }
             SoundManager.Instance.PlayBGM(SoundName.Stage5BGM);
         }
 
         private void HandleMouseClick() 
         {
+            Rect rect = cam.pixelRect;
+            
             Vector2 mousePosition = Mouse.current.position.value;
             RectTransform trans =
-                Instantiate(breadCutPrefab, new Vector3(mousePosition.x, 720, 0), Quaternion.identity, parentObject)
+                Instantiate(breadCutPrefab, new Vector3(mousePosition.x, (rect.height)/2, 0), Quaternion.identity, parentObject)
                     .GetComponent<RectTransform>();
             SoundManager.Instance.Play(SoundName.CutBread);
             if (_breadWantCutList.Count <= 0)
